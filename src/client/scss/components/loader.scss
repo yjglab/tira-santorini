@@ -1,0 +1,74 @@
+#loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: $dark;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 1000;
+}
+// This is just to center the spinner
+
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite,
+    colors ($duration * 4) ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: #ffffff;
+    opacity: 0;
+  }
+  25% {
+    stroke: #ffffff;
+    opacity: 1;
+  }
+  50% {
+    stroke: #ffffff;
+    opacity: 0;
+  }
+  75% {
+    stroke: #ffffff;
+    opacity: 1;
+  }
+  100% {
+    stroke: #ffffff;
+    opacity: 0;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}
