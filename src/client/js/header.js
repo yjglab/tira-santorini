@@ -1,6 +1,6 @@
 import variables from "./variables";
 
-const bgColorsBody = [
+const backColors = [
   variables.tiraColor1,
   variables.tiraColor2,
   variables.tiraColor3,
@@ -9,12 +9,24 @@ const bgColorsBody = [
   variables.tiraColor5,
   variables.tiraColor6,
 ];
+const backColorsPlus = [
+  variables.tiraColor1Plus,
+  variables.tiraColor2Plus,
+  variables.tiraColor3Plus,
+  variables.tiraMainWhitePlus,
+  variables.tiraColor4Plus,
+  variables.tiraColor5Plus,
+  variables.tiraColor6Plus,
+];
 const $nav = document.querySelector(".nav");
 const $navItems = $nav.querySelectorAll(".nav-item");
 const $navBorder = $nav.querySelector(".nav-border");
 let activeItem = $nav.querySelector(".active");
 
 const $$backColorChange = document.querySelectorAll(".back-color-change");
+const $$backColorPlusChange = document.querySelectorAll(
+  ".back-color-plus-change"
+);
 const $$midColorChange = document.querySelectorAll(".mid-colorChange");
 function clickItem(item, index) {
   $nav.style.removeProperty("--timeOut");
@@ -32,7 +44,10 @@ function clickItem(item, index) {
 
   item.classList.add("active");
   $$backColorChange.forEach(
-    (v) => (v.style.backgroundColor = bgColorsBody[index])
+    (v) => (v.style.backgroundColor = backColors[index])
+  );
+  $$backColorPlusChange.forEach(
+    (v) => (v.style.backgroundColor = backColorsPlus[index])
   );
 
   activeItem = item;

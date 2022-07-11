@@ -81,11 +81,11 @@ body {
   height: 100%;
   display: flex;
   flex-wrap: nowrap;
-  background-color: #222;
+  background-color: $tiraMainWhitePlus;
 
   .intro__section {
-    width: 100vw;
-    height: 100.1vh;
+    width: 99vw;
+    height: 103.1vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,13 +96,14 @@ body {
     color: white;
     position: relative;
     padding: 10px;
-    background-color: #222;
+    background-color: $tiraMainWhitePlus;
 
     &.one {
       h2 {
         width: 40%;
         margin-bottom: 50px;
         line-height: 48px;
+        transition: color $midColorChangeTransition;
       }
       .intro__section-card {
         background-color: rgb(110, 110, 110);
@@ -123,7 +124,6 @@ body {
     &.two {
       flex-direction: row;
       .intro__section-card {
-        background-color: rgb(110, 110, 110);
         width: 300px;
         height: 480px;
         overflow: hidden;
@@ -131,9 +131,10 @@ body {
         cursor: pointer;
 
         position: relative;
-        &:not(:last-child) {
-          margin-right: 50px;
-        }
+        margin: 0 10px;
+        // &:not(:last-child) {
+        //   margin-right: 20px;
+        // }
 
         img {
           position: absolute;
@@ -158,7 +159,6 @@ body {
           left: 50%;
           transform: translate(-50%, -50%);
           z-index: 2;
-          background-color: rgb(201, 98, 98);
           color: white;
           font-family: "Open Sans", sans-serif;
           font-weight: 200;
@@ -170,8 +170,57 @@ body {
           height: 100%;
           transition: all $midColorChangeTransition;
         }
+
         &:hover p {
           top: 50%;
+        }
+      }
+      .intro__section-card:nth-of-type(1) {
+        p {
+          background-color: $tiraColor1;
+          &:hover {
+            background-color: $tiraColor1op;
+          }
+        }
+      }
+      .intro__section-card:nth-of-type(2) {
+        p {
+          background-color: $tiraColor2;
+          &:hover {
+            background-color: $tiraColor2op;
+          }
+        }
+      }
+      .intro__section-card:nth-of-type(3) {
+        p {
+          background-color: $tiraColor3;
+          &:hover {
+            background-color: $tiraColor3op;
+          }
+        }
+      }
+      .intro__section-card:nth-of-type(4) {
+        p {
+          background-color: $tiraColor4;
+          &:hover {
+            background-color: $tiraColor4op;
+          }
+        }
+      }
+      .intro__section-card:nth-of-type(5) {
+        p {
+          background-color: $tiraColor5;
+          &:hover {
+            background-color: $tiraColor5op;
+          }
+        }
+      }
+      .intro__section-card:nth-of-type(6) {
+        p {
+          background-color: $tiraColor6;
+          &:hover {
+            background-color: $tiraColor6op;
+          }
         }
       }
     }
@@ -200,7 +249,8 @@ body {
         font-size: 1.22rem;
         line-height: 32px;
         text-align: left;
-        color: white;
+        color: $tiraMainDark;
+        transition: color $midColorChangeTransition;
       }
     }
   }
@@ -216,7 +266,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $tiraMainDark;
+  background-color: $tiraMainWhitePlus;
 
   .intro__section-vertical {
     display: flex;
@@ -230,7 +280,7 @@ body {
       font-weight: 400;
       font-size: 1.6rem;
       line-height: 40px;
-      color: $tiraMainWhite;
+      color: $tiraMainDark;
       text-align: center;
       transition: all $midColorChangeTransition;
     }
