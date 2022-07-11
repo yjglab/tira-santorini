@@ -1,8 +1,16 @@
-$backColor: white;
-$red: tomato;
-$dark: #131313;
-$white: white;
-$mainFont: "EB Garamond", serif;
+$mainFont: "Barlow Semi Condensed", sans-serif;
+$serif: "EB Garamond", serif; // "Nanum Myeongjo", serif;
 $sans: "Nanum Gothic", sans-serif;
 
-// font-family: "Nanum Myeongjo", serif;
+$tiraMainWhite: rgb(235, 235, 235);
+$tiraMainDark: #424242;
+
+$tiraColor1: #fbe4e0;
+$tiraColor2: #ffb3ab;
+$tiraColor3: #ffd4b0;
+$tiraColor4: #c5d4ff;
+$tiraColor5: #6178ff;
+$tiraColor6: #7a7a96;
+
+$midColorChangeTransition: 0.5s ease-in-out;
+$test: #9c9cff;

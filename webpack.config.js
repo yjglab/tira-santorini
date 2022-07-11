@@ -30,6 +30,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: "file-loader",
+        options: {
+          name: "img/[name].[ext]",
+        },
+      },
+      {
         test: /\.js$/,
         use: {
           loader: "babel-loader",
@@ -40,7 +47,16 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], // sass->css->style
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "",
+            },
+          },
+          "css-loader",
+          "sass-loader",
+        ], // sass->css->style
       },
     ],
   },

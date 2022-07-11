@@ -1,1 +1,106 @@
-@import "../config/_variables";
+@import "../config/_variables.scss";
+
+html {
+  --bgColornav: rgba(75, 84, 101, 0.255);
+  --duration: 0.7s;
+}
+.mid-colorChange {
+  color: $tiraMainDark;
+}
+.nav {
+  position: fixed;
+  margin: 4.5% auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 40.05em;
+  height: 1.6em;
+  font-size: 1.5em;
+  padding: 0 2.85em;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bgColornav);
+  border-radius: 1em;
+  z-index: 999;
+}
+
+.nav-item {
+  all: unset;
+  flex-grow: 1;
+  z-index: 100;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  border-radius: 50%;
+  align-items: center;
+  will-change: transform;
+  justify-content: center;
+  padding: 0.55em 0 0.85em;
+  transition: transform var(--timeOut, var(--duration));
+  width: 20%;
+}
+
+.nav-item::before {
+  content: "";
+  z-index: -1;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 50%;
+  position: absolute;
+  transform: scale(0);
+  transition: background-color var(--duration), transform var(--duration);
+}
+
+.nav-item.active {
+  transform: translate3d(0, -0.8em, 0);
+}
+
+.nav-item.active::before {
+  transform: scale(1);
+  background-color: var(--bgColorItem);
+}
+
+// .nav-item.active .icon {
+//   animation: strok 1.5s reverse;
+// }
+
+// @keyframes strok {
+//   100% {
+//     stroke-dashoffset: 400;
+//   }
+// }
+.nav-title {
+  color: white;
+  font-size: 1em;
+}
+.nav-title-mid {
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 1.3em;
+  color: #575471;
+}
+.nav-border {
+  left: 0;
+  bottom: 100%;
+  width: 8.9em;
+  height: 2em;
+  position: absolute;
+  clip-path: url(#navClipPath);
+  will-change: transform;
+  background-color: var(--bgColornav);
+  transition: transform var(--timeOut, var(--duration));
+}
+
+.svg-container {
+  width: 0;
+  height: 0;
+}
+
+@media screen and (max-width: 50em) {
+  .nav {
+    font-size: 0.8em;
+  }
+}
+.back-color-change {
+  transition: background-color var(--duration);
+}

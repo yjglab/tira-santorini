@@ -2,3 +2,48 @@
 @import "./config/_reset";
 @import "./components/loader";
 @import "./components/header";
+
+html {
+  box-sizing: border-box;
+  // overflow-y: scroll;
+}
+
+html,
+body {
+  min-height: 100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  font-family: $mainFont;
+}
+
+// *,
+// *:before,
+// *:after {
+//   box-sizing: inherit;
+// }
+body {
+  background: white;
+  overflow: overlay;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 20px; /*너비*/
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(23, 23, 23, 0.642);
+  background-clip: padding-box;
+  border: 6px solid transparent;
+  border-radius: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
