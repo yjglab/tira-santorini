@@ -1,5 +1,6 @@
-import variables from "./variables";
+import variables from "../variables";
 import setNav from "./setNav";
+import setTrans from "./setTrans";
 
 setNav();
 
@@ -80,34 +81,11 @@ function offsetnavBorder(activeItem, $navBorder) {
   //       ($navBorder.offsetWidth - offsetActiveItem.width) / 2
   //   ) + "px";
 
-  let trans;
   const activeItemTitle = activeItem.innerText;
-  switch (activeItemTitle) {
-    case "OIA":
-      trans = "-409.5px";
-      break;
-    case "FIRA":
-      trans = "-273px";
-      break;
-    case "AKROTIRI":
-      trans = "-136.5px";
-      break;
-    case "TIRA":
-      trans = "0px";
-      break;
-    case "FIROSTEFANI":
-      trans = "136.5px";
-      break;
-    case "IMEROVIGLI":
-      trans = "273px";
-      break;
-    case "KAMARI":
-      trans = "409.5px";
-      break;
-    default:
-      break;
-  }
-  $navBorder.style.transform = `translate3d(${trans}, 0 , 0)`;
+
+  $navBorder.style.transform = `translate3d(${setTrans(
+    activeItemTitle
+  )}, 0 , 0)`;
 }
 
 offsetnavBorder(activeItem, $navBorder);

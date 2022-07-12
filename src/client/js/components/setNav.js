@@ -1,4 +1,6 @@
-const setNav = () => {
+import setTrans from "./setTrans";
+
+export const setNav = () => {
   const pageTitle = document.title.split(" |", 1)[0];
 
   const set = (itemIdx) => {
@@ -10,34 +12,7 @@ const setNav = () => {
     const $item = document.querySelector(`.nav-item:nth-of-type(${itemIdx})`);
     $item.classList.add("active");
 
-    let trans;
-    switch (pageTitle) {
-      case "OIA":
-        trans = "-409.5px";
-        break;
-      case "FIRA":
-        trans = "-273px";
-        break;
-      case "AKROTIRI":
-        trans = "-136.5px";
-        break;
-      case "TIRA":
-        trans = "0px";
-        break;
-      case "FIROSTEFANI":
-        trans = "136.5px";
-        break;
-      case "IMEROVIGLI":
-        trans = "273px";
-        break;
-      case "KAMARI":
-        trans = "409.5px";
-        break;
-      default:
-        break;
-    }
-
-    $navBorder.style.transform = `translate3d(${trans}, 0 , 0)`;
+    $navBorder.style.transform = `translate3d(${setTrans(pageTitle)}, 0 , 0)`;
     function func(item) {
       item.classList.add("active");
       $item.classList.remove("active");
@@ -70,5 +45,4 @@ const setNav = () => {
       break;
   }
 };
-
 export default setNav;
