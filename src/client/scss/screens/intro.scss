@@ -3,16 +3,7 @@
 body {
   overflow-x: hidden;
 }
-.intro__banner-floor-img {
-  z-index: 0;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 0;
-  img {
-    width: 60%;
-  }
-}
+
 // banner 섹션
 .intro__section-banner-container {
   width: 100%;
@@ -24,14 +15,47 @@ body {
   justify-content: center;
   align-items: center;
   background-color: $tiraMainWhite;
+  font-family: "넥슨Lv2고딕 OTF", "넥슨Lv2고딕OTF", "nexon-lv2-gothic-otf";
+  letter-spacing: -0.05em;
 
+  .intro__video-wrapper {
+    border-radius: 50%;
+    width: 3000px;
+    height: 1500px;
+    background-color: #9090902b;
+    position: absolute;
+    top: -75%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    video {
+      position: absolute;
+      bottom: 0;
+      width: 70%;
+    }
+  }
+
+  .intro__banner-floor-img {
+    z-index: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    img {
+      width: 25%;
+    }
+  }
   .intro__section-vertical {
     width: 72%;
     z-index: 1;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+    position: absolute;
+    top: 20%;
     .intro__section-card {
       background-color: rgb(164, 164, 164);
       width: 480px;
@@ -55,6 +79,7 @@ body {
       // align-items: flex-start;
       margin-right: 80px;
       width: 36%;
+      color: $tiraMainWhite; ////
       h1,
       p {
         transition: color 0.7s ease-in-out;
@@ -65,8 +90,8 @@ body {
       }
       p {
         width: 100%;
-        font-family: "Open Sans", sans-serif;
-        font-weight: 200;
+        font-family: $tiraGothicFont;
+        font-weight: 300;
         font-size: 1.22rem;
         line-height: 32px;
         text-align: left;
@@ -102,7 +127,7 @@ body {
     &.one {
       h2 {
         width: 40%;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
         line-height: 48px;
         transition: color $midColorChangeTransition;
       }

@@ -1,6 +1,9 @@
-function importAll(r) {
+(function importAllImages() {
+  const r = require.context("../img", false, /\.(png|jpe?g|svg)$/);
   return r.keys().map(r);
-}
-const images = importAll(
-  require.context("../img", false, /\.(png|jpe?g|svg)$/)
-);
+})();
+
+(function importAllVideos() {
+  const r = require.context("../videos", false, /\.(mp4)$/);
+  return r.keys().map(r);
+})();

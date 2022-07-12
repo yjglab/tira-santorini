@@ -60,6 +60,10 @@ module.exports = {
           "sass-loader",
         ], // sass->css->style
       },
+      {
+        test: /\.mp4$/,
+        use: "file-loader?name=videos/[name].[ext]",
+      },
     ],
   },
 };

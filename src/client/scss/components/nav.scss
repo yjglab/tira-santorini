@@ -1,7 +1,7 @@
 @import "../config/_variables.scss";
 
 html {
-  --bgColornav: rgba(75, 84, 101, 0.255);
+  --bgColornav: rgba(177, 180, 191, 0.392);
   --duration: 0.7s;
 }
 .mid-colorChange {
@@ -9,7 +9,7 @@ html {
 }
 .nav {
   position: fixed;
-  margin: 4.5% auto;
+  margin: 2.5% auto;
   left: 0;
   right: 0;
   display: flex;
@@ -26,6 +26,7 @@ html {
 
 .nav-item {
   all: unset;
+
   flex-grow: 1;
   z-index: 100;
   display: flex;
@@ -38,8 +39,20 @@ html {
   // padding: 0.55em 0 0.85em;
   transition: transform var(--timeOut, var(--duration));
   width: 20%;
-}
 
+  h3 {
+    font-family: $tiraLightFont;
+    letter-spacing: -0.001em;
+  }
+}
+.nav-item:nth-of-type(4) {
+  h3 {
+    font-family: $tiraHeaderFont;
+    font-weight: 700;
+    font-size: 1.2em;
+    letter-spacing: -0.001em;
+  }
+}
 .nav-item::before {
   content: "";
   z-index: -1;

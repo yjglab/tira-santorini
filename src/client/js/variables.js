@@ -1,5 +1,5 @@
 const variables = {
-  tiraMainWhite: "rgb(245, 241, 241)",
+  tiraMainWhite: "rgb(255, 255, 255)",
   tiraMainDark: "#424242",
   tiraColor1: "#fbe4e0",
   tiraColor2: "#ffbfb8",
@@ -8,7 +8,7 @@ const variables = {
   tiraColor5: "#8AA0FF",
   tiraColor6: "#7a7a96",
 
-  tiraMainWhitePlus: "rgb(238, 229, 229)",
+  tiraMainWhitePlus: "rgb(245, 241, 241)",
   tiraMainDarkPlus: "#424242",
   tiraColor1Plus: "#ffccc3",
   tiraColor2Plus: "#f6a59d",

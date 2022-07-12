@@ -1,8 +1,11 @@
-$mainFont: "Barlow Semi Condensed", sans-serif;
+// $mainFont: "Barlow Semi Condensed", sans-serif;
 $serif: "EB Garamond", serif; // "Nanum Myeongjo", serif;
 $sans: "Nanum Gothic", sans-serif;
+$tiraHeaderFont: "Gotham", sans-serif;
+$tiraLightFont: -apple-system, BlinkMacSystemFont, sans-serif;
+$tiraGothicFont: "넥슨Lv2고딕 OTF", "넥슨Lv2고딕OTF", "nexon-lv2-gothic-otf";
 
-$tiraMainWhite: rgb(245, 241, 241);
+$tiraMainWhite: rgb(239, 245, 255);
 $tiraMainDark: #424242;
 $tiraColor1: #fbe4e0;
 $tiraColor2: #ffbfb8;
@@ -11,7 +14,7 @@ $tiraColor4: #c5d4ff;
 $tiraColor5: #8c9dff;
 $tiraColor6: #7a7a96;
 
-$tiraMainWhitePlus: rgb(238, 229, 229);
+$tiraMainWhitePlus: rgb(230, 238, 249);
 $tiraMainDarkPlus: #424242;
 $tiraColor1Plus: #ffccc3;
 $tiraColor2Plus: #f6a59d;

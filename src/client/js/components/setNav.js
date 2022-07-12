@@ -5,7 +5,6 @@ export const setNav = () => {
 
   const set = (itemIdx) => {
     const $navBorder = document.querySelector(".nav-border");
-
     const $$items = document.querySelectorAll(".nav-item");
     $$items.forEach((v) => v.classList.remove("active"));
 
@@ -13,16 +12,16 @@ export const setNav = () => {
     $item.classList.add("active");
 
     $navBorder.style.transform = `translate3d(${setTrans(pageTitle)}, 0 , 0)`;
-    function func(item) {
+    function classToggle(item) {
       item.classList.add("active");
       $item.classList.remove("active");
     }
     const $$navItems = document.querySelectorAll(".nav-item");
     $$navItems.forEach((item, idx) => {
-      item.addEventListener("click", () => func(item));
+      item.addEventListener("click", () => classToggle(item));
     });
   };
-  switch (pageTitle) {
+  switch (pageTitle.toUpperCase()) {
     case "OIA":
       set(1);
       break;
