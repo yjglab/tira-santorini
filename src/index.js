@@ -6,7 +6,11 @@ const app = express();
 const logger = morgan("dev");
 
 app.set("view engine", "pug");
-app.set("views", process.cwd() + "/src/views");
+app.set("views", [
+  process.cwd() + "/src/views",
+  process.cwd() + "/src/views/towns",
+]);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // string to JS object
 app.use(express.text());

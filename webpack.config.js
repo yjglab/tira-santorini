@@ -8,6 +8,8 @@ module.exports = {
     intro: ["./src/client/js/intro.js", "./src/client/scss/screens/intro.scss"],
     main: ["./src/client/js/main.js", "./src/client/scss/screens/main.scss"],
     header: ["./src/client/js/header.js"],
+
+    oia: ["./src/client/js/oia.js", "./src/client/scss/screens/oia.scss"],
   },
   mode: "development",
   plugins: [
