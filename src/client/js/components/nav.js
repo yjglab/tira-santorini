@@ -36,12 +36,12 @@ const $$midColorChange = document.querySelectorAll(".mid-colorChange");
 function clickItem(item, index) {
   $nav.style.removeProperty("--timeOut");
 
-  // if (item.children[0].textContent === "TIRA") {
-  //   $$midColorChange.forEach((v) => (v.style.color = variables.tiraMainDark));
-  // } else {
-  //   $$midColorChange.forEach((v) => (v.style.color = "white"));
-  // }
-  // if (activeItem == item) return;
+  if (item.children[0].textContent === "TIRA") {
+    $$midColorChange.forEach((v) => (v.style.color = variables.tiraMainDark));
+  } else {
+    $$midColorChange.forEach((v) => (v.style.color = "white"));
+  }
+  if (activeItem == item) return;
   if (activeItem) {
     activeItem.classList.remove("active");
   }
