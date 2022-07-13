@@ -242,7 +242,7 @@ body {
             display: inline-block;
 
             a {
-              text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+              text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.133);
               transition: all 0.2s;
             }
           }
@@ -254,11 +254,12 @@ body {
           }
 
           .card-content__subtitle {
-            width: 170px;
+            width: 200px;
             margin: 0 auto;
-            color: #ddd;
-            font-style: italic;
-            font-family: "Abril Fatface", serif;
+            color: rgb(255, 255, 255);
+            font-family: $tiraHeaderFont;
+            font-size: 0.7em;
+            font-weight: 500;
             a {
               color: #ddd;
               &:hover {

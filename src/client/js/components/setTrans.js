@@ -1,6 +1,6 @@
 export const setTrans = (str) => {
   let trans;
-  switch (str) {
+  switch (str.toUpperCase()) {
     case "OIA":
       trans = "-330px";
       break;

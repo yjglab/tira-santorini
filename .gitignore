@@ -1,4 +1,6 @@
 /node_modules
+/src/client/img
+/src/client/videos
 /assets
 db.js
 init.js

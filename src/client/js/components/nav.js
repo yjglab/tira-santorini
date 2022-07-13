@@ -46,6 +46,7 @@ function clickItem(item, index) {
     activeItem.classList.remove("active");
   }
   item.classList.add("active");
+
   $$backColorChange.forEach(
     (v) => (v.style.backgroundColor = backColors[index])
   );
