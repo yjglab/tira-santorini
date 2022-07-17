@@ -1,25 +1,25 @@
 export const setTrans = (str) => {
   let trans;
-  switch (str.toUpperCase()) {
-    case "OIA":
+  switch (str.toLowerCase()) {
+    case "story":
       trans = "-330px";
       break;
-    case "FIRA":
+    case "single":
       trans = "-220px";
       break;
-    case "AKROTIRI":
+    case "set":
       trans = "-110px";
       break;
-    case "TIRA":
+    case "tira":
       trans = "0px";
       break;
-    case "FIROSTEFANI":
+    case "review":
       trans = "110px";
       break;
-    case "IMEROVIGLI":
+    case "profile":
       trans = "220px";
       break;
-    case "KAMARI":
+    case "register":
       trans = "330px";
       break;
     default:

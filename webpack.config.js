@@ -9,7 +9,10 @@ module.exports = {
     main: ["./src/client/js/main.js", "./src/client/scss/screens/main.scss"],
     nav: ["./src/client/js/components/nav.js"],
 
-    oia: ["./src/client/js/towns/oia.js", "./src/client/scss/screens/oia.scss"],
+    story: [
+      "./src/client/js/pages/story.js",
+      "./src/client/scss/screens/story.scss",
+    ],
   },
   mode: "development",
   plugins: [

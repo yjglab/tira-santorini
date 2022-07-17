@@ -8,7 +8,7 @@ const logger = morgan("dev");
 app.set("view engine", "pug");
 app.set("views", [
   process.cwd() + "/src/views",
-  process.cwd() + "/src/views/towns",
+  process.cwd() + "/src/views/pages",
 ]);
 
 app.use(express.urlencoded({ extended: true }));

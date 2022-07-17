@@ -20,9 +20,11 @@ html {
   align-items: center;
   justify-content: center;
   background-color: var(--bgColornav);
+  backdrop-filter: blur(7px);
   border-radius: 1em;
   z-index: 999;
   box-shadow: 0px 0px 16px 0px rgba(150, 150, 150, 0.15);
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-item {
@@ -47,6 +49,10 @@ html {
     font-weight: 500;
     color: $tiraMainDark;
     letter-spacing: 0.03em;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      color: rgb(192, 192, 192);
+    }
   }
 }
 .nav-item:nth-of-type(4) {
@@ -121,4 +127,24 @@ html {
 .back-color-change,
 .back-color-plus-change {
   transition: background-color var(--duration);
+}
+
+.affix {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  border-radius: 0%;
+  .nav-item:not(:nth-of-type(4)) {
+    h3 {
+      font-size: 0.58em;
+    }
+  }
+  .nav-item:nth-of-type(4) {
+    h3 {
+      font-size: 1em;
+    }
+  }
+  .nav-item.active {
+    transform: none;
+  }
 }

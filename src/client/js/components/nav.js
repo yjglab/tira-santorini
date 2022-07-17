@@ -2,6 +2,14 @@ import variables from "../variables";
 import setNav from "./setNav";
 import setTrans from "./setTrans";
 
+$(window).scroll(function () {
+  if ($(document).scrollTop() > 150) {
+    $(".nav").addClass("affix");
+  } else {
+    $(".nav").removeClass("affix");
+  }
+});
+
 setNav();
 
 const backColors = [

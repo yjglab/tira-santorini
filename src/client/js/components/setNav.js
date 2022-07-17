@@ -21,23 +21,23 @@ export const setNav = () => {
       item.addEventListener("click", () => classToggle(item));
     });
   };
-  switch (pageTitle.toUpperCase()) {
-    case "OIA":
+  switch (pageTitle.toLowerCase()) {
+    case "story":
       set(1);
       break;
-    case "FIRA":
+    case "single":
       set(2);
       break;
-    case "AKROTIRI":
+    case "set":
       set(3);
       break;
-    case "FIROSTEFANI":
+    case "review":
       set(5);
       break;
-    case "IMEROVIGLI":
+    case "profile":
       set(6);
       break;
-    case "KAMARI":
+    case "register":
       set(7);
       break;
     default:
