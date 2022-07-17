@@ -48,6 +48,8 @@ function clickItem(item, index) {
     $$midColorChange.forEach((v) => (v.style.color = variables.tiraMainDark));
   } else {
     $$midColorChange.forEach((v) => (v.style.color = "white"));
+    // $nav.style.backgroundColor = "white";
+    // $navBorder.style.backgroundColor = "white";
   }
   if (activeItem == item) return;
   if (activeItem) {

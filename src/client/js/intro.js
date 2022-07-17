@@ -100,19 +100,27 @@ tl5
   .from(
     ".intro__section-horizontal-container .intro__section.three .intro__section-card",
     {
-      y: 400,
+      y: 700,
       opacity: 0,
-      duration: 1.2,
+      duration: 3.2,
+    }
+  )
+  .from(
+    ".intro__section-horizontal-container .intro__section.three .section-video-wrapper",
+    {
+      y: -700,
+      opacity: 0,
+      duration: 5.2,
     }
   )
   .from(
     ".intro__section-horizontal-container .intro__section.three p",
-    { x: 500, opacity: 0, duration: 1.2 },
+    { x: 500, opacity: 0, duration: 7.2 },
     "<.7"
   );
 
-let sections = gsap.utils.toArray(".intro__section"),
-  container = document.querySelector(".intro__section-horizontal-container");
+let sections = gsap.utils.toArray(".intro__section");
+let container = document.querySelector(".intro__section-horizontal-container");
 
 gsap.to(sections, {
   xPercent: -100 * (sections.length - 1),
