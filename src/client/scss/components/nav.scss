@@ -112,7 +112,7 @@ html {
   clip-path: url(#navClipPath);
   will-change: transform;
   background-color: $navColor;
-  transition: transform var(--timeOut, var(--duration));
+  transition: all var(--timeOut, var(--duration));
 }
 
 .svg-container {
@@ -131,12 +131,15 @@ html {
 }
 
 .affix {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.59);
   box-shadow: 0px -2px 25px 12px rgba(0, 0, 0, 0.05);
   margin: 0 auto;
   padding: 0;
   width: 100%;
   border-radius: 0%;
+  .nav-border {
+    opacity: 0;
+  }
   .nav-item:not(:nth-of-type(4)) {
     h3 {
       font-size: 0.58em;
