@@ -2,6 +2,5 @@
 /src/client/img
 /src/client/videos
 /assets
-db.js
-init.js
+package-lock.json
 

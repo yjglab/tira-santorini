@@ -3,7 +3,7 @@ import setNav from "./setNav";
 import setTrans from "./setTrans";
 
 $(window).scroll(function () {
-  if ($(document).scrollTop() > 150) {
+  if ($(document).scrollTop() > 80) {
     $(".nav").addClass("affix");
   } else {
     $(".nav").removeClass("affix");
@@ -46,11 +46,12 @@ function clickItem(item, index) {
 
   if (item.children[0].textContent === "TIRA") {
     $$midColorChange.forEach((v) => (v.style.color = variables.tiraMainDark));
-  } else {
-    $$midColorChange.forEach((v) => (v.style.color = "white"));
-    // $nav.style.backgroundColor = "white";
-    // $navBorder.style.backgroundColor = "white";
   }
+  // else {
+  //   $$midColorChange.forEach((v) => (v.style.color = backColors[index]));
+  // $nav.style.backgroundColor = "white";
+  // $navBorder.style.backgroundColor = "white";
+  // }
   if (activeItem == item) return;
   if (activeItem) {
     activeItem.classList.remove("active");
@@ -67,10 +68,12 @@ function clickItem(item, index) {
   activeItem = item;
   offsetnavBorder(activeItem, $navBorder);
 
+  //
   setTimeout(() => {
     $("#loader").fadeIn();
     $("#loader").css("backgroundColor", backColors[index]);
   }, 1000);
+
   if (item.children[0].textContent === "TIRA") {
     setTimeout(() => {
       window.open("/", "_self");
@@ -80,6 +83,8 @@ function clickItem(item, index) {
       window.open(item.children[0].textContent.toLowerCase(), "_self");
     }, 2000);
   }
+
+  //
 }
 
 function offsetnavBorder(activeItem, $navBorder) {

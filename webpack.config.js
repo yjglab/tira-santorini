@@ -8,7 +8,6 @@ module.exports = {
     intro: ["./src/client/js/intro.js", "./src/client/scss/screens/intro.scss"],
     main: ["./src/client/js/main.js", "./src/client/scss/screens/main.scss"],
     nav: ["./src/client/js/components/nav.js"],
-    footer: ["./src/client/js/components/footer.js"],
 
     story: [
       "./src/client/js/pages/story.js",

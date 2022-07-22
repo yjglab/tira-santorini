@@ -18,6 +18,13 @@ body {
   font-family: $tiraGothicFont;
   letter-spacing: -0.02em;
 
+  .intro__wave-wrapper {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+
   .intro__video-wrapper {
     border-radius: 40%;
     width: 3000px;
@@ -452,13 +459,31 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    // overflow-x: hidden;
+    .last-logo-wrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: 180px;
+      }
+
+      span {
+        font-family: $tiraHeaderFont;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 3.2px;
+        color: $tiraMainDark;
+        margin-top: 18px;
+      }
+    }
 
     p {
       width: 90%;
-      // font-family: "Open Sans", sans-serif;
-      // font-weight: 400;
-      // font-size: 1.6rem;
-      // line-height: 40px;
       color: $tiraMainDark;
       text-align: center;
       transition: all $midColorChangeTransition;
@@ -471,7 +496,6 @@ body {
   width: 90%;
   height: 90%;
   bottom: 7.4%;
-  // background-color: purple;
   overflow: hidden;
 
   video {
@@ -479,18 +503,11 @@ body {
   }
 }
 
-.intro__wave-wrapper {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-
 .waves {
   position: relative;
   width: 100%;
   height: 2vh;
-  margin-bottom: -7px; /*Fix for safari gap*/
+  margin-bottom: -7px;
   min-height: 100px;
   max-height: 150px;
 }
