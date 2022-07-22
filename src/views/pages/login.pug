@@ -1,0 +1,11 @@
+h1 #{pageTitle}
+
+if errMsg
+    span=errMsg
+div(style="width: 400px; height: 800px; background-color:aqua")
+    form(method="POST" style="display:flex; flex-direction:column")
+        input(placeholder="USER ID" name="username", type="text", required)
+        input(placeholder="PASSWORD" name="password", type="password", required)
+        input(type="submit", value="로그인")
+    span 
+        a(href="/join") 계정생성 

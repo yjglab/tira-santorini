@@ -1,5 +1,5 @@
 import User from "../models/User";
-
+import bcrypt from "bcrypt";
 export const getJoin = (req, res) =>
   res.render("join", { pageTitle: "회원등록" });
 export const postJoin = async (req, res) => {
@@ -16,22 +16,50 @@ export const postJoin = async (req, res) => {
   if (alreadyExists) {
     return res.status(400).render("join", {
       pageTitle,
-      errMsg: "사용자명 혹은 이메일이 이미 간택되었습니다",
+      errMsg: "이미 간택된 사용자/이메일 입니다",
     });
   }
 
-  await User.create({
-    name,
-    username,
-    email,
-    password,
-    phone,
-    location,
-  });
-  return res.redirect("/login");
+  try {
+    await User.create({
+      name,
+      username,
+      email,
+      password,
+      phone,
+      location,
+    });
+    return res.redirect("/login");
+  } catch (error) {
+    return res.status(400).render("join", {
+      pageTitle,
+      errMsg: error._message,
+    });
+  }
 };
+export const getLogin = (req, res) =>
+  res.render("login", { pageTitle: "Log In" });
+export const postLogin = async (req, res) => {
+  const { username, password } = req.body;
+  const user = await User.findOne({ username });
+  const pageTitle = "Log In";
+  if (!user) {
+    return res.status(400).render("login", {
+      pageTitle,
+      errMsg: "존재하지 않는 사용자입니다",
+    });
+  }
+  const passwordAccord = await bcrypt.compare(password, user.password);
+  if (!passwordAccord) {
+    return res.status(400).render("login", {
+      pageTitle,
+      errMsg: "잘못된 비밀번호입니다",
+    });
+  }
+  res.redirect("/");
+};
+
 export const edit = (req, res) => res.send("Edit User");
 export const remove = (req, res) => res.send("Remove User");
-export const login = (req, res) => res.send("Login");
 export const logout = (req, res) => res.send("Log out");
 export const see = (req, res) => res.send("See User");
