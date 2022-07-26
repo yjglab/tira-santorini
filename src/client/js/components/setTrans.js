@@ -16,10 +16,10 @@ export const setTrans = (str) => {
     case "review":
       trans = "110px";
       break;
-    case "profile":
+    case "gallery":
       trans = "220px";
       break;
-    case "register":
+    case "login":
       trans = "330px";
       break;
     default:

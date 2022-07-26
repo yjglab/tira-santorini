@@ -34,10 +34,10 @@ export const setNav = () => {
     case "review":
       set(5);
       break;
-    case "profile":
+    case "gallery":
       set(6);
       break;
-    case "register":
+    case "login":
       set(7);
       break;
     default:

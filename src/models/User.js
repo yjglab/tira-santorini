@@ -4,10 +4,11 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   username: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
+  avatarUrl: String,
+  password: { type: String },
   name: { type: String, required: true },
-  phone: Number,
   location: String,
+  socialOnly: { type: Boolean, default: false },
 });
 
 userSchema.pre("save", async function () {

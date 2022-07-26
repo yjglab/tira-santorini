@@ -72,16 +72,21 @@ function clickItem(item, index) {
   setTimeout(() => {
     $("#loader").fadeIn();
     $("#loader").css("backgroundColor", backColors[index]);
-  }, 1000);
-
-  if (item.children[0].textContent === "TIRA") {
+  }, 500);
+  const navItemTitle = item.children[0].textContent.toLowerCase();
+  if (navItemTitle === "tira") {
     setTimeout(() => {
       window.open("/", "_self");
-    }, 2000);
+    }, 1000);
+  } else if (navItemTitle == "logout") {
+    console.log("로그아웃");
+    setTimeout(() => {
+      window.open("/users/logout", "_self");
+    }, 1000);
   } else {
     setTimeout(() => {
-      window.open(item.children[0].textContent.toLowerCase(), "_self");
-    }, 2000);
+      window.open(navItemTitle, "_self");
+    }, 1000);
   }
 
   //
