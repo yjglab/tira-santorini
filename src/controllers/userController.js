@@ -11,14 +11,14 @@ export const postJoin = async (req, res) => {
   if (password !== password2) {
     return res.status(400).render("join", {
       pageTitle,
-      errMsg: "비밀번호가 일치하지 않습니다",
+      errMsg: "PASSWORD가 일치하지 않습니다",
     });
   }
   const alreadyExists = await User.exists({ $or: [{ username }, { email }] });
   if (alreadyExists) {
     return res.status(400).render("join", {
       pageTitle,
-      errMsg: "이미 간택된 사용자/이메일 입니다",
+      errMsg: "이미 간택된 USER ID / EMAIL 입니다",
     });
   }
 
@@ -142,4 +142,47 @@ export const logout = (req, res) => {
   req.session.destroy();
   return res.redirect("/");
 };
-export const edit = (req, res) => res.send("Edit User");
+export const getProfile = (req, res) => {
+  res.render("profile", { pageTitle: "My Profile" });
+};
+export const postProfile = async (req, res) => {
+  const {
+    session: {
+      user: { _id },
+    },
+    body: { name, email, username, location },
+  } = req;
+
+  if (req.session.user.email !== email) {
+    const alreadyExists = await User.exists({ email });
+    if (alreadyExists) {
+      return res.status(400).render("profile", {
+        pageTitle: "My Profile",
+        errMsg: "이미 간택된 EMAIL로 업데이트 할 수 없습니다",
+      });
+    }
+  }
+  if (req.session.user.username !== username) {
+    const alreadyExists = await User.exists({ username });
+    if (alreadyExists) {
+      return res.status(400).render("profile", {
+        pageTitle: "My Profile",
+        errMsg: "이미 간택된 USER ID로 업데이트 할 수 없습니다",
+      });
+    }
+  }
+  const updatedUser = await User.findByIdAndUpdate(
+    _id,
+    {
+      name,
+      email,
+      username,
+      location,
+    },
+    {
+      new: true, // new object로 생성
+    }
+  );
+  req.session.user = updatedUser;
+  return res.redirect("/users/profile");
+};

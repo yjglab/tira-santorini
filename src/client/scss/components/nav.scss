@@ -166,4 +166,11 @@ html {
   right: 0;
   background-color: greenyellow;
   z-index: 1000;
+
+  img {
+    position: absolute;
+    width: 30%;
+
+    top: 30px;
+  }
 }

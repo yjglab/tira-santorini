@@ -1,0 +1,13 @@
+h1 #{pageTitle}
+
+div(style="width: 400px; height: 800px; background-color:wheat; ")
+    form(style="display: flex; flex-direction: column;" method="POST")
+        input(placeholder="NAME" name="name", type="text", required, value=loggedInUser.name)
+        input(placeholder="EMAIL" name="email", type="email", required, value=loggedInUser.email)
+        input(placeholder="USER ID" name="username", type="text", required, value=loggedInUser.username)
+        input(placeholder="LOCATION" name="location", type="text", required, value=loggedInUser.location)
+        input(type="submit", value="UPDATE")
+    h4 
+        a(href="users/change-password") 비번변경
+    if errMsg 
+        span #{errMsg}

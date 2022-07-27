@@ -26,4 +26,19 @@
 
 if loggedIn
     .user
+        a(href="/users/profile")
+            img(src=`${loggedInUser.avatarUrl}`)
         span #{loggedInUser.name}
+        
+
+//- {
+//-   _id: '4f8390',
+//-   email: '',
+//-   username: 'b',
+//-   avatarUrl: '',
+//-   password: '',      
+//-   name: 'u',
+//-   location: 'Korea',
+//-   socialOnly: true,
+//-   __v: 0
+//- }
