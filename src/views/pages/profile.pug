@@ -8,6 +8,7 @@ div(style="width: 400px; height: 800px; background-color:wheat; ")
         input(placeholder="LOCATION" name="location", type="text", required, value=loggedInUser.location)
         input(type="submit", value="UPDATE")
     h4 
-        a(href="users/change-password") 비번변경
+        if !loggedInUser.socialOnly
+            a(href="change-password") 비번변경
     if errMsg 
         span #{errMsg}
