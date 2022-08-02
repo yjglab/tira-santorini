@@ -2,21 +2,21 @@ import User from "../models/User";
 import fetch from "cross-fetch";
 import bcrypt from "bcrypt";
 
-export const getJoin = (req, res) =>
-  res.render("join", { pageTitle: "회원등록" });
-export const postJoin = async (req, res) => {
+export const getRegister = (req, res) =>
+  res.render("register", { pageTitle: "Register" });
+export const postRegister = async (req, res) => {
   const { name, username, email, password, password2, phone, location } =
     req.body;
-  const pageTitle = "회원등록";
+  const pageTitle = "Register";
   if (password !== password2) {
-    return res.status(400).render("join", {
+    return res.status(400).render("register", {
       pageTitle,
       errMsg: "PASSWORD가 일치하지 않습니다",
     });
   }
   const alreadyExists = await User.exists({ $or: [{ username }, { email }] });
   if (alreadyExists) {
-    return res.status(400).render("join", {
+    return res.status(400).render("register", {
       pageTitle,
       errMsg: "이미 간택된 USER ID / EMAIL 입니다",
     });
@@ -28,12 +28,13 @@ export const postJoin = async (req, res) => {
       username,
       email,
       password,
-      phone,
+      avatarUrl: "static/img/anms-bk.png",
+      introduction: "",
       location,
     });
     return res.redirect("/login");
   } catch (error) {
-    return res.status(400).render("join", {
+    return res.status(400).render("register", {
       pageTitle,
       errMsg: error._message,
     });
@@ -60,6 +61,7 @@ export const postLogin = async (req, res) => {
   }
   req.session.loggedIn = true;
   req.session.user = user;
+
   res.redirect("/");
 };
 
@@ -72,6 +74,7 @@ export const startGithubLogin = (req, res) => {
   };
   const params = new URLSearchParams(config).toString();
   const targetUrl = `${baseUrl}?${params}`;
+
   return res.redirect(targetUrl);
 };
 
@@ -125,6 +128,7 @@ export const finishGithubLogin = async (req, res) => {
         avatarUrl: userData.avatar_url,
         password: "",
         name: userData.name,
+        introduction: "",
         location: userData.location,
         socialOnly: true,
       });
@@ -148,11 +152,11 @@ export const getProfile = (req, res) => {
 export const postProfile = async (req, res) => {
   const {
     session: {
-      user: { _id },
+      user: { _id, avatarUrl },
     },
-    body: { name, email, username, location },
+    body: { name, email, username, introduction, location },
+    file,
   } = req;
-
   if (req.session.user.email !== email) {
     const alreadyExists = await User.exists({ email });
     if (alreadyExists) {
@@ -177,6 +181,8 @@ export const postProfile = async (req, res) => {
       name,
       email,
       username,
+      avatarUrl: file ? file.path : avatarUrl, // 전송받은 파일 없으면 기존 url 유지
+      introduction,
       location,
     },
     {

@@ -34,6 +34,7 @@ app.use(
 );
 
 app.use(localsMiddleware);
+app.use("/userUploads", express.static("userUploads"));
 app.use("/static", express.static("assets")); // access 부여
 app.use("/", globalRouter);
 app.use("/main", mainRouter);

@@ -1,10 +1,18 @@
-h1 #{pageTitle}
+h1 프로필
 
 div(style="width: 400px; height: 800px; background-color:wheat; ")
-    form(style="display: flex; flex-direction: column;" method="POST")
+    if !loggedInUser.socialOnly
+        img(style="width: 300px; height:300px;" src="/" + loggedInUser.avatarUrl)
+    else 
+        img(style="width: 300px; height:300px;" src=loggedInUser.avatarUrl)
+    span 10mb제한
+    form(method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column;")
+        label(for="avatar")
+        input(type="file" id="avatar" name="avatar" accept="image/*")  
         input(placeholder="NAME" name="name", type="text", required, value=loggedInUser.name)
         input(placeholder="EMAIL" name="email", type="email", required, value=loggedInUser.email)
         input(placeholder="USER ID" name="username", type="text", required, value=loggedInUser.username)
+        input(placeholder="INTRODUCTION" name="introduction", type="text", value=loggedInUser.introduction)
         input(placeholder="LOCATION" name="location", type="text", required, value=loggedInUser.location)
         input(type="submit", value="UPDATE")
     h4 

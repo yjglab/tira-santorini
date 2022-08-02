@@ -1,0 +1,71 @@
+@import "../config/_variables.scss";
+@import "../screens/register.scss";
+
+#loginTable {
+  margin-top: 0;
+  .hr1 {
+    width: 23%;
+    top: 210px;
+  }
+  .form-group-login {
+    margin-top: 60px;
+  }
+  .form-group-social {
+    a {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .form-group-login,
+  .form-group-social {
+    display: flex;
+    justify-content: center;
+  }
+  .form-group-login,
+  .form-group-social {
+    position: relative;
+    margin-bottom: 16px;
+
+    input,
+    a {
+      width: 100%;
+      padding: 10px 0px;
+      text-indent: 10px;
+      outline: 0;
+      border: none;
+      background-color: rgb(251, 250, 255);
+
+      font-size: 16px;
+      transition: background-color 0.5s ease-in-out;
+    }
+    input[type="submit"],
+    a {
+      width: 60%;
+      border-radius: 30px;
+      background-color: $tiraColor6Plus;
+      color: white;
+      cursor: pointer;
+      text-indent: 0;
+      border: none;
+      transition: all 0.3s ease-in-out;
+      font-weight: 700;
+      font-family: $tiraHeaderFont;
+      letter-spacing: 1px;
+      &:hover {
+        background-color: $tiraColor2;
+        color: $tiraMainDark;
+      }
+    }
+  }
+
+  .form-group-social {
+    a {
+      background-color: $tiraMainDark;
+      color: white;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+        color: $tiraMainDark;
+      }
+    }
+  }
+}

@@ -2,9 +2,9 @@ import express from "express";
 
 import { intro, story } from "../controllers/globalController.js";
 import {
-  getJoin,
+  getRegister,
   getLogin,
-  postJoin,
+  postRegister,
   postLogin,
 } from "../controllers/userController.js";
 import { publicOnlyMiddleware } from "../middlewares.js";
@@ -13,10 +13,10 @@ const globalRouter = express.Router();
 
 globalRouter.get("/", intro);
 globalRouter
-  .route("/join")
+  .route("/register")
   .all(publicOnlyMiddleware)
-  .get(getJoin)
-  .post(postJoin);
+  .get(getRegister)
+  .post(postRegister);
 globalRouter
   .route("/login")
   .all(publicOnlyMiddleware)

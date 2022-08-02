@@ -52,7 +52,7 @@ function clickItem(item, index) {
   // $nav.style.backgroundColor = "white";
   // $navBorder.style.backgroundColor = "white";
   // }
-  if (activeItem == item) return;
+  // if (activeItem == item) return;
   if (activeItem) {
     activeItem.classList.remove("active");
   }
@@ -79,7 +79,6 @@ function clickItem(item, index) {
       window.open("/", "_self");
     }, 1000);
   } else if (navItemTitle == "logout") {
-    console.log("로그아웃");
     setTimeout(() => {
       window.open("/users/logout", "_self");
     }, 1000);

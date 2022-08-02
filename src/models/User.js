@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String },
   name: { type: String, required: true },
   location: String,
+  introduction: String,
   socialOnly: { type: Boolean, default: false },
 });
 

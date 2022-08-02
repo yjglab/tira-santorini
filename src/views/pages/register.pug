@@ -1,0 +1,43 @@
+extends ../layout
+
+block links
+    link(rel="stylesheet", href="/static/css/register.css")
+
+block content
+    .login__form-wrapper
+        .table
+            span.register-title REGISTER IN OUR MEMBERS
+            span.hr1
+            span.register-subtext 티라 회원에 등록하고 다양한 혜택을 받아보세요
+            #signin
+                form(method="POST")
+                    .form-group
+                        label(for="username") USER ID
+                        input( name="username", type="text", required, autofocus)
+                    .form-group
+                        label(for="username") NAME
+                        input( name="name", type="text", required)
+                    .form-group
+                        label(for="username") EMAIL
+                        input( name="email", type="email", required)
+                    .form-group
+                        label(for="pass") PASSWORD
+                        input#pass( name="password", type="password", required)
+                        span#showPassword.fa.fa-eye-slash 
+                    .form-group
+                        label(for="pass") PASSWORD CONFIRM
+                        input( name="password2", type="password", required)
+                    .form-group
+                        label(for="username") LOCATION
+                        input( name="location", type="text", required)
+                    .form-group
+                        input(type="submit", value="REGISTER")
+            
+            .alreadyExist 
+                span 이미 회원이신가요? 
+                    a(href="/login")
+                        span 로그인하기
+
+block scripts
+    script(src="/static/js/register.js")
+    

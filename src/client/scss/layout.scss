@@ -16,7 +16,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
+  scroll-behavior: smooth;
   font-family: $tiraLightFont;
 }
 

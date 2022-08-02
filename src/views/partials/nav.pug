@@ -25,10 +25,15 @@
             c9.2,3.6,17.6,4.2,23.3,4H6.7z`)
 
 if loggedIn
+    
     .user
         a(href="/users/profile")
             img(src=`${loggedInUser.avatarUrl}`)
-        span #{loggedInUser.name}
+else 
+    .user 
+        a(href="/login")
+            img(src="/static/img/anms-bk.png")
+        
         
 
 //- {

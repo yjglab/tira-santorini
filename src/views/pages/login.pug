@@ -1,14 +1,32 @@
-h1 #{pageTitle}
+extends ../layout
 
-if errMsg
-    span=errMsg
-div(style="width: 400px; height: 800px; background-color:aqua")
-    form(method="POST" style="display:flex; flex-direction:column")
-        input(placeholder="USER ID" name="username", type="text", required)
-        input(placeholder="PASSWORD" name="password", type="password", required)
-        input(type="submit", value="로그인")
-        h3 
-            a(href="/users/github/start") github 로그인
-            
-    span 
-        a(href="/join") 계정생성 
+block links
+    link(rel="stylesheet", href="/static/css/login.css")
+
+block content
+    .login__form-wrapper
+        .table#loginTable
+            span.register-title LOG IN
+            span.hr1
+            #signin
+                form(method="POST")
+                    .form-group
+                        label(for="username") USER ID
+                        input(name="username", type="text", required)
+                    .form-group
+                        label(for="pass") PASSWORD
+                        input#pass(name="password", type="password", required)
+                        span#showPassword.fa.fa-eye-slash 
+                    .form-group-login
+                        input(type="submit", value="ENTER")
+                    .form-group-social
+                        a(href="/users/github/start") ENTER WITH GITHUB
+            .hr
+            .alreadyExist 
+                span 아직 회원이 아니신가요? 
+                    a(href="/register")
+                        span 회원 등록하기
+
+block scripts
+    script(src="/static/js/login.js")
+
