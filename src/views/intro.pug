@@ -1,11 +1,28 @@
 extends layout
-
+block styles
+    style(type="text/css").
+        .content:before {
+            background-image: url("/static/img/402.png");
+        }
+        .content:after {
+            background-image: url("/static/img/401.png");
+        }
 block links
     link(rel="stylesheet", href="/static/css/intro.css")
 
 block content
     .intro__section-banner-container.back-color-change
         .intro__video-wrapper
+            .content
+                //- img(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68939/zep.png")
+                img(src="/static/img/moon.png")
+                .bird-1
+                .bird-2
+                .bird-3
+                .bird-4
+                .bird-5
+                .bird-6
+            //- .clouds(style="background: transparent url(/static/img/clouds2.png) repeat top center;")
             //- video(muted autoplay loop)
             //-     source(src="static/videos/intro.mp4" type="video/mp4")
             //-     strong 너의 브라우저가 비디오 태그를 지원하지 않습니다.
@@ -22,9 +39,11 @@ block content
                     br
                     | 티라의 제품은 모든 제조과정이 수제로 이루어지는 프리미엄 핸드메이드 디저트로 늘 정성을 다해 만드는 신선하고 깨끗한 티라미수입니다.
             .intro__section-card
-                img(src="https://i.pinimg.com/564x/a6/6f/56/a66f5613781b17e4ee88d5e129603a9d.jpg", alt="image")
+                img(src="/static/img/mockup.jpg", alt="image")
         .intro__banner-floor-img
             img(src="/static/img/tira-full.png")
+            img(src="/static/img/tira-r1.png")
+            img(src="/static/img/tira-r2.png")
         .intro__wave-wrapper
             div
                 svg.waves(xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink", viewBox="0 24 150 28", preserveAspectRatio="none", shape-rendering="auto")
@@ -43,7 +62,7 @@ block content
                 | 티라에서 선보이는 티라미수는 신선한 마스카포네 치즈의 부드러움과<br>직접 로스팅하여 블랜딩한 에스프레소 코코아파우더의 조화, 홈메이드 방식의 제조를 통해 최고의 맛을 내고 있습니다.
 
             .intro__section-card
-                img(src="https://live.staticflickr.com/5210/5262298961_ee51a466c0_4k.jpg", alt="image")
+                img(loading="lazy" src="/static/img/mockup.jpg", alt="image")
         section.intro__section.two.back-color-plus-change
             h2 
                 | 산토리니 여섯 마을의 고유 특징들을 배경으로 엄선한 신선한 재료와 원두로 제작한 여섯가지 티라미수를 제공합니다. 
@@ -54,7 +73,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(src="https://www.acozykitchen.com/wp-content/uploads/2020/03/TiramisuRecipe-3.jpg")
+                        img(loading="lazy" src="/static/img/mockup.jpg", alt="image")
                     .card-content__title
                         h3
                             a(href="#") OIA
@@ -72,7 +91,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(src="https://www.acozykitchen.com/wp-content/uploads/2020/03/TiramisuRecipe-3.jpg")
+                        img(loading="lazy" src="/static/img/mockup.jpg", alt="image")
                     .card-content__title
                         h3
                             a(href="#") FIRA
@@ -90,7 +109,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(src="https://www.acozykitchen.com/wp-content/uploads/2020/03/TiramisuRecipe-3.jpg")
+                        img(loading="lazy" src="/static/img/mockup.jpg", alt="image")
                     .card-content__title
                         h3
                             a(href="#") AKROTIRI
@@ -108,7 +127,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(src="https://www.acozykitchen.com/wp-content/uploads/2020/03/TiramisuRecipe-3.jpg")
+                        img(loading="lazy" src="/static/img/mockup.jpg", alt="image")
                     .card-content__title
                         h3
                             a(href="#") FIROSTEFANI
@@ -126,7 +145,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(src="https://www.acozykitchen.com/wp-content/uploads/2020/03/TiramisuRecipe-3.jpg")
+                        img(loading="lazy" src="/static/img/mockup.jpg", alt="image")
                     .card-content__title
                         h3
                             a(href="#") IMEROVIGLI
@@ -144,7 +163,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(src="https://www.acozykitchen.com/wp-content/uploads/2020/03/TiramisuRecipe-3.jpg")
+                        img(loading="lazy" src="/static/img/mockup.jpg", alt="image")
                     .card-content__title
                         h3
                             a(href="#") KAMARI
@@ -165,7 +184,7 @@ block content
                     source(src="static/videos/v1.mp4" type="video/mp4")
                     strong 너의 브라우저가 비디오 태그를 지원하지 않습니다.
             .intro__section-card
-                //- img(src="", alt="image")
+                //- img(loading="lazy" src="", alt="image")
                 p.mid-colorChange.mid-colorChange
                     | Chef의 레시피로 특별하게 배합된 치즈의 조합으로, 24시간 이상 숙성을 통해 더욱 진한 밀도감의 티라미수 크림을
                     br
@@ -173,10 +192,12 @@ block content
                     br
                     | 티라에서 제공하는 특별한 경험입니다.
     .intro__section-last-container.back-color-change
-        section.intro__section-vertical
-            .last-logo-wrapper
-                img(src="/static/img/tira-one.png")
-                span ORPHIC CHOICE FOR DEEPER TASTE
+        section.intro__section-last
+            .last-content-wrapper
+                .clouds(style="background: transparent url(/static/img/clouds2.png) repeat top center;")
+                .logo-wrapper
+                    img(loading="lazy" src="/static/img/tira-one.png")
+                    span ORPHIC CHOICE FOR DEEPER TASTE
         
             //- p.mid-colorChange last p 텍스트
 

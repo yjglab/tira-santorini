@@ -2,5 +2,6 @@
 /src/client/img
 /src/client/videos
 /assets
+/uploads
 package-lock.json
 .env

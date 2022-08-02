@@ -13,6 +13,14 @@ module.exports = {
       "./src/client/js/pages/story.js",
       "./src/client/scss/screens/story.scss",
     ],
+    register: [
+      "./src/client/js/pages/register.js",
+      "./src/client/scss/screens/register.scss",
+    ],
+    login: [
+      "./src/client/js/pages/login.js",
+      "./src/client/scss/screens/login.scss",
+    ],
   },
   mode: "development",
   plugins: [

@@ -22,6 +22,9 @@ export const setTrans = (str) => {
     case "login":
       trans = "330px";
       break;
+    case "logout":
+      trans = "330px";
+      break;
     default:
       break;
   }

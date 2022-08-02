@@ -21,6 +21,7 @@ export const setNav = () => {
       item.addEventListener("click", () => classToggle(item));
     });
   };
+
   switch (pageTitle.toLowerCase()) {
     case "story":
       set(1);
@@ -37,7 +38,7 @@ export const setNav = () => {
     case "gallery":
       set(6);
       break;
-    case "login":
+    case "log in":
       set(7);
       break;
     default:

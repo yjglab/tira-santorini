@@ -5,4 +5,4 @@ ScrollOut({
   },
 });
 
-Splitting({ target: ".heading" });
+Splitting({ target: ".content-heading" });
