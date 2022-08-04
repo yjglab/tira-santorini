@@ -39,5 +39,7 @@ app.use("/static", express.static("assets")); // access 부여
 app.use("/", globalRouter);
 app.use("/main", mainRouter);
 app.use("/users", userRouter);
-
+app.get("*", (req, res) => {
+  res.render("404", { pageTitle: "404 Not Found" });
+});
 export default app;

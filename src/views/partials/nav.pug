@@ -11,7 +11,7 @@
         h3.nav-title REVIEW
     .nav-item(style="--bgColorItem: white")
         h3.nav-title GALLERY
-    .nav-item(style="--bgColorItem: white")
+    .nav-item.log(style="--bgColorItem: white")
         if loggedIn
             h3.nav-title LOGOUT
         else
@@ -27,7 +27,7 @@
 if loggedIn
     
     .user
-        a(href="/users/profile")
+        a(href=`/users/${loggedInUser._id}`)
             img(src=`${loggedInUser.avatarUrl}`)
 else 
     .user 

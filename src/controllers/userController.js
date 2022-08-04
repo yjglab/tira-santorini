@@ -146,10 +146,10 @@ export const logout = (req, res) => {
   req.session.destroy();
   return res.redirect("/");
 };
-export const getProfile = (req, res) => {
-  res.render("profile", { pageTitle: "My Profile" });
+export const getSetProfile = (req, res) => {
+  res.render("setProfile", { pageTitle: "Set Profile" });
 };
-export const postProfile = async (req, res) => {
+export const postSetProfile = async (req, res) => {
   const {
     session: {
       user: { _id, avatarUrl },
@@ -160,8 +160,8 @@ export const postProfile = async (req, res) => {
   if (req.session.user.email !== email) {
     const alreadyExists = await User.exists({ email });
     if (alreadyExists) {
-      return res.status(400).render("profile", {
-        pageTitle: "My Profile",
+      return res.status(400).render("setProfile", {
+        pageTitle: "Set Profile",
         errMsg: "이미 간택된 EMAIL로 업데이트 할 수 없습니다",
       });
     }
@@ -169,8 +169,8 @@ export const postProfile = async (req, res) => {
   if (req.session.user.username !== username) {
     const alreadyExists = await User.exists({ username });
     if (alreadyExists) {
-      return res.status(400).render("profile", {
-        pageTitle: "My Profile",
+      return res.status(400).render("setProfile", {
+        pageTitle: "Set Profile",
         errMsg: "이미 간택된 USER ID로 업데이트 할 수 없습니다",
       });
     }
@@ -190,7 +190,7 @@ export const postProfile = async (req, res) => {
     }
   );
   req.session.user = updatedUser;
-  return res.redirect("/users/profile");
+  return res.redirect("/users/set-profile");
 };
 
 export const getChangePw = (req, res) => {
@@ -225,4 +225,12 @@ export const postChangePw = async (req, res) => {
   user.password = newPassword;
   await user.save();
   return res.redirect("/users/logout");
+};
+export const myProfile = async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findById(id);
+  if (!user) {
+    return res.status(404).render("404", { pageTitle: "404 Not Found" });
+  }
+  return res.render("myProfile", { pageTitle: `${user.name}의 Profile`, user });
 };
