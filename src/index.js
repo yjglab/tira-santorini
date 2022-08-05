@@ -40,6 +40,6 @@ app.use("/", globalRouter);
 app.use("/main", mainRouter);
 app.use("/users", userRouter);
 app.get("*", (req, res) => {
-  res.render("404", { pageTitle: "404 Not Found" });
+  res.status(404).render("404", { pageTitle: "404 Not Found" });
 });
 export default app;
