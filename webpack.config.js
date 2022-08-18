@@ -21,6 +21,7 @@ module.exports = {
       "./src/client/js/pages/login.js",
       "./src/client/scss/screens/login.scss",
     ],
+    test: ["./src/client/scss/screens/test.scss"],
   },
   mode: "development",
   plugins: [

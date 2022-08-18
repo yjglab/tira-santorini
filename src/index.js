@@ -6,6 +6,7 @@ import userRouter from "./routers/userRouter.js";
 import session from "express-session";
 import { localsMiddleware } from "./middlewares.js";
 import MongoStore from "connect-mongo";
+import flash from "express-flash";
 
 const app = express();
 const logger = morgan("dev");
@@ -33,6 +34,7 @@ app.use(
   })
 );
 
+app.use(flash());
 app.use(localsMiddleware);
 app.use("/userUploads", express.static("userUploads"));
 app.use("/static", express.static("assets")); // access 부여

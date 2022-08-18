@@ -4,9 +4,7 @@ html {
   --bgColornav: rgb(255, 247, 247);
   --duration: 0.7s;
 }
-.mid-colorChange {
-  color: $tiraMainDark;
-}
+
 .nav {
   position: fixed;
   margin: 2.5% auto;
@@ -23,7 +21,7 @@ html {
   backdrop-filter: blur(3px);
   border-radius: 1em;
   z-index: 999;
-  // box-shadow: 0px 0px 16px 10px rgba(150, 150, 150, 0.1);
+  // box-shadow: 0px 0px 14px 2px rgba(205, 94, 94, 0.2);
   transition: all 0.3s ease-in-out;
 }
 
@@ -84,15 +82,6 @@ html {
   background-color: var(--bgColorItem);
 }
 
-// .nav-item.active .icon {
-//   animation: strok 1.5s reverse;
-// }
-
-// @keyframes strok {
-//   100% {
-//     stroke-dashoffset: 400;
-//   }
-// }
 .nav-title {
   color: white;
   font-size: 0.8em;
@@ -124,10 +113,6 @@ html {
   .nav {
     font-size: 0.8em;
   }
-}
-.back-color-change,
-.back-color-plus-change {
-  transition: background-color var(--duration);
 }
 
 .affix {

@@ -13,6 +13,7 @@ export const loggedInOnlyMiddleware = (req, res, next) => {
   if (req.session.loggedIn) {
     return next();
   } else {
+    req.flash("error", "접근할 수 없습니다. 로그인 하세요!");
     return res.redirect("/login");
   }
 };
@@ -21,6 +22,7 @@ export const publicOnlyMiddleware = (req, res, next) => {
   if (!req.session.loggedIn) {
     return next();
   } else {
+    req.flash("error", "로그인 중이므로 접근할 수 없습니다");
     return res.redirect("/");
   }
 };

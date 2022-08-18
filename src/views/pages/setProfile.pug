@@ -1,3 +1,6 @@
+include ../mixins/flash-msg
+
+
 h1 프로필
 
 div(style="width: 400px; height: 800px; background-color:wheat; ")
@@ -18,5 +21,11 @@ div(style="width: 400px; height: 800px; background-color:wheat; ")
     h4 
         if !loggedInUser.socialOnly
             a(href="change-password") 비번변경
+    if messages.error 
+            +flashMsg("error", messages.error)
+    if messages.info
+        +flashMsg("info", messages.info)
+    if messages.success
+        +flashMsg("success", messages.success)
     if errMsg 
         span #{errMsg}

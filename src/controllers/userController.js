@@ -32,6 +32,7 @@ export const postRegister = async (req, res) => {
       introduction: "",
       location,
     });
+    req.flash("info", "새로운 계정이 등록되었습니다");
     return res.redirect("/login");
   } catch (error) {
     return res.status(400).render("register", {
@@ -62,6 +63,7 @@ export const postLogin = async (req, res) => {
   req.session.loggedIn = true;
   req.session.user = user;
 
+  req.flash("info", `안녕하세요, ${user.username}님!`);
   res.redirect("/");
 };
 
@@ -118,6 +120,7 @@ export const finishGithubLogin = async (req, res) => {
       (email) => email.primary === true && email.verified === true
     );
     if (!emailObj) {
+      req.flash("error", "존재하지 않는 사용자입니다");
       res.redirect("/login");
     }
     let user = await User.findOne({ email: emailObj.email });
@@ -136,13 +139,17 @@ export const finishGithubLogin = async (req, res) => {
 
     req.session.loggedIn = true;
     req.session.user = user;
+
+    req.flash("info", `안녕하세요, ${user.username}님!`);
     return res.redirect("/");
   } else {
+    req.flash("error", "존재하지 않는 사용자입니다");
     return res.redirect("/login");
   }
 };
 
 export const logout = (req, res) => {
+  req.flash("info", "로그아웃 되었습니다");
   req.session.destroy();
   return res.redirect("/");
 };
@@ -190,11 +197,13 @@ export const postSetProfile = async (req, res) => {
     }
   );
   req.session.user = updatedUser;
+  req.flash("success", "프로필 정보가 변경되었습니다");
   return res.redirect("/users/set-profile");
 };
 
 export const getChangePw = (req, res) => {
   if (req.session.socialOnly) {
+    req.flash("error", "소셜 계정은 비밀번호를 변경할 수 없습니다");
     return res.redirect("/");
   }
   return res.render("change-password", { pageTitle: "Change Password" });
@@ -224,6 +233,7 @@ export const postChangePw = async (req, res) => {
 
   user.password = newPassword;
   await user.save();
+  req.flash("success", "비밀번호를 변경했습니다");
   return res.redirect("/users/logout");
 };
 export const myProfile = async (req, res) => {

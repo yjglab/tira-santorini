@@ -5,7 +5,9 @@
 *:after {
   position: relative;
 }
-
+body {
+  overflow-x: hidden;
+}
 .story__top-section {
   text-align: center;
   height: 99vh;
@@ -14,13 +16,58 @@
   align-items: center;
   justify-content: center;
 
+  .top-background {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    align-items: center;
+
+    .clouds {
+      position: relative;
+      top: 100px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 99vh;
+
+      -moz-animation: move-clouds-back 200s linear infinite;
+      -ms-animation: move-clouds-back 200s linear infinite;
+      -o-animation: move-clouds-back 200s linear infinite;
+      -webkit-animation: move-clouds-back 200s linear infinite;
+      animation: move-clouds-back 200s linear infinite;
+    }
+    .logo-wrapper {
+      width: 500px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      bottom: 380px;
+      img {
+        width: 280px;
+      }
+      span {
+        font-family: $tiraHeaderFont;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 3.2px;
+        color: $tiraMainDark;
+        margin: -12px;
+      }
+    }
+  }
   .top-header {
     margin: 0;
     padding: 0;
     position: absolute;
     width: 100%;
-    top: 50%;
-    bottom: 50%;
+    height: 20%;
+    bottom: 12%;
+    // bottom: 50%;
     line-height: 0px;
     filter: contrast(10);
     font-family: $tiraHeaderFont;
@@ -28,7 +75,7 @@
 
     .top-heading-1 {
       text-align: center;
-      font-size: 140px;
+      font-size: 100px;
       animation: anim 4s infinite alternate-reverse;
       //   .top-heading-username {
       //     &:hover {
@@ -38,7 +85,7 @@
       //   }
     }
     .top-heading-2 {
-      font-size: 140px;
+      font-size: 100px;
       animation: anim 4s infinite alternate;
     }
     .top-heading-1,
@@ -174,4 +221,37 @@
 .char {
   display: inline-block;
   opacity: calc(1 + ((var(--viewport-y) * 1.5) - var(--char-percent)));
+}
+
+@keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+@-webkit-keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+@-moz-keyframes move-clouds-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
+}
+@-ms-keyframes move-clouds-back {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 10000px 0;
+  }
 }

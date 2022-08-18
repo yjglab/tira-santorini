@@ -39,7 +39,7 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgba(164, 164, 164, 0.435);
+  background-color: rgba(0, 0, 0, 0.416);
   background-clip: padding-box;
   border: 6px solid transparent;
   border-radius: 15px;
@@ -47,4 +47,41 @@ body {
 
 *::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0);
+}
+
+.flash-msg {
+  &.flash-msg-error {
+    background-color: $tiraColor2;
+    color: $tiraMainDark;
+  }
+  &.flash-msg-info {
+    background-color: $tiraColor6;
+  }
+  &.flash-msg-success {
+    background-color: $tiraColor5;
+  }
+  color: white;
+  position: fixed;
+  top: 85px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 300px;
+  padding: 8px 20px;
+  border-radius: 10000px;
+  text-align: center;
+  animation: goAway 0.3s ease-in-out forwards;
+  animation-delay: 2s;
+  z-index: 999;
+  font-weight: 600;
+}
+@keyframes goAway {
+  from {
+    transform: none;
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
 }

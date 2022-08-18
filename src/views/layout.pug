@@ -1,3 +1,5 @@
+include mixins/flash-msg
+
 doctype html
 html(lang="en")
     head
@@ -9,11 +11,18 @@ html(lang="en")
             block links
             block styles
         title #{pageTitle} | #{brandName}
-    body.back-color-change
+    body
         include partials/loader
         include partials/nav
         
+        if messages.error 
+            +flashMsg("error", messages.error)
+        if messages.info
+            +flashMsg("info", messages.info)
+        if messages.success
+            +flashMsg("success", messages.success)
         main 
+            
             block content
         
         include partials/footer

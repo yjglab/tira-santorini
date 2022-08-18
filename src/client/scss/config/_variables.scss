@@ -5,11 +5,15 @@ $tiraHeaderFont: "Gotham", sans-serif;
 $tiraLightFont: -apple-system, BlinkMacSystemFont, sans-serif;
 $tiraGothicFont: "넥슨Lv2고딕 OTF", "넥슨Lv2고딕OTF", "nexon-lv2-gothic-otf";
 
+$baseFontSize: 1.2em;
 $tiraMainWhite: rgb(255, 248, 248);
 $tiraMainDark: #424242;
+$tiraMainPk: #ffdbd7;
+$tiraMainBl: #cedaff;
+
 $tiraColor1: #fbe4e0;
 $tiraColor2: #ffbfb8;
-$tiraColor3: #ffd9ba;
+$tiraColor3: #6d4747;
 $tiraColor4: #c5d4ff;
 $tiraColor5: #8c9dff;
 $tiraColor6: #7a7a96;
@@ -18,19 +22,19 @@ $tiraMainWhitePlus: rgb(255, 255, 255);
 $tiraMainDarkPlus: #424242;
 $tiraColor1Plus: #ffccc3;
 $tiraColor2Plus: #f6a59d;
-$tiraColor3Plus: #ffc697;
+$tiraColor3Plus: #5a3737;
 $tiraColor4Plus: #b3c7ff;
 $tiraColor5Plus: #778bff;
 $tiraColor6Plus: #686888;
 
 $mainVerticalColor: rgb(196, 180, 180);
 $elseVerticalColor: white;
-$midColorChangeTransition: 0.5s ease-in-out;
+
 $test: rgb(227, 216, 216);
 
 $tiraColor1op: #fbe4e061;
 $tiraColor2op: #ffbfb861;
-$tiraColor3op: #ffd9ba61;
+$tiraColor3op: #6d474761;
 $tiraColor4op: #c5d4ff61;
 $tiraColor5op: #8c9dff61;
 $tiraColor6op: #7a7a9661;
