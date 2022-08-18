@@ -31,6 +31,7 @@ export const postRegister = async (req, res) => {
       avatarUrl: "static/img/anms-bk.png",
       introduction: "",
       location,
+      postalCode: 0,
     });
     req.flash("info", "새로운 계정이 등록되었습니다");
     return res.redirect("/login");
@@ -133,6 +134,7 @@ export const finishGithubLogin = async (req, res) => {
         name: userData.name,
         introduction: "",
         location: userData.location,
+        postalCode: 0,
         socialOnly: true,
       });
     }
@@ -161,7 +163,7 @@ export const postSetProfile = async (req, res) => {
     session: {
       user: { _id, avatarUrl },
     },
-    body: { name, email, username, introduction, location },
+    body: { name, email, username, introduction, location, postalCode },
     file,
   } = req;
   if (req.session.user.email !== email) {
@@ -182,6 +184,7 @@ export const postSetProfile = async (req, res) => {
       });
     }
   }
+
   const updatedUser = await User.findByIdAndUpdate(
     _id,
     {
@@ -189,13 +192,15 @@ export const postSetProfile = async (req, res) => {
       email,
       username,
       avatarUrl: file ? file.path : avatarUrl, // 전송받은 파일 없으면 기존 url 유지
-      introduction,
       location,
+      introduction,
+      postalCode,
     },
     {
       new: true, // new object로 생성
     }
   );
+
   req.session.user = updatedUser;
   req.flash("success", "프로필 정보가 변경되었습니다");
   return res.redirect("/users/set-profile");

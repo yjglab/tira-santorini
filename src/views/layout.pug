@@ -14,7 +14,7 @@ html(lang="en")
     body
         include partials/loader
         include partials/nav
-        
+       
         if messages.error 
             +flashMsg("error", messages.error)
         if messages.info

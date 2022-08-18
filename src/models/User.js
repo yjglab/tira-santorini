@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
   location: String,
   introduction: String,
   socialOnly: { type: Boolean, default: false },
+  postalCode: { type: Number },
 });
 
 userSchema.pre("save", async function () {

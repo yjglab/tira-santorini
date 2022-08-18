@@ -51,8 +51,8 @@ body {
 
 .flash-msg {
   &.flash-msg-error {
-    background-color: $tiraColor2;
-    color: $tiraMainDark;
+    background-color: rgb(255, 99, 91);
+    color: white;
   }
   &.flash-msg-info {
     background-color: $tiraColor6;
@@ -62,25 +62,31 @@ body {
   }
   color: white;
   position: fixed;
-  top: 85px;
-  left: 0;
-  right: 0;
+  bottom: 135px;
+  opacity: 0;
+  right: 45px;
   margin: 0 auto;
   max-width: 300px;
   padding: 8px 20px;
   border-radius: 10000px;
+  border-bottom-right-radius: 0;
   text-align: center;
-  animation: goAway 0.3s ease-in-out forwards;
-  animation-delay: 2s;
+  animation: goAway 6s ease-in-out forwards;
+  animation-delay: 1s;
   z-index: 999;
   font-weight: 600;
+  transform: translateX(150px);
 }
 @keyframes goAway {
-  from {
+  8% {
     transform: none;
     opacity: 1;
   }
-  to {
+  80% {
+    opacity: 1;
+    transform: none;
+  }
+  90% {
     transform: translateY(-20px);
     opacity: 0;
   }

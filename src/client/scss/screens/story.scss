@@ -52,7 +52,7 @@ body {
       }
       span {
         font-family: $tiraHeaderFont;
-        font-size: 17px;
+        font-size: $baseFontSize;
         font-weight: 600;
         letter-spacing: 3.2px;
         color: $tiraMainDark;
@@ -75,17 +75,11 @@ body {
 
     .top-heading-1 {
       text-align: center;
-      font-size: 100px;
+      font-size: 55px;
       animation: anim 4s infinite alternate-reverse;
-      //   .top-heading-username {
-      //     &:hover {
-      //       color: wheat;
-      //       font-size: 170px;
-      //     }
-      //   }
     }
     .top-heading-2 {
-      font-size: 100px;
+      font-size: 70px;
       animation: anim 4s infinite alternate;
     }
     .top-heading-1,
@@ -141,7 +135,7 @@ body {
     max-width: 35em;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    color: white;
+
     padding: 2em;
     font-size: 2.5vmin;
 
@@ -160,15 +154,18 @@ body {
         margin-bottom: 20px;
         font-weight: 700;
       }
+
       .content-subheading {
         font-size: 1.25em;
         font-weight: 600;
+        color: white;
       }
     }
 
     .content-paragraph {
       grid-row: 2 / 3;
       line-height: 1.6;
+      color: white;
     }
     .content-subheading,
     .content-paragraph {
@@ -231,27 +228,36 @@ body {
     background-position: 10000px 0;
   }
 }
-@-webkit-keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-@-moz-keyframes move-clouds-back {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
-}
-@-ms-keyframes move-clouds-back {
-  from {
-    background-position: 0;
-  }
-  to {
-    background-position: 10000px 0;
-  }
+// @-webkit-keyframes move-clouds-back {
+//   from {
+//     background-position: 0 0;
+//   }
+//   to {
+//     background-position: 10000px 0;
+//   }
+// }
+// @-moz-keyframes move-clouds-back {
+//   from {
+//     background-position: 0 0;
+//   }
+//   to {
+//     background-position: 10000px 0;
+//   }
+// }
+// @-ms-keyframes move-clouds-back {
+//   from {
+//     background-position: 0;
+//   }
+//   to {
+//     background-position: 10000px 0;
+//   }
+// }
+
+.story__bottom-section {
+  text-align: center;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

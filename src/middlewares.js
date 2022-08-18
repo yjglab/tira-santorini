@@ -30,6 +30,6 @@ export const publicOnlyMiddleware = (req, res, next) => {
 export const uploadAvatarMiddleware = multer({
   dest: "userUploads/avatar", // 사용자 파일을 uploads 폴더에 저장
   limits: {
-    fileSize: 10000000, // 10mb
+    fileSize: 5000000, // 5mb
   },
 });

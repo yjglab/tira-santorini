@@ -26,20 +26,14 @@ export const setNav = () => {
     case "story":
       set(1);
       break;
-    case "single":
+    case "shop":
       set(2);
       break;
-    case "set":
-      set(3);
-      break;
     case "review":
-      set(5);
-      break;
-    case "gallery":
-      set(6);
+      set(4);
       break;
     case "log in":
-      set(7);
+      set(5);
       break;
     default:
       break;

@@ -12,14 +12,14 @@ html {
   right: 0;
   display: flex;
   width: 32.05em;
-  height: 1.3em;
+  height: 30px;
   font-size: 1.5em;
-  padding: 0 2.85em;
+  padding: 0 1.5em;
   align-items: center;
   justify-content: center;
   background-color: $navColor;
   backdrop-filter: blur(3px);
-  border-radius: 1em;
+  border-radius: 11.5px;
   z-index: 999;
   // box-shadow: 0px 0px 14px 2px rgba(205, 94, 94, 0.2);
   transition: all 0.3s ease-in-out;
@@ -37,27 +37,30 @@ html {
   align-items: center;
   will-change: transform;
   justify-content: center;
-  // padding: 0.55em 0 0.85em;
   transition: transform var(--timeOut, var(--duration));
   width: 20%;
 
   h3 {
     font-family: $tiraHeaderFont;
-    font-size: 0.62em;
+    font-size: 0.68em;
     font-weight: 500;
     color: $tiraMainDark;
     letter-spacing: 0.03em;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    position: absolute;
+    &:not(.nav-title-mid) {
+      top: -1.6px;
+    }
     &:hover {
       color: rgb(146, 158, 186);
     }
   }
 }
-.nav-item:nth-of-type(4) {
+.nav-item:nth-of-type(3) {
   h3 {
     font-family: $tiraHeaderFont;
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.1em;
     letter-spacing: -0.001em;
     transition: all 0.3s ease-in-out;
   }
@@ -82,10 +85,6 @@ html {
   background-color: var(--bgColorItem);
 }
 
-.nav-title {
-  color: white;
-  font-size: 0.8em;
-}
 .nav-title-mid {
   font-weight: 700;
   letter-spacing: 3px;
@@ -125,12 +124,12 @@ html {
   .nav-border {
     opacity: 0;
   }
-  .nav-item:not(:nth-of-type(4)) {
+  .nav-item:not(:nth-of-type(3)) {
     h3 {
       font-size: 0.58em;
     }
   }
-  .nav-item:nth-of-type(4) {
+  .nav-item:nth-of-type(3) {
     h3 {
       font-size: 0.8em;
     }
