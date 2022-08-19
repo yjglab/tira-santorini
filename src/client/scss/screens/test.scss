@@ -1,0 +1,176 @@
+@import "../config/_variables.scss";
+
+$profileListFontSize: calc($baseFontSize + 1px);
+
+body {
+  overflow-x: hidden;
+}
+.profile-section-container {
+  font-family: $tiraGothicFont;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 30px;
+
+  .profile-section {
+    overflow: hidden;
+    width: 1200px;
+    height: 600px;
+    // background-color: rgb(184, 184, 184);
+    padding: 40px 20px;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0 20px 45px 5px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    position: relative;
+    .profile-bar {
+      position: absolute;
+      width: 100%;
+      height: 28px;
+      text-align: center;
+      top: 0px;
+      background-color: $tiraColor6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: calc($baseFontSize - 3px);
+    }
+    .profile-edit-icon {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      position: absolute;
+      right: 27px;
+      bottom: 23px;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          font-size: 26px;
+        }
+      }
+    }
+    .profile-left-wrapper {
+      width: 30%;
+      height: 100%;
+
+      .profile-image-wrapper {
+        height: 55%;
+        width: 100%;
+        position: relative;
+
+        img {
+          border-radius: 25px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        i {
+          font-size: 22px;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            color: $tiraColor2;
+          }
+        }
+      }
+      .introduction-wrapper {
+        width: 100%;
+        height: 40%;
+        margin: 20px 0;
+
+        position: relative;
+        h1 {
+          font-family: $tiraHeaderFont;
+          font-size: $profileListFontSize;
+          letter-spacing: 1.5px;
+          padding: 0px 5px;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+        .hr {
+          width: 100%;
+          height: 2px;
+          background-color: $navColor;
+          margin: 15px 0 12px 0;
+        }
+        p {
+          height: 80%;
+          line-height: 23px;
+          padding: 3px 5px;
+          font-size: $baseFontSize;
+          overflow: scroll;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+        .hide-filter {
+          background: rgb(255, 255, 255);
+          background: linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          width: 100%;
+          height: 60px;
+          position: absolute;
+          bottom: -5px;
+        }
+      }
+    }
+    .profile-info-wrapper {
+      width: 70%;
+      height: 100%;
+      .profile-info-top-wrapper {
+        width: 91.5%;
+        height: 100%;
+        margin-left: 35px;
+
+        .profile-info-list {
+          display: flex;
+          width: 100%;
+          height: 60px;
+          margin-bottom: 30px;
+          .list-column {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            // transition: all 1s ease-in-out;
+            flex-direction: column;
+            h1 {
+              font-family: $tiraHeaderFont;
+              font-size: $profileListFontSize;
+              font-weight: 600;
+              letter-spacing: 1.5px;
+            }
+            h2 {
+              padding: 15px 0;
+              padding-left: 2px;
+              overflow: hidden;
+              width: 95%;
+              height: 100%;
+              background-color: tomato;
+            }
+            .hr {
+              width: 100%;
+              height: 3.5px;
+              background-color: $navColor;
+              margin: 15px 0 12px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,11 +3,11 @@ import {
   finishGithubLogin,
   startGithubLogin,
   logout,
-  getSetProfile,
-  postSetProfile,
+  getProfile,
+  postProfile,
   getChangePw,
   postChangePw,
-  myProfile,
+  profile,
 } from "../controllers/userController";
 import {
   loggedInOnlyMiddleware,
@@ -19,10 +19,10 @@ const userRouter = express.Router();
 
 userRouter.get("/logout", loggedInOnlyMiddleware, logout);
 userRouter
-  .route("/set-profile")
+  .route("/:id/profile", profile)
   .all(loggedInOnlyMiddleware)
-  .get(getSetProfile)
-  .post(uploadAvatarMiddleware.single("avatar"), postSetProfile);
+  .get(getProfile)
+  .post(uploadAvatarMiddleware.single("avatar"), postProfile);
 userRouter
   .route("/change-password")
   .all(loggedInOnlyMiddleware)
@@ -31,5 +31,5 @@ userRouter
 userRouter.get("/github/start", publicOnlyMiddleware, startGithubLogin);
 userRouter.get("/github/finish", publicOnlyMiddleware, finishGithubLogin);
 
-userRouter.get("/:id", myProfile);
+// userRouter.get("/:id", myProfile);
 export default userRouter;

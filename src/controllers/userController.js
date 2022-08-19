@@ -155,10 +155,10 @@ export const logout = (req, res) => {
   req.session.destroy();
   return res.redirect("/");
 };
-export const getSetProfile = (req, res) => {
-  res.render("setProfile", { pageTitle: "Set Profile" });
+export const getProfile = (req, res) => {
+  res.render("profile", { pageTitle: "Profile" });
 };
-export const postSetProfile = async (req, res) => {
+export const postProfile = async (req, res) => {
   const {
     session: {
       user: { _id, avatarUrl },
@@ -169,8 +169,8 @@ export const postSetProfile = async (req, res) => {
   if (req.session.user.email !== email) {
     const alreadyExists = await User.exists({ email });
     if (alreadyExists) {
-      return res.status(400).render("setProfile", {
-        pageTitle: "Set Profile",
+      return res.status(400).render("profile", {
+        pageTitle: "Profile",
         errMsg: "이미 간택된 EMAIL로 업데이트 할 수 없습니다",
       });
     }
@@ -178,8 +178,8 @@ export const postSetProfile = async (req, res) => {
   if (req.session.user.username !== username) {
     const alreadyExists = await User.exists({ username });
     if (alreadyExists) {
-      return res.status(400).render("setProfile", {
-        pageTitle: "Set Profile",
+      return res.status(400).render("profile", {
+        pageTitle: "Profile",
         errMsg: "이미 간택된 USER ID로 업데이트 할 수 없습니다",
       });
     }
@@ -203,7 +203,7 @@ export const postSetProfile = async (req, res) => {
 
   req.session.user = updatedUser;
   req.flash("success", "프로필 정보가 변경되었습니다");
-  return res.redirect("/users/set-profile");
+  return res.redirect(`/users/${updatedUser._id}/profile`);
 };
 
 export const getChangePw = (req, res) => {
@@ -241,11 +241,11 @@ export const postChangePw = async (req, res) => {
   req.flash("success", "비밀번호를 변경했습니다");
   return res.redirect("/users/logout");
 };
-export const myProfile = async (req, res) => {
-  const { id } = req.params;
-  const user = await User.findById(id);
-  if (!user) {
-    return res.status(404).render("404", { pageTitle: "404 Not Found" });
-  }
-  return res.render("myProfile", { pageTitle: `${user.name}의 Profile`, user });
-};
+// export const myProfile = async (req, res) => {
+//   const { id } = req.params;
+//   const user = await User.findById(id);
+//   if (!user) {
+//     return res.status(404).render("404", { pageTitle: "404 Not Found" });
+//   }
+//   return res.render("myProfile", { pageTitle: `${user.name}의 Profile`, user });
+// };

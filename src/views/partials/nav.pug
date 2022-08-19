@@ -22,7 +22,7 @@
 
 if loggedIn
     .user
-        a(href=`/users/${loggedInUser._id}`)
+        a(href=`/users/${loggedInUser._id}/profile`)
             img(src=`${loggedInUser.avatarUrl}`)
 else 
     .user 
