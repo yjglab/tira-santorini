@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 export const getRegister = (req, res) =>
   res.render("register", { pageTitle: "Register" });
 export const postRegister = async (req, res) => {
-  const { name, username, email, password, password2, phone, location } =
+  const { name, username, email, password, password2, phone, address } =
     req.body;
   const pageTitle = "Register";
   if (password !== password2) {
@@ -30,7 +30,7 @@ export const postRegister = async (req, res) => {
       password,
       avatarUrl: "static/img/anms-bk.png",
       introduction: "",
-      location,
+      address,
       postalCode: 0,
     });
     req.flash("info", "새로운 계정이 등록되었습니다");
@@ -126,14 +126,14 @@ export const finishGithubLogin = async (req, res) => {
     }
     let user = await User.findOne({ email: emailObj.email });
     if (!user) {
-      const user = await User.create({
+      user = await User.create({
         email: emailObj.email,
         username: userData.login,
         avatarUrl: userData.avatar_url,
         password: "",
         name: userData.name,
         introduction: "",
-        location: userData.location,
+        address: userData.location,
         postalCode: 0,
         socialOnly: true,
       });
@@ -163,7 +163,7 @@ export const postSetProfile = async (req, res) => {
     session: {
       user: { _id, avatarUrl },
     },
-    body: { name, email, username, introduction, location, postalCode },
+    body: { name, email, username, introduction, address, postalCode },
     file,
   } = req;
   if (req.session.user.email !== email) {
@@ -192,7 +192,7 @@ export const postSetProfile = async (req, res) => {
       email,
       username,
       avatarUrl: file ? file.path : avatarUrl, // 전송받은 파일 없으면 기존 url 유지
-      location,
+      address,
       introduction,
       postalCode,
     },

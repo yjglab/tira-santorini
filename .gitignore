@@ -1,7 +1,6 @@
 /node_modules
-# /src/client/img
-# /src/client/videos
+/src/client/img
+/src/client/videos
 /assets
-/uploads
-# package-lock.json
+/userUploads
 .env
