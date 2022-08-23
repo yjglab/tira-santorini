@@ -71,8 +71,8 @@ body {
   border-radius: 10000px;
   border-bottom-right-radius: 0;
   text-align: center;
-  animation: goAway 6s ease-in-out forwards;
-  animation-delay: 1s;
+  animation: goAway 4s ease-in-out forwards;
+  animation-delay: 300ms;
   z-index: 999;
   font-weight: 600;
   transform: translateX(150px);
@@ -82,7 +82,7 @@ body {
     transform: none;
     opacity: 1;
   }
-  80% {
+  70% {
     opacity: 1;
     transform: none;
   }

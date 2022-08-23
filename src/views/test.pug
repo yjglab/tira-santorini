@@ -1,52 +1,76 @@
-extends layout
-block styles
+//- extends layout
+//- include ./mixins/flash-msg
+
+//- block styles
     
-block links
-    link(rel="stylesheet", href="/static/css/test.css")
+//- block links
+//-     link(rel="stylesheet", href="/static/css/test.css")
 
-block content
-    .profile-section-container
-        
-        section.profile-section
-            .profile-bar 프로필을 재설정합니다
-            .profile-edit-icon
-                i.fa-solid.fa-pen-to-square
-            .profile-left-wrapper 
-                .profile-image-wrapper
-                    img(src="data:image/jpeg;base64,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")
-                    i.fa-solid.fa-camera
-                .introduction-wrapper
-                    h1 INTRODUCTION
-                    .hr
-                    p 안녕하세요, 안녕하세요...안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요, 안녕하세요...안녕하세요. 안녕하하세요. 안녕하세요. 안녕하세요 안녕하세요, 안녕하세요..!하세요, 안녕하세요..!하세요, 안녕하세요..!하세요, 안녕하세요..!하세요, 안녕하세요..!하세요, 안녕하세요..!하세요, 안녕하세요..!
-                    .hide-filter
-            .profile-info-wrapper
-                .profile-info-top-wrapper
-                    .profile-info-list
-                        .list-column
-                            h1 NAME
-                            h2 yjglab 
-                        .list-column
-                            h1 USER ID
-                            h2 yjgid
-                    .profile-info-list
-                        .list-column
-                            h1 E-MAIL
-                            h2 yjglab 
-                    .profile-info-list
-                        .list-column
-                            h1 ADDRESS
-                            h2 wㅓㄴ북ㄱ저눅사자ㅏ이
-                        .list-column
-                            h1 POSTAL CODE
-                            h2 02914
-                    .profile-info-list
-                        .list-column
-                            h1 SOCIAL INTEGRATION
-                            h2 Linked
+//- block content
+//-     if messages.error 
+//-         +flashMsg("error", messages.error)
+//-     if messages.info
+//-         +flashMsg("info", messages.info)
+//-     if messages.success
+//-         +flashMsg("success", messages.success)
+//-     .profile-section-container
+//-         section.profile-section
+//-             form(method="POST" enctype="multipart/form-data")
+//-                 .profile-bar 프로필을 재설정합니다
+//-                 .profile-edit-icon-wrapper
+//-                     button(type="submit")
+//-                         i.fa-solid.fa-circle-check
+//-                     i.profile-edit.fa-solid.fa-pen-to-square
+//-                 .profile-left-wrapper 
+//-                     .profile-image-wrapper
+//-                         if !loggedInUser.socialOnly
+//-                             img(src="/" + loggedInUser.avatarUrl)
+//-                         else 
+//-                             img(src=loggedInUser.avatarUrl)
+//-                         i.fa-solid.fa-camera
+                            
+//-                     .introduction-wrapper
+//-                         h1 INTRODUCTION
+//-                         .hr
+//-                         textarea(placeholder="INTRODUCTION" name="introduction")=loggedInUser.introduction
                         
-                .profile-info-bottom-wrapper
+//-                         .hide-filter
+//-                 .profile-info-wrapper
+//-                     .profile-info-top-wrapper
+//-                         .profile-info-list
+//-                             .list-column
+//-                                 h1 NAME
+//-                                 h2
+//-                                     input(placeholder="NAME" name="name", type="text", required, value=loggedInUser.name)
+//-                             .list-column
+//-                                 h1 USER ID
+//-                                 h2
+//-                                     input(placeholder="USER ID" name="username", type="text", required, value=loggedInUser.username)
+//-                         .profile-info-list
+//-                             .list-column
+//-                                 h1 E-MAIL
+//-                                 h2
+//-                                     input(placeholder="EMAIL" name="email", type="email", required, value=loggedInUser.email)
+//-                         .profile-info-list
+//-                             .list-column
+//-                                 h1 ADDRESS
+//-                                 h2
+//-                                     input(placeholder="ADDRESS" name="address", type="text", value=loggedInUser.address)
+//-                             .list-column
+//-                                 h1 POSTAL CODE
+//-                                 h2 
+//-                                     input(placeholder="POSTAL CODE" name="postalCode", type="text", pattern="[0-9]+", value=loggedInUser.postalCode)
+//-                         .profile-info-list
+//-                             .list-column
+//-                                 h1 SOCIAL INTEGRATION
+//-                                 if loggedInUser.socialOnly 
+//-                                     h2 Linked 
+//-                                 else 
+//-                                     h2 Unlinked
+                                
+                            
+//-                     .profile-info-bottom-wrapper
                         
 
-block scripts
-    script(src="/static/js/intro.js")
+//- block scripts
+//-     script(src="/static/js/test.js")

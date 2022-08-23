@@ -12,7 +12,7 @@
   font-size: $baseFontSize;
   text-align: left;
 
-  padding: 40px 60px;
+  padding: 30px 60px;
 
   .footer-left,
   .footer-center,
@@ -100,11 +100,10 @@
     width: 35%;
 
     h2 {
-      font-family: $tiraHeaderFont;
+      font-family: "Gotham Black", sans-serif;
+      font-size: 30px;
+      letter-spacing: 3.2px;
       color: $tiraMainDark;
-      font-size: 28px;
-      font-weight: 600;
-      margin: 0;
     }
 
     .menu {

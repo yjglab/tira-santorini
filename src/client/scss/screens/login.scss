@@ -42,7 +42,7 @@
     a {
       width: 60%;
       border-radius: 30px;
-      background-color: $tiraColor6Plus;
+      background-color: $tiraMainDark;
       color: white;
       cursor: pointer;
       text-indent: 0;
@@ -52,7 +52,7 @@
       font-family: $tiraHeaderFont;
       letter-spacing: 1px;
       &:hover {
-        background-color: $tiraColor2;
+        background-color: $navColor;
         color: $tiraMainDark;
       }
     }
@@ -60,12 +60,17 @@
 
   .form-group-social {
     a {
-      background-color: $tiraMainDark;
+      background-color: black;
       color: white;
       &:hover {
-        background-color: rgba(0, 0, 0, 0.06);
+        background-color: $navColor;
         color: $tiraMainDark;
       }
     }
   }
+}
+
+.alreadyExist {
+  color: $tiraMainDark;
+  font-size: calc($baseFontSize - 2px);
 }

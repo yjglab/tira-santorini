@@ -14,9 +14,6 @@ body {
   color: $tiraMainDark;
 }
 
-i {
-  color: $tiraMainDark;
-}
 .profile-section-container {
   font-family: $tiraGothicFont;
   width: 100%;
@@ -93,15 +90,32 @@ i {
           height: 100%;
           object-fit: cover;
         }
-        i {
-          font-size: 22px;
+        .file-select-btn {
           position: absolute;
           bottom: 20px;
           left: 20px;
-          cursor: pointer;
-          transition: all 0.2s ease-in-out;
-          &:hover {
-            color: white;
+          display: flex;
+          width: 140px;
+          align-items: center;
+          i {
+            color: $tiraMainDark;
+            font-size: 22px;
+
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            &:hover {
+              color: white;
+            }
+          }
+          input[type="file"] {
+            margin-left: 10px;
+            background-color: white;
+            padding: 3px 8px;
+            border-radius: 10px;
+            width: 100%;
+            &::file-selector-button {
+              display: none;
+            }
           }
         }
       }

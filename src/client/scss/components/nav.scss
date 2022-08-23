@@ -12,7 +12,7 @@ html {
   right: 0;
   display: flex;
   width: 32.05em;
-  height: 30px;
+  height: 27px;
   font-size: 1.5em;
   padding: 0 1.5em;
   align-items: center;
@@ -45,11 +45,12 @@ html {
     font-size: 0.68em;
     font-weight: 500;
     color: $tiraMainDark;
-    letter-spacing: 0.03em;
+
     transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
     position: absolute;
     &:not(.nav-title-mid) {
       top: -1.6px;
+      letter-spacing: 0.03em;
     }
     &:hover {
       color: rgb(146, 158, 186);
@@ -58,10 +59,10 @@ html {
 }
 .nav-item:nth-of-type(3) {
   h3 {
-    font-family: $tiraHeaderFont;
-    font-weight: 700;
+    font-family: "Gotham Black", sans-serif;
+
     font-size: 1.1em;
-    letter-spacing: -0.001em;
+    letter-spacing: 2.7;
     transition: all 0.3s ease-in-out;
   }
 }

@@ -1,32 +1,111 @@
+extends ../layout
 include ../mixins/flash-msg
 
+block styles
+    
+block links
+    link(rel="stylesheet", href="/static/css/profile.css")
 
-h1 프로필
-
-div(style="width: 400px; height: 800px; background-color:wheat; ")
-    if !loggedInUser.socialOnly
-        img(style="width: 300px; height:300px;" src="/" + loggedInUser.avatarUrl)
-    else 
-        img(style="width: 300px; height:300px;" src=loggedInUser.avatarUrl)
-    span 10mb제한
-    form(method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column;")
-        label(for="avatar")
-        input(type="file" id="avatar" name="avatar" accept="image/*")  
-        input(placeholder="NAME" name="name", type="text", required, value=loggedInUser.name)
-        input(placeholder="EMAIL" name="email", type="email", required, value=loggedInUser.email)
-        input(placeholder="USER ID" name="username", type="text", required, value=loggedInUser.username)
-        input(placeholder="INTRODUCTION" name="introduction", type="text", value=loggedInUser.introduction)
-        input(placeholder="ADDRESS" name="address", type="text", value=loggedInUser.address)
-        input(placeholder="POSTAL CODE" name="postalCode", type="number", value=loggedInUser.postalCode)
-        input(type="submit", value="UPDATE")
-    h4 
-        if !loggedInUser.socialOnly
-            a(href="change-password") 비번변경
+block content
     if messages.error 
-            +flashMsg("error", messages.error)
+        +flashMsg("error", messages.error)
     if messages.info
         +flashMsg("info", messages.info)
     if messages.success
         +flashMsg("success", messages.success)
-    if errMsg 
-        span #{errMsg}
+    .profile-section-container
+        section.profile-section
+            form(method="POST" enctype="multipart/form-data")
+                .profile-bar 프로필을 재설정합니다
+                .profile-edit-icon-wrapper
+                    button(type="submit")
+                        i.fa-solid.fa-circle-check
+                    i.profile-edit-btn.fa-solid.fa-pen-to-square
+                .profile-left-wrapper 
+                    .profile-image-wrapper
+                        if !loggedInUser.socialOnly
+                            img(src="/" + loggedInUser.avatarUrl)
+                        else 
+                            img(src=loggedInUser.avatarUrl)
+                        .file-select-btn
+                            label(for="avatar")
+                                i.fa-solid.fa-camera
+                            input(type="file" id="avatar" name="avatar" accept="image/*")  
+                        
+                            
+                    .introduction-wrapper
+                        h1 INTRODUCTION
+                        .hr
+                        textarea(placeholder="INTRODUCTION" name="introduction")=loggedInUser.introduction
+                        
+                        .hide-filter
+                .profile-info-wrapper
+                    .profile-info-top-wrapper
+                        .profile-info-list
+                            .list-column
+                                h1 NAME
+                                h2
+                                    input(placeholder="NAME" name="name", type="text", required, value=loggedInUser.name)
+                            .list-column
+                                h1 USER ID
+                                h2
+                                    input(placeholder="USER ID" name="username", type="text", required, value=loggedInUser.username)
+                        .profile-info-list
+                            .list-column
+                                h1 E-MAIL
+                                h2
+                                    input(placeholder="EMAIL" name="email", type="email", required, value=loggedInUser.email)
+                        .profile-info-list
+                            .list-column
+                                h1 ADDRESS
+                                h2
+                                    input(placeholder="ADDRESS" name="address", type="text", value=loggedInUser.address)
+                            .list-column
+                                h1 POSTAL CODE
+                                h2 
+                                    input(placeholder="POSTAL CODE" name="postalCode", type="text", pattern="[0-9]+", value=loggedInUser.postalCode)
+                        .profile-info-list
+                            .list-column
+                                h1 SOCIAL INTEGRATION
+                                if loggedInUser.socialOnly 
+                                    h2 Linked 
+                                else 
+                                    h2 Unlinked
+                                
+                            
+                    .profile-info-bottom-wrapper
+                        
+
+block scripts
+    script(src="/static/js/profile.js")
+
+
+//- h1 프로필
+
+//- div(style="width: 400px; height: 800px; background-color:wheat; ")
+//-     if !loggedInUser.socialOnly
+//-         img(style="width: 300px; height:300px;" src="/" + loggedInUser.avatarUrl)
+//-     else 
+//-         img(style="width: 300px; height:300px;" src=loggedInUser.avatarUrl)
+//-     span 10mb제한
+//-     form(method="POST" enctype="multipart/form-data" style="display: flex; flex-direction: column;")
+//-         label(for="avatar")
+//-         input(type="file" id="avatar" name="avatar" accept="image/*")  
+//-         input(placeholder="NAME" name="name", type="text", required, value=loggedInUser.name)
+//-         input(placeholder="EMAIL" name="email", type="email", required, value=loggedInUser.email)
+//-         input(placeholder="USER ID" name="username", type="text", required, value=loggedInUser.username)
+//-         textarea(style="resize: none" cols=10 rows=6 placeholder="INTRODUCTION" name="introduction")=loggedInUser.introduction
+//-         input(placeholder="ADDRESS" name="address", type="text", value=loggedInUser.address)
+//-         input(placeholder="POSTAL CODE" name="postalCode", type="text", pattern="[0-9]+", value=loggedInUser.postalCode)
+//-         button(type="submit") go
+//-     h4 
+//-         if !loggedInUser.socialOnly
+//-             a(href="change-password") 비번변경
+//-     if messages.error 
+//-         +flashMsg("error", messages.error)
+//-     if messages.info
+//-         +flashMsg("info", messages.info)
+//-     if messages.success
+//-         +flashMsg("success", messages.success)
+//-     if errMsg 
+//-         span #{errMsg}

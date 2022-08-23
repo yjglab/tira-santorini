@@ -28,10 +28,10 @@ export const postRegister = async (req, res) => {
       username,
       email,
       password,
-      avatarUrl: "static/img/anms-bk.png",
+      avatarUrl: "static/img/profile-base-dk.png",
       introduction: "",
       address,
-      postalCode: 0,
+      postalCode: "0",
     });
     req.flash("info", "새로운 계정이 등록되었습니다");
     return res.redirect("/login");
@@ -134,7 +134,7 @@ export const finishGithubLogin = async (req, res) => {
         name: userData.name,
         introduction: "",
         address: userData.location,
-        postalCode: 0,
+        postalCode: "0",
         socialOnly: true,
       });
     }

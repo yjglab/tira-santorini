@@ -1,4 +1,6 @@
 extends layout
+include ./mixins/flash-msg
+
 block styles
     style(type="text/css").
         
@@ -50,7 +52,7 @@ block content
            
         section.intro__section-vertical
             .top-logo 
-                img(src="/static/img/tira-one.png")
+                img(src="/static/img/logo-base.png")
             .text
                 h1 깊은 맛을 위한 신비한 선택
                 p 
@@ -65,9 +67,9 @@ block content
                 .mouse-scroll-icon
                     .scroll-dot
         .intro__banner-floor-img
-            img(src="/static/img/tira-full.png")
-            img(src="/static/img/tira-r1.png")
-            img(src="/static/img/tira-r2.png")
+            img(src="/static/img/church-set.png")
+            img(src="/static/img/church-sm.png")
+            img(src="/static/img/church-md.png")
         
         .intro__wave-wrapper
             div
@@ -98,7 +100,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(loading="lazy" src="/static/img/digital-mkup-01.jpg", alt="image")
+                        img(loading="lazy" src="/static/img/tira-logo-noline.png", alt="image")
                     .card-content__title
                         h3
                             a(href="#") OIA
@@ -116,7 +118,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(loading="lazy" src="/static/img/digital-mkup-02.jpg", alt="image")
+                        img(loading="lazy" src="/static/img/tira-logo-noline.png", alt="image")
                     .card-content__title
                         h3
                             a(href="#") FIRA
@@ -134,7 +136,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(loading="lazy" src="/static/img/digital-mkup-03.jpg", alt="image")
+                        img(loading="lazy" src="/static/img/tira-logo-noline.png", alt="image")
                     .card-content__title
                         h3
                             a(href="#") AKROTIRI
@@ -145,14 +147,14 @@ block content
                             | 이곳은 영광스러운 미노아 문명이 묻힌 슬프고 아름다운 유적지입니다
                             br 
                             br
-                            | 아직 발견되지 않은 프레스코화 된 유물과 예술품들이 담겨있는 거대한 문명의 발자취에서 여러분의 기대를 충족할 거대한 향수를 경험해보세요
+                            | 발견되지 않은 프레스코 유물과 예술품들이 담겨있는 거대한 문명의 발자취에서 기대를 충족할 거대한 향수를 경험해보세요
                         a(href="#") 자세히 보기
                     //- .card-content__gradient-overlay
                     .card-content__color-overlay
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(loading="lazy" src="/static/img/digital-mkup-04.jpg", alt="image")
+                        img(loading="lazy" src="/static/img/tira-logo-noline.png", alt="image")
                     .card-content__title
                         h3
                             a(href="#") FIROSTEFANI
@@ -163,14 +165,14 @@ block content
                             | 이 곳은 아름다운 야경을 즐기고 싶은 사람들의 특별한 아지트입니다
                             br 
                             br
-                            | 이 아지트에서만 경험할 수 있는 본래의 티라미수와 함께 동화 속 구조물들을 자유롭게 거닐며 여러분의 고요한 공간을 만들어보세요
+                            | 이 아지트에서만 경험할 수 있는 특별한 분위기 속에서 동화 속 구조물들을 자유롭게 거닐며 여러분의 고요한 공간을 만들어보세요
                         a(href="#") 자세히 보기
                     //- .card-content__gradient-overlay
                     .card-content__color-overlay
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(loading="lazy" src="/static/img/digital-mkup-05.jpg", alt="image")
+                        img(loading="lazy" src="/static/img/tira-logo-noline.png", alt="image")
                     .card-content__title
                         h3
                             a(href="#") IMEROVIGLI
@@ -188,7 +190,7 @@ block content
             .intro__section-card
                 .card-content
                     .card-content__img 
-                        img(loading="lazy" src="/static/img/digital-mkup-06.jpg", alt="image")
+                        img(loading="lazy" src="/static/img/tira-logo-noline.png", alt="image")
                     .card-content__title
                         h3
                             a(href="#") KAMARI

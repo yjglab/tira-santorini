@@ -21,6 +21,10 @@ module.exports = {
       "./src/client/js/pages/login.js",
       "./src/client/scss/screens/login.scss",
     ],
+    profile: [
+      "./src/client/js/pages/profile.js",
+      "./src/client/scss/screens/profile.scss",
+    ],
     test: [
       "./src/client/js/pages/test.js",
       "./src/client/scss/screens/test.scss",

@@ -40,23 +40,24 @@ body {
       animation: move-clouds-back 200s linear infinite;
     }
     .logo-wrapper {
-      width: 500px;
-      height: 300px;
+      width: 800px;
+      height: 320px;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
       bottom: 380px;
       img {
-        width: 280px;
+        width: 200px;
       }
       span {
-        font-family: $tiraHeaderFont;
-        font-size: $baseFontSize;
-        font-weight: 600;
+        font-family: $tiraHeaderBlackFont;
+        font-size: 23px;
         letter-spacing: 3.2px;
         color: $tiraMainDark;
-        margin: -12px;
+        margin: -24px;
+        position: absolute;
+        bottom: 0;
       }
     }
   }
@@ -89,7 +90,7 @@ body {
       position: absolute;
 
       margin: 0;
-      color: $tiraMainDark;
+      color: #141722;
       text-shadow: 4px 4px 120px rgba(256, 256, 256, 1),
         -4px -4px 120px rgba(256, 256, 256, 1),
         -4px 4px 120px rgba(256, 256, 256, 1),
@@ -119,7 +120,9 @@ body {
   --scroll-length: 1.5;
   height: calc(var(--scroll-length) * 100vh);
   width: 100%;
-  font-family: $tiraHeaderFont;
+  font-family: $tiraHeaderBlackFont;
+  font-weight: 100;
+  letter-spacing: 4.5px;
   .content-header {
     margin-bottom: 20px;
     font-size: 22px;
@@ -150,6 +153,7 @@ body {
       justify-content: flex-end;
 
       .content-heading {
+        width: 1000px;
         font-size: 3em;
         margin-bottom: 20px;
         font-weight: 700;
