@@ -16,10 +16,10 @@ block content
     .profile-section-container
         section.profile-section
             form(method="POST" enctype="multipart/form-data")
-                .profile-bar 프로필을 재설정합니다
+                .profile-bar.edit-mode-element-show 프로필을 재설정합니다
                 .profile-edit-icon-wrapper
                     button(type="submit")
-                        i.fa-solid.fa-circle-check
+                        i.fa-solid.fa-circle-check.edit-mode-element-show
                     i.profile-edit-btn.fa-solid.fa-pen-to-square
                 .profile-left-wrapper 
                     .profile-image-wrapper
@@ -27,7 +27,7 @@ block content
                             img(src="/" + loggedInUser.avatarUrl)
                         else 
                             img(src=loggedInUser.avatarUrl)
-                        .file-select-btn
+                        .file-select-btn.edit-mode-element-show
                             label(for="avatar")
                                 i.fa-solid.fa-camera
                             input(type="file" id="avatar" name="avatar" accept="image/*")  
@@ -36,33 +36,31 @@ block content
                     .introduction-wrapper
                         h1 INTRODUCTION
                         .hr
-                        textarea(placeholder="INTRODUCTION" name="introduction")=loggedInUser.introduction
-                        
-                        .hide-filter
+                        textarea.edit-mode-element-textbox(placeholder="INTRODUCTION" name="introduction")=loggedInUser.introduction
                 .profile-info-wrapper
                     .profile-info-top-wrapper
                         .profile-info-list
                             .list-column
                                 h1 NAME
-                                h2
+                                h2.edit-mode-element-textbox
                                     input(placeholder="NAME" name="name", type="text", required, value=loggedInUser.name)
-                            .list-column
+                            .list-column.edit-mode-element-show
                                 h1 USER ID
-                                h2
+                                h2.edit-mode-element-textbox
                                     input(placeholder="USER ID" name="username", type="text", required, value=loggedInUser.username)
                         .profile-info-list
                             .list-column
                                 h1 E-MAIL
-                                h2
+                                h2.edit-mode-element-textbox
                                     input(placeholder="EMAIL" name="email", type="email", required, value=loggedInUser.email)
                         .profile-info-list
                             .list-column
                                 h1 ADDRESS
-                                h2
+                                h2.edit-mode-element-textbox
                                     input(placeholder="ADDRESS" name="address", type="text", value=loggedInUser.address)
                             .list-column
                                 h1 POSTAL CODE
-                                h2 
+                                h2.edit-mode-element-textbox
                                     input(placeholder="POSTAL CODE" name="postalCode", type="text", pattern="[0-9]+", value=loggedInUser.postalCode)
                         .profile-info-list
                             .list-column

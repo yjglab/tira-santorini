@@ -25,9 +25,23 @@ body {
   top: 30px;
 
   .profile-section {
+    display: flex;
+    justify-content: center;
+    .edit-mode-element-show {
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.5s ease-in-out;
+    }
+    .edit-mode-element-textbox {
+      border: 2px solid white;
+      box-sizing: border-box;
+      border-radius: 8px;
+      transition: all 0.5s ease-in-out;
+      pointer-events: none;
+    }
     form {
       overflow: hidden;
-      width: 1200px;
+      width: 1100px;
       height: 600px;
       padding: 40px 20px;
       border-radius: 20px;
@@ -55,6 +69,8 @@ body {
       height: 60px;
       cursor: pointer;
       position: absolute;
+      overflow: hidden;
+
       right: 27px;
       bottom: 23px;
       font-size: 24px;
@@ -68,8 +84,8 @@ body {
         align-items: center;
       }
       i {
-        transition: all 0.2s ease-in-out;
         margin: 0 10px;
+        transition: all 0.4s ease-in-out;
         &:hover {
           font-size: 26px;
         }
@@ -100,9 +116,9 @@ body {
           i {
             color: $tiraMainDark;
             font-size: 22px;
-
+            transition: all 0.4s ease-in-out;
             cursor: pointer;
-            transition: all 0.2s ease-in-out;
+
             &:hover {
               color: white;
             }
@@ -123,7 +139,7 @@ body {
         width: 100%;
         height: 40%;
         margin: 20px 0;
-        overflow: hidden;
+        box-sizing: border-box;
         position: relative;
         h1 {
           font-family: $tiraHeaderFont;
@@ -141,34 +157,21 @@ body {
         }
 
         textarea {
-          all: unset;
+          // all: unset;
+          display: block;
           resize: none;
           width: 100%;
           padding: 5px 10px;
           background-color: $lightBlue;
-          height: 80%;
+          height: 82%;
           line-height: 23px;
           font-size: $baseFontSize;
-
+          box-sizing: border-box;
           word-break: break-all;
-          // pointer-events: none;
 
           &::-webkit-scrollbar {
             display: none;
           }
-        }
-
-        .hide-filter {
-          background: $lightBlue;
-          background: linear-gradient(
-            0deg,
-            rgb($lightBlue, 1) 0%,
-            rgb($lightBlue, 0) 100%
-          );
-          width: 100%;
-          height: 60px;
-          position: absolute;
-          bottom: -14px;
         }
       }
     }
@@ -189,6 +192,7 @@ body {
             width: 50%;
             height: 100%;
             display: flex;
+
             // transition: all 1s ease-in-out;
             flex-direction: column;
             h1 {
@@ -199,6 +203,8 @@ body {
               margin-bottom: 5px;
             }
             h2 {
+              border-radius: 8px;
+              box-sizing: border-box;
               input {
                 all: unset;
                 width: 100%;
@@ -207,7 +213,7 @@ body {
               }
               display: flex;
               align-items: center;
-              border-bottom: 1px solid $navColor;
+              // border-bottom: 1px solid $navColor;
               padding-left: 2px;
               overflow: hidden;
               width: 95%;

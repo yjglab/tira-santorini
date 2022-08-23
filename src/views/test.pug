@@ -1,76 +1,19 @@
-//- extends layout
-//- include ./mixins/flash-msg
+extends layout
+include ./mixins/flash-msg
 
-//- block styles
+block styles
     
-//- block links
-//-     link(rel="stylesheet", href="/static/css/test.css")
+block links
+    link(rel="stylesheet", href="/static/css/test.css")
 
-//- block content
-//-     if messages.error 
-//-         +flashMsg("error", messages.error)
-//-     if messages.info
-//-         +flashMsg("info", messages.info)
-//-     if messages.success
-//-         +flashMsg("success", messages.success)
-//-     .profile-section-container
-//-         section.profile-section
-//-             form(method="POST" enctype="multipart/form-data")
-//-                 .profile-bar 프로필을 재설정합니다
-//-                 .profile-edit-icon-wrapper
-//-                     button(type="submit")
-//-                         i.fa-solid.fa-circle-check
-//-                     i.profile-edit.fa-solid.fa-pen-to-square
-//-                 .profile-left-wrapper 
-//-                     .profile-image-wrapper
-//-                         if !loggedInUser.socialOnly
-//-                             img(src="/" + loggedInUser.avatarUrl)
-//-                         else 
-//-                             img(src=loggedInUser.avatarUrl)
-//-                         i.fa-solid.fa-camera
-                            
-//-                     .introduction-wrapper
-//-                         h1 INTRODUCTION
-//-                         .hr
-//-                         textarea(placeholder="INTRODUCTION" name="introduction")=loggedInUser.introduction
-                        
-//-                         .hide-filter
-//-                 .profile-info-wrapper
-//-                     .profile-info-top-wrapper
-//-                         .profile-info-list
-//-                             .list-column
-//-                                 h1 NAME
-//-                                 h2
-//-                                     input(placeholder="NAME" name="name", type="text", required, value=loggedInUser.name)
-//-                             .list-column
-//-                                 h1 USER ID
-//-                                 h2
-//-                                     input(placeholder="USER ID" name="username", type="text", required, value=loggedInUser.username)
-//-                         .profile-info-list
-//-                             .list-column
-//-                                 h1 E-MAIL
-//-                                 h2
-//-                                     input(placeholder="EMAIL" name="email", type="email", required, value=loggedInUser.email)
-//-                         .profile-info-list
-//-                             .list-column
-//-                                 h1 ADDRESS
-//-                                 h2
-//-                                     input(placeholder="ADDRESS" name="address", type="text", value=loggedInUser.address)
-//-                             .list-column
-//-                                 h1 POSTAL CODE
-//-                                 h2 
-//-                                     input(placeholder="POSTAL CODE" name="postalCode", type="text", pattern="[0-9]+", value=loggedInUser.postalCode)
-//-                         .profile-info-list
-//-                             .list-column
-//-                                 h1 SOCIAL INTEGRATION
-//-                                 if loggedInUser.socialOnly 
-//-                                     h2 Linked 
-//-                                 else 
-//-                                     h2 Unlinked
-                                
-                            
-//-                     .profile-info-bottom-wrapper
-                        
+block content
+    if messages.error 
+        +flashMsg("error", messages.error)
+    if messages.info
+        +flashMsg("info", messages.info)
+    if messages.success
+        +flashMsg("success", messages.success)
+    
 
-//- block scripts
-//-     script(src="/static/js/test.js")
+block scripts
+    script(src="/static/js/test.js")
