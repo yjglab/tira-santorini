@@ -51,43 +51,46 @@ block content
                         .product-add-cart-btn ADD TO CART
             .product-set-container 
 
-        .cart-section
-            .cart
-                //- .column-labels
-                //-     label.product-image Image
-                //-     label.product-details Product
-                //-     label.product-price Price
-                //-     label.product-quantity Quantity
-                //-     label.product-removal Remove
-                //-     label.product-line-price Total
-                .cart-product
-                    .cart-product-image
-                        img(src="https://static.toiimg.com/thumb/53096885.cms?width=1200&height=900")
-                    .cart-product-details
-                        .cart-product-title D
-                        //- p.cart-product-description
-                    .cart-product-price 10000
-                    .cart-product-quantity
-                        input(type="number", value="1", min="1")
-                    .cart-product-line-price 10000
-                    .cart-product-removal
-                        button.remove-product
-                            i.fa-solid.fa-circle-minus
-              
-            .totals
-                .totals-item
-                    label 제품 가격
-                    #cart-subtotal.totals-value 0
-                //- .totals-item
-                //-     label 부가가치세 (10%)
-                //-     #cart-tax.totals-value 0
-                .totals-item
-                    label 배송비
-                    #cart-shipping.totals-value 0
-                .totals-item.totals-item-total
-                    label 전체 가격
-                    #cart-total.totals-value 0
-            button.checkout 결제
+        .cart-section-container
+            .cart-section-background
+            .cart-section
+                .cart
+                    //- .column-labels
+                    //-     label.product-image Image
+                    //-     label.product-details Product
+                    //-     label.product-price Price
+                    //-     label.product-quantity Quantity
+                    //-     label.product-removal Remove
+                    //-     label.product-line-price Total
+                    .cart-product
+                        .cart-product-image
+                            img(src="")
+                        .cart-product-details
+                            .cart-product-title 
+                            //- p.cart-product-description
+                        .cart-product-price 0
+                        .cart-product-quantity
+                            input(type="number", value="1", min="1")
+                        .cart-product-line-price 0
+                        .cart-product-removal
+                            button.remove-product
+                                i.fa-solid.fa-circle-minus
+                .totals
+                    .totals-item
+                        label 제품 가격
+                        #cart-subtotal.totals-value 0
+                    //- .totals-item
+                    //-     label 부가가치세 (10%)
+                    //-     #cart-tax.totals-value 0
+                    .totals-item.shipping
+                        label 배송비
+                        #cart-shipping.totals-value 0
+                    .totals-item.totals-item-total
+                        label 전체 가격
+                        #cart-total.totals-value 0
+                button.checkout 결제
+
+        
 
 
 block scripts

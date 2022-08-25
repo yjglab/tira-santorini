@@ -68,6 +68,7 @@ const handleProductChange = (productObject) => {
 
   changeBackgroundSmoothly();
 };
+let nowProduct = JSON.parse(JSON.stringify(productObjects.product1));
 
 const $productPick = document.querySelectorAll(".product-pick");
 const handleProductPick = (e) => {
@@ -76,16 +77,22 @@ const handleProductPick = (e) => {
 
   if (e.target.classList.contains("pick-1")) {
     handleProductChange(productObjects.product1);
+    nowProduct = JSON.parse(JSON.stringify(productObjects.product1));
   } else if (e.target.classList.contains("pick-2")) {
     handleProductChange(productObjects.product2);
+    nowProduct = JSON.parse(JSON.stringify(productObjects.product2));
   } else if (e.target.classList.contains("pick-3")) {
     handleProductChange(productObjects.product3);
+    nowProduct = JSON.parse(JSON.stringify(productObjects.product3));
   } else if (e.target.classList.contains("pick-4")) {
     handleProductChange(productObjects.product4);
+    nowProduct = JSON.parse(JSON.stringify(productObjects.product4));
   } else if (e.target.classList.contains("pick-5")) {
     handleProductChange(productObjects.product5);
+    nowProduct = JSON.parse(JSON.stringify(productObjects.product5));
   } else if (e.target.classList.contains("pick-6")) {
     handleProductChange(productObjects.product6);
+    nowProduct = JSON.parse(JSON.stringify(productObjects.product6));
   }
 };
 $productPick.forEach((v) =>
@@ -93,28 +100,63 @@ $productPick.forEach((v) =>
 );
 handleProductChange(productObjects.product1);
 
+// 카트에 넣기
+const $productAddCartBtn = document.querySelector(".product-add-cart-btn");
+const $cartSectionContainer = document.querySelector(".cart-section-container");
+const $cartSectionBackground = document.querySelector(
+  ".cart-section-background"
+);
+const $productSection = document.querySelector(".product-section");
+
+const handleAddCart = () => {
+  // 카트 컨테이너 플로팅
+  $cartSectionContainer.style.transform = "translateY(0px)";
+  $cartSectionContainer.style.opacity = 1;
+  $productSection.style.filter = "blur(10px)";
+
+  // 카트 목록 추가
+  const clone = document.querySelector(".cart-product").cloneNode(true);
+  clone.querySelector(".cart-product-price").textContent = nowProduct.price;
+  clone.querySelector(".cart-product-line-price").textContent =
+    nowProduct.price;
+  clone.querySelector(".cart-product-image img").src = nowProduct.imgSrc;
+  clone.querySelector(".cart-product-title").textContent = nowProduct.name;
+  document.querySelector(".cart").appendChild(clone);
+
+  $(".cart-product-removal button").click(function () {
+    removeItem(this);
+  });
+  $(".cart-product-quantity input").change(function () {
+    updateQuantity(this);
+  });
+
+  recalculateCart();
+};
+// 카트 닫기
+$productAddCartBtn.addEventListener("click", handleAddCart);
+$cartSectionBackground.addEventListener("click", () => {
+  $productSection.style.filter = "blur(0px)";
+  $cartSectionContainer.style.transform = "translateY(900px)";
+  $cartSectionContainer.style.opacity = 0;
+});
 // 카트
 let shippingCost = 2500;
 let fadeTime = 200;
 
-recalculateCart();
-
-$(".cart-product-quantity input").change(function () {
-  updateQuantity(this);
-});
-
-$(".cart-product-removal button").click(function () {
-  removeItem(this);
-});
+// recalculateCart();
 
 function recalculateCart() {
   let subtotal = 0;
-
   $(".cart-product").each(function () {
     subtotal += parseInt($(this).children(".cart-product-line-price").text());
   });
 
   let shipping = subtotal > 0 ? shippingCost : 0;
+  if (subtotal > 30000) {
+    shipping = 0;
+    $(".totals-item.shipping label").text("배송비(무료)");
+  }
+
   let total = subtotal + shipping;
 
   $(".totals-value").fadeOut(fadeTime, function () {
