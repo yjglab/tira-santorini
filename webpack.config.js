@@ -25,6 +25,10 @@ module.exports = {
       "./src/client/js/pages/profile.js",
       "./src/client/scss/screens/profile.scss",
     ],
+    shop: [
+      "./src/client/js/pages/shop.js",
+      "./src/client/scss/screens/shop.scss",
+    ],
     test: [
       "./src/client/js/pages/test.js",
       "./src/client/scss/screens/test.scss",

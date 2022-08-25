@@ -1,0 +1,377 @@
+@import "../config/_variables.scss";
+
+body {
+  overflow-x: hidden;
+}
+.shop-section-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: $tiraMainDark;
+  font-size: $baseFontSize;
+  .product-section {
+    width: 100%;
+    height: 100%;
+    // filter: blur(8px);
+    transition: filter 0.5s ease-in-out;
+    .product-individual-container {
+      width: 100%;
+      height: 100%;
+      padding: 100px 40px;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .product-section-title {
+        width: 75%;
+        margin-bottom: 25px;
+        font-size: $baseFontSize;
+        font-family: $tiraGothicFont;
+        font-weight: 500;
+        border-radius: 35px;
+        padding: 10px 20px;
+        background-color: white;
+        span {
+          text-align: left;
+        }
+      }
+      .product-container {
+        width: 75%;
+        height: 570px;
+        display: flex;
+        .product-img-section {
+          width: 500px;
+          height: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+          }
+        }
+        .product-info-section {
+          width: 60%;
+          padding: 5px 50px;
+          position: relative;
+          .list-title {
+            width: 100%;
+            display: flex;
+            h1 {
+              display: flex;
+              align-items: center;
+              font-family: "Gotham", sans-serif;
+              font-size: $baseFontSize;
+              cursor: pointer;
+              margin-right: 20px;
+              margin-bottom: 15px;
+              font-weight: 600;
+              letter-spacing: 1.5px;
+            }
+          }
+          .product-name {
+            margin-top: 10px;
+            width: 100%;
+            height: 22%;
+            position: relative;
+            h1 {
+              position: absolute;
+              top: 3px;
+              font-size: calc($baseFontSize + 22px);
+              font-family: $tiraHeaderBlackFont;
+
+              letter-spacing: 3px;
+            }
+          }
+
+          .product-description {
+            height: 20%;
+          }
+          .product-picker {
+            width: 100%;
+            height: 15%;
+
+            .picker-container {
+              display: flex;
+              align-items: center;
+
+              .product-pick {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background-color: white;
+                margin: 0 4px;
+                border: 2px solid transparent;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                  border: 4px solid white;
+                }
+
+                &.pick-1 {
+                  background-color: $tiraColor1;
+                }
+                &.pick-2 {
+                  background-color: $tiraColor2;
+                }
+                &.pick-3 {
+                  background-color: $tiraColor3;
+                }
+                &.pick-4 {
+                  background-color: $tiraColor4;
+                }
+                &.pick-5 {
+                  background-color: $tiraColor5;
+                }
+                &.pick-6 {
+                  background-color: $tiraColor6;
+                }
+              }
+              .picked {
+                border: 4px solid $tiraMainDark;
+              }
+            }
+          }
+          .price-and-quantity {
+            position: absolute;
+
+            right: 40px;
+            bottom: 115px;
+            display: flex;
+            div {
+              margin: 10px 10px;
+              height: 20px;
+            }
+            .product-quantity {
+              display: flex;
+              align-items: center;
+              margin-bottom: 15px;
+              input {
+                width: 35px;
+                height: 40px;
+                border: none;
+                font-size: $baseFontSize;
+                outline: none;
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  appearance: none;
+                }
+              }
+            }
+
+            .product-price {
+              display: flex;
+              h2 {
+                font-size: calc($baseFontSize + 2px);
+                margin-right: 3px;
+              }
+              h1 {
+                font-size: calc($baseFontSize + 10px);
+              }
+            }
+          }
+          .product-add-cart-btn {
+            position: absolute;
+            right: 30px;
+            bottom: 70px;
+            width: 150px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 35px;
+            font-weight: 600;
+            font-family: $tiraHeaderFont;
+
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+              background-color: white;
+              color: $tiraMainDark;
+            }
+          }
+        }
+      }
+    }
+  }
+  .cart-section {
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    position: fixed;
+    z-index: 999;
+    width: 500px;
+    height: 500px;
+    box-sizing: border-box;
+    display: flex; // flex
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: 25vh;
+    font-size: calc($baseFontSize - 2px);
+    overflow: hidden;
+    box-shadow: 0 15px 25px 5px rgb($tiraMainDark, 0.3);
+    .cart {
+      background-color: white;
+      width: 100%;
+      height: 70%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+      .cart-product {
+        width: 100%;
+        background-color: $lightBlue;
+        box-sizing: border-box;
+        padding: 10px 10px;
+        display: flex;
+        align-items: center;
+        .cart-product-image {
+          text-align: center;
+          float: left;
+          width: 50px;
+          height: 50px;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+          }
+        }
+
+        .cart-product-details {
+          float: left;
+          width: 45%;
+          margin-left: 15px;
+
+          .cart-product-description {
+            line-height: 1.4em;
+          }
+        }
+        .cart-product-price {
+          padding: 0 5px;
+          float: left;
+          width: 18%;
+          text-align: right;
+        }
+        .cart-product-quantity {
+          padding: 0 5px;
+          float: left;
+          width: 8%;
+          input[type="number"] {
+            width: 100%;
+            outline: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            background-color: $tiraMainDark;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              appearance: none;
+            }
+          }
+        }
+        .cart-product-removal {
+          float: left;
+          width: 8%;
+          display: flex;
+          justify-content: center;
+          .remove-product {
+            border: 0;
+            color: $tiraMainDark;
+            font-size: calc($baseFontSize + 1px);
+            background-color: transparent;
+          }
+        }
+        .cart-product-line-price {
+          width: 18%;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .totals {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: all 1s ease-in-out;
+    .totals-item {
+      width: 100%;
+      padding: 2px 0;
+      label {
+        width: 40%;
+        text-align: right;
+      }
+
+      .totals-value {
+        float: right;
+        width: 20%;
+        text-align: right;
+      }
+    }
+  }
+
+  .checkout {
+    height: 25px;
+    border: 0;
+    padding: 6px 25px;
+    background-color: $tiraMainDark;
+    color: white;
+    font-size: $baseFontSize;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: $tiraMainDark;
+    }
+  }
+}
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1;
+}
+
+.cart,
+.column-labels,
+.product,
+.totals-item {
+  @extend .group;
+}
+
+.product .product-price:before,
+.product .product-line-price:before,
+.totals-value:before {
+  content: "₩";
+}
+
+.detail-list {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}

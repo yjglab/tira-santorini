@@ -92,17 +92,6 @@ html {
   font-size: 1.3em;
   color: $tiraMainDark;
 }
-.nav-border {
-  // left: 0;
-  bottom: 99%;
-  width: 7.6em;
-  height: 1.8em;
-  position: absolute;
-  clip-path: url(#navClipPath);
-  will-change: transform;
-  background-color: $navColor;
-  transition: all var(--timeOut, var(--duration));
-}
 
 .svg-container {
   width: 0;
@@ -122,9 +111,7 @@ html {
   padding: 0;
   width: 100%;
   border-radius: 0%;
-  .nav-border {
-    opacity: 0;
-  }
+
   .nav-item:not(:nth-of-type(3)) {
     h3 {
       font-size: 0.58em;

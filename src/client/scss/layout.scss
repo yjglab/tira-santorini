@@ -19,12 +19,11 @@ body {
   scroll-behavior: smooth;
   font-family: $tiraLightFont;
 }
-
-// *,
-// *:before,
-// *:after {
-//   box-sizing: inherit;
-// }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
   // background: white;
   overflow: overlay;

@@ -1,0 +1,93 @@
+extends ../layout
+include ../mixins/flash-msg
+
+block styles
+    
+block links
+    link(rel="stylesheet", href="/static/css/shop.css")
+
+block content
+    if messages.error 
+        +flashMsg("error", messages.error)
+    if messages.info
+        +flashMsg("info", messages.info)
+    if messages.success
+        +flashMsg("success", messages.success)
+    .shop-section-container
+        .product-section
+            .product-individual-container 
+                .product-section-title 
+                    span 단일 패키지 구매
+                .product-container 
+                    .product-img-section 
+                        img(src="https://static.toiimg.com/thumb/53096885.cms?width=1200&height=900")
+                    .product-info-section
+                        .product-name 
+                            h1 FIRAFOWOD
+                        .product-description 
+                            .list-title
+                                h1.btn-explain DESCRIPTION
+                                h1.btn-ingredient INGREDIENT
+                            .description
+                                .product-explain 맛있는 딸기와 자awdawdawdaw몽을 섞은 티라의 시그니처 케이크
+                                .product-ingredient
+                        .product-picker
+                            .list-title
+                                h1 SELECT
+                            .picker-container 
+                                .product-pick.pick-1.picked
+                                .product-pick.pick-2
+                                .product-pick.pick-3
+                                .product-pick.pick-4
+                                .product-pick.pick-5
+                                .product-pick.pick-6
+                        .price-and-quantity
+                            //- .product-quantity
+                            //-     input(type="number", value=1, min=100 max=9)
+                            .product-price 
+                                h2 ₩
+                                h1.price 6000
+                        .product-add-cart-btn ADD TO CART
+            .product-set-container 
+
+        .cart-section
+            .cart
+                //- .column-labels
+                //-     label.product-image Image
+                //-     label.product-details Product
+                //-     label.product-price Price
+                //-     label.product-quantity Quantity
+                //-     label.product-removal Remove
+                //-     label.product-line-price Total
+                .cart-product
+                    .cart-product-image
+                        img(src="https://static.toiimg.com/thumb/53096885.cms?width=1200&height=900")
+                    .cart-product-details
+                        .cart-product-title D
+                        //- p.cart-product-description
+                    .cart-product-price 10000
+                    .cart-product-quantity
+                        input(type="number", value="1", min="1")
+                    .cart-product-line-price 10000
+                    .cart-product-removal
+                        button.remove-product
+                            i.fa-solid.fa-circle-minus
+              
+            .totals
+                .totals-item
+                    label 제품 가격
+                    #cart-subtotal.totals-value 0
+                //- .totals-item
+                //-     label 부가가치세 (10%)
+                //-     #cart-tax.totals-value 0
+                .totals-item
+                    label 배송비
+                    #cart-shipping.totals-value 0
+                .totals-item.totals-item-total
+                    label 전체 가격
+                    #cart-total.totals-value 0
+            button.checkout 결제
+
+
+block scripts
+    script(src="/static/js/shop.js")

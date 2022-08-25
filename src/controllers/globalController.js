@@ -8,6 +8,11 @@ export const story = async (req, res) => {
     pageTitle: "story",
   });
 };
+export const shop = async (req, res) => {
+  return res.render("shop", {
+    pageTitle: "shop",
+  });
+};
 export const test = async (req, res) => {
   return res.render("test", {
     pageTitle: "test",

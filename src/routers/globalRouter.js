@@ -1,6 +1,6 @@
 import express from "express";
 
-import { intro, story, test } from "../controllers/globalController.js";
+import { intro, shop, story, test } from "../controllers/globalController.js";
 import {
   getRegister,
   getLogin,
@@ -23,6 +23,7 @@ globalRouter
   .get(getLogin)
   .post(postLogin);
 globalRouter.get("/story", story);
+globalRouter.get("/shop", shop);
 globalRouter.get("/test", test);
 
 export default globalRouter;
