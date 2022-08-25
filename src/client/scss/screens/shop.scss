@@ -15,15 +15,24 @@ body {
     height: 100%;
     // filter: blur(8px);
     transition: filter 0.5s ease-in-out;
+    position: relative;
+    .product-individual-container-background {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
     .product-individual-container {
       width: 100%;
       height: 100%;
       padding: 100px 40px;
-      background-color: rgb(255, 255, 255);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      transition: all 1s ease-in-out;
       .product-section-title {
         width: 75%;
         margin-bottom: 25px;
@@ -208,7 +217,7 @@ body {
     width: 500px;
     height: 500px;
     box-sizing: border-box;
-    display: flex; // flex
+    display: none; // flex
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
