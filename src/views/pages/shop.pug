@@ -19,19 +19,36 @@ block content
             .product-individual-container 
                 .product-section-title 
                     span 단일 패키지 구매
+                    span 티라미수 1 Pound / 브랜드카드 단일 구성
                 .product-container 
                     .product-img-section 
                         img(src="/static/img/white.jpg")
                     .product-info-section
                         .product-name 
                             h1 
+                            .product-logo
+                                img(src="/static/img/logo-base-2.png")
                         .product-description 
                             .list-title
                                 h1.btn-explain DESCRIPTION
-                                h1.btn-ingredient INGREDIENT
                             .description
                                 .product-explain 
+                            .list-title
+                                h1.btn-explain INGREDIENT
+                            .description
                                 .product-ingredient
+                                    h1 열량(Kcal)
+                                        .ingredient
+                                    h1 당류(g) 
+                                        .ingredient
+                                    h1 단백질(g)
+                                        .ingredient
+                                    h1 포화지방(g)
+                                        .ingredient
+                                    h1 나트륨(g)
+                                        .ingredient
+                                    h1 알레르기유발
+                                        .ingredient
                         .product-picker
                             .list-title
                                 h1 SELECT
@@ -54,6 +71,11 @@ block content
         .cart-section-container
             .cart-section-background
             .cart-section
+                .cart-list-label 
+                    h1 제품
+                    h1 가격
+                    h1 수량
+                    h1 총 가격
                 .cart
                     //- .column-labels
                     //-     label.product-image Image

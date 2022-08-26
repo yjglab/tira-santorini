@@ -3,49 +3,49 @@ const productObjects = {
   product1: {
     name: "OIA",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-01.jpg",
-    explain: "1번째 제품",
-    ingredient: "딸기/망고",
+    imgSrc: "/static/img/digital-mkup-01-1.png",
+    explain: "달콤한 딸기와 치즈를 배합하여 만든 부드러운 티라미수",
+    ingredient: "255,23.3,3,5.5,70,계란•우유•밀",
     backColor: "linear-gradient(196deg, white, #ffe2dd)",
   },
   product2: {
     name: "FIRA",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-02.jpg",
-    explain: "2번째 제품",
-    ingredient: "딸기/망고",
+    imgSrc: "/static/img/digital-mkup-02-1.png",
+    explain: "상큼한 자몽과 망고를 배합하여 만든 새콤한 티라미수",
+    ingredient: "230,25.2,4,6.5,65,계란•우유•밀",
     backColor: "linear-gradient(196deg, #ffe3e0, #ffb3ab)",
   },
   product3: {
     name: "AKROTIRI",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-03.jpg",
-    explain: "3번째 제품",
-    ingredient: "딸기/망고",
+    imgSrc: "/static/img/digital-mkup-03-1.png",
+    explain: "마스카포네 치즈와 에스프레소를 배합하여 만든 정통 티라미수",
+    ingredient: "300,7.5,5.4,6.5,60,계란•우유•밀",
     backColor: "linear-gradient(196deg, #c69191, #764c4c)",
   },
   product4: {
     name: "FIROSTEFANI",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-04.jpg",
-    explain: "4번째 제품",
-    ingredient: "딸기/망고",
+    imgSrc: "/static/img/digital-mkup-04-1.png",
+    explain: "시원한 민트와 청포도를 배합하여 만든 시그니처 티라미수",
+    ingredient: "355,31.2,5.5,14,77,계란•우유•밀",
     backColor: "linear-gradient(196deg, #edf2ff, #c5d4ff)",
   },
   product5: {
     name: "IMEROVIGLI",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-05.jpg",
-    explain: "5번째 제품",
-    ingredient: "딸기/망고",
+    imgSrc: "/static/img/digital-mkup-05-1.png",
+    explain: "블루베리와 치즈를 배합하여 만든 부드럽고 달콤한 티라미수",
+    ingredient: "340,30,5.3,14,79,계란•우유•밀",
     backColor: "linear-gradient(196deg, #afc9ff, #87adff)",
   },
   product6: {
     name: "KAMARI",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-06.jpg",
-    explain: "6번째 제품",
-    ingredient: "딸기/망고",
+    imgSrc: "/static/img/digital-mkup-06-1.png",
+    explain: "흑임자와 초콜릿 쿠키를 배합하여 만든 진한 티라미수",
+    ingredient: "402,41,3.5,19,66.2,계란•우유•밀",
     backColor: "linear-gradient(196deg, #9595ae, #64647e)",
   },
 };
@@ -58,11 +58,15 @@ const handleProductChange = (productObject) => {
       .fadeIn(600);
     $(".product-name h1").text(productObject.name).fadeIn(500);
     $(".product-explain").text(productObject.explain).fadeIn(500);
-    $(".product-ingredient").text(productObject.ingredient).fadeIn(500);
+    const splitTextIngredient = productObject.ingredient.split(",");
+    document
+      .querySelectorAll(".product-ingredient .ingredient")
+      .forEach((v, i) => (v.textContent = splitTextIngredient[i]));
+    $(".product-ingredient .ingredient").fadeIn(500);
   }
   function changeBackgroundSmoothly() {
     $(
-      ".product-img-section img, .product-individual-container-background, .product-name h1, .product-explain, .product-ingredient"
+      ".product-img-section img, .product-individual-container-background, .product-name h1, .product-explain, .product-ingredient .ingredient"
     ).fadeOut(300, smoothChange);
   }
 
@@ -152,9 +156,11 @@ function recalculateCart() {
   });
 
   let shipping = subtotal > 0 ? shippingCost : 0;
-  if (subtotal > 30000) {
+  if (subtotal >= 30000) {
     shipping = 0;
     $(".totals-item.shipping label").text("배송비(무료)");
+  } else {
+    $(".totals-item.shipping label").text("배송비");
   }
 
   let total = subtotal + shipping;

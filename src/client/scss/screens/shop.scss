@@ -42,8 +42,13 @@ body {
         border-radius: 35px;
         padding: 10px 20px;
         background-color: white;
+        box-shadow: 0 8px 15px 3px rgb($tiraMainDark, 0.1);
         span {
           text-align: left;
+        }
+        span:last-child {
+          margin-left: 15px;
+          font-size: calc($baseFontSize - 6px);
         }
       }
       .product-container {
@@ -58,10 +63,23 @@ body {
           justify-content: center;
           overflow: hidden;
           img {
-            width: 100%;
-            height: 100%;
+            width: 110%;
+            height: 110%;
             object-fit: cover;
             border-radius: 25px;
+
+            animation: imgmove 6s ease-in-out infinite;
+            @keyframes imgmove {
+              0% {
+                transform: translateY(-4px);
+              }
+              50% {
+                transform: translateY(4px);
+              }
+              100% {
+                transform: translateY(-4px);
+              }
+            }
           }
         }
         .product-info-section {
@@ -89,6 +107,7 @@ body {
             height: 22%;
             position: relative;
             h1 {
+              width: 70%;
               position: absolute;
               top: 3px;
               font-size: calc($baseFontSize + 22px);
@@ -96,15 +115,56 @@ body {
 
               letter-spacing: 3px;
             }
+            .product-logo {
+              width: 40px;
+              position: absolute;
+              right: 0;
+              img {
+                width: 100%;
+              }
+            }
           }
 
           .product-description {
-            height: 20%;
+            height: 37%;
+
+            .description {
+              margin-bottom: 30px;
+              height: 17%;
+
+              .product-ingredient {
+                display: flex;
+                width: 100%;
+                height: 60px;
+                justify-content: space-between;
+                h1 {
+                  font-size: calc($baseFontSize - 4px);
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  font-weight: 600;
+                  .ingredient {
+                    background-color: white;
+                    width: 90%;
+                    height: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 35px;
+                    margin-top: 5px;
+                    font-weight: normal;
+                  }
+                }
+              }
+            }
           }
           .product-picker {
             width: 100%;
             height: 15%;
-
+            margin-top: 15px;
             .picker-container {
               display: flex;
               align-items: center;
@@ -249,13 +309,41 @@ body {
     font-size: calc($baseFontSize - 2px);
     overflow: hidden;
     box-shadow: 0 15px 25px 5px rgb($tiraMainDark, 0.3);
+    .cart-list-label {
+      width: 100%;
+      height: 5%;
+      position: absolute;
+      top: 0;
+      background-color: $tiraMainDark;
+      display: flex;
+      align-items: center;
 
+      h1 {
+        color: white;
+        display: flex;
+        position: absolute;
+        font-weight: 600;
+        &:nth-child(1) {
+          left: 4%;
+        }
+        &:nth-child(2) {
+          right: 34%;
+        }
+        &:nth-child(3) {
+          right: 25.5%;
+        }
+        &:nth-child(4) {
+          right: 8.5%;
+        }
+      }
+    }
     .cart {
       background-color: white;
       width: 100%;
       height: 70%;
       overflow-y: auto;
       overflow-x: hidden;
+      margin-top: 20px;
       &::-webkit-scrollbar {
         width: 0;
       }
@@ -267,6 +355,7 @@ body {
         padding: 10px 10px;
         display: flex; // flex
         align-items: center;
+        margin: 5px 0;
         &:first-child {
           display: none;
         }
@@ -287,7 +376,14 @@ body {
           float: left;
           width: 45%;
           margin-left: 15px;
-
+          position: relative;
+          .cart-product-title {
+            font-family: $tiraHeaderFont;
+            font-weight: 500;
+            height: 100%;
+            position: absolute;
+            top: -2px;
+          }
           .cart-product-description {
             line-height: 1.4em;
           }
