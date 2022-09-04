@@ -6,7 +6,7 @@ $(window).scroll(function () {
     $(".mouse-scroll-icon, .text").fadeOut();
     $(".nav").addClass("affix");
   } else {
-    $(".mouse-scroll-icon, .text").fadeIn();
+    $(".text").fadeIn();
     $(".nav").removeClass("affix");
   }
 });

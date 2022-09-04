@@ -5,14 +5,15 @@ body {
 }
 .shop-section-container {
   width: 100%;
-  height: 100vh;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+
   color: $tiraMainDark;
   font-size: $baseFontSize;
   .product-section {
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     transition: filter 0.5s ease-in-out;
     position: relative;
@@ -20,6 +21,7 @@ body {
       width: 100%;
       height: 100%;
       position: absolute;
+
       top: 0;
       left: 0;
       z-index: -1;
@@ -42,7 +44,7 @@ body {
         border-radius: 35px;
         padding: 10px 20px;
         background-color: white;
-        box-shadow: 0 8px 15px 3px rgb($tiraMainDark, 0.1);
+        box-shadow: 0 8px 15px 3px rgb($tiraMainDark, 0.05);
         span {
           text-align: left;
         }
@@ -173,7 +175,7 @@ body {
                 width: 30px;
                 height: 30px;
                 border-radius: 50%;
-                background-color: white;
+
                 margin: 0 4px;
                 border: 2px solid transparent;
                 transition: all 0.3s ease-in-out;
@@ -196,6 +198,9 @@ body {
                 }
                 &.pick-5 {
                   background-color: $tiraColor5;
+                }
+                &.pick-6 {
+                  background-color: $tiraColor6;
                 }
                 &.pick-6 {
                   background-color: $tiraColor6;

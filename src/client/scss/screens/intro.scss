@@ -94,6 +94,9 @@ body {
       top: 0;
       left: 0;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .background-bottom {
       width: 100vw;
@@ -212,6 +215,9 @@ body {
       z-index: 2;
       opacity: 0.7;
 
+      @media all and (min-width: 0px) and (max-width: 768px) {
+        display: none;
+      }
       .mountain {
         clip-path: polygon(50% 0, 0% 100%, 100% 100%);
         background: linear-gradient(to bottom, white 0%, $tiraMainPk 100%);
@@ -679,6 +685,7 @@ body {
         background-color: #333d66;
         width: 100%;
         height: 100px;
+
         &:before {
           left: 0;
           bottom: 0;
@@ -786,16 +793,32 @@ body {
     justify-content: center;
     position: absolute;
     top: 12%;
-
+    @media all and (min-width: 768px) and (max-width: 1280px) {
+      height: 40%;
+      top: 15%;
+    }
+    @media all and (min-width: 0px) and (max-width: 768px) {
+      height: 32%;
+      top: 18%;
+    }
     .top-logo {
       position: absolute;
       width: 65px;
       height: 65px;
-      top: 40px;
+      top: 5%;
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      @media all and (min-width: 768px) and (max-width: 1280px) {
+        width: 55px;
+        height: 55px;
+        top: -7%;
+      }
+      @media all and (min-width: 0px) and (max-width: 768px) {
+        width: 35px;
+        height: 35px;
+        top: -30%;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -827,7 +850,7 @@ body {
         transition: color 0.7s ease-in-out;
       }
       h1 {
-        font-size: 1.35em;
+        font-size: calc($baseFontSize + 0.2em);
         margin-bottom: 30px;
         font-weight: 500;
       }
@@ -838,6 +861,12 @@ body {
         line-height: 1.5em;
         font-size: $baseFontSize;
         text-align: center;
+        @media all and (min-width: 768px) and (max-width: 1280px) {
+          font-size: calc($baseFontSize - 0.1em);
+        }
+        @media all and (min-width: 0px) and (max-width: 768px) {
+          font-size: calc($baseFontSize - 0.2em);
+        }
       }
     }
   }
@@ -872,14 +901,30 @@ body {
         letter-spacing: -0.02em;
         line-height: 1.5em;
         width: 70%;
+        top: 10%;
         margin-bottom: 35px;
         color: $tiraMainDark;
+        @media all and (min-width: 768px) and (max-width: 1280px) {
+          font-size: calc($baseFontSize - 0.1em);
+        }
+        @media all and (min-width: 0px) and (max-width: 768px) {
+          font-size: calc($baseFontSize - 0.2em);
+          width: 100%;
+        }
       }
       .intro__section-card {
-        width: 1000px;
-        height: 620px;
+        width: 80%;
+        height: 70%;
         overflow: hidden;
         position: relative;
+        @media all and (min-width: 768px) and (max-width: 1280px) {
+          width: 80%;
+          height: 70%;
+        }
+        @media all and (min-width: 0px) and (max-width: 768px) {
+          width: 90%;
+          height: 60%;
+        }
         img {
           width: 100%;
           height: 100%;
@@ -896,11 +941,19 @@ body {
         position: absolute;
         text-align: center;
         width: 70%;
-        top: 140px;
+        top: 10%;
         color: $tiraMainDark;
         font-family: $tiraGothicFont;
         letter-spacing: -0.02em;
         line-height: 1.5em;
+        @media all and (min-width: 768px) and (max-width: 1280px) {
+          font-size: calc($baseFontSize - 0.1em);
+          width: 80%;
+        }
+        @media all and (min-width: 0px) and (max-width: 768px) {
+          font-size: calc($baseFontSize - 0.2em);
+          width: 80%;
+        }
       }
       .intro__section-card:nth-of-type(1) {
         .card-content {
@@ -964,8 +1017,8 @@ body {
         }
       }
       .intro__section-card {
-        width: 300px;
-        height: 380px;
+        width: 17%;
+        height: 43%;
         overflow: hidden;
         // border-radius: 15px;
         cursor: pointer;
@@ -980,7 +1033,6 @@ body {
       }
 
       .card-content {
-        max-width: 550px;
         width: 100%;
         height: 100%;
         position: absolute;
@@ -1151,10 +1203,15 @@ body {
       flex-direction: row;
       .section-video-wrapper {
         position: absolute;
-        width: 90%;
-        height: 90%;
-        bottom: 7.4%;
+        width: 80%;
+        height: 80%;
+        bottom: 10%;
         overflow: hidden;
+
+        video {
+          width: 100%;
+          height: 100%;
+        }
       }
 
       .intro__section-card {
@@ -1222,7 +1279,12 @@ body {
   border-radius: 15px;
   border: 3.3px solid rgb($tiraMainDark, 0.9);
   animation: mouseIcon 1s;
-
+  @media all and (min-width: 768px) and (max-width: 1280px) {
+    display: none;
+  }
+  @media all and (min-width: 0px) and (max-width: 768px) {
+    display: none;
+  }
   .scroll-dot {
     display: block;
     width: 5.2px;
