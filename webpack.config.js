@@ -2,36 +2,46 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const BASE_JS_PATH = "./src/client/js/";
+const BASE_SCSS_PATH = "./src/client/scss/";
 module.exports = {
   entry: {
-    layout: ["./src/client/js/layout.js", "./src/client/scss/layout.scss"],
-    intro: ["./src/client/js/intro.js", "./src/client/scss/screens/intro.scss"],
-    main: ["./src/client/js/main.js", "./src/client/scss/screens/main.scss"],
-    nav: ["./src/client/js/components/nav.js"],
+    layout: [BASE_JS_PATH + "layout.js", BASE_SCSS_PATH + "layout.scss"],
+    intro: [BASE_JS_PATH + "intro.js", BASE_SCSS_PATH + "screens/intro.scss"],
+    main: [BASE_JS_PATH + "main.js", BASE_SCSS_PATH + "screens/main.scss"],
+    nav: [BASE_JS_PATH + "components/nav.js"],
 
     story: [
-      "./src/client/js/pages/story.js",
-      "./src/client/scss/screens/story.scss",
+      BASE_JS_PATH + "pages/story.js",
+      BASE_SCSS_PATH + "screens/story.scss",
+    ],
+    review: [
+      BASE_JS_PATH + "pages/review.js",
+      BASE_SCSS_PATH + "screens/review.scss",
     ],
     register: [
-      "./src/client/js/pages/register.js",
-      "./src/client/scss/screens/register.scss",
+      BASE_JS_PATH + "pages/register.js",
+      BASE_SCSS_PATH + "screens/register.scss",
     ],
     login: [
-      "./src/client/js/pages/login.js",
-      "./src/client/scss/screens/login.scss",
+      BASE_JS_PATH + "pages/login.js",
+      BASE_SCSS_PATH + "screens/login.scss",
     ],
     profile: [
-      "./src/client/js/pages/profile.js",
-      "./src/client/scss/screens/profile.scss",
+      BASE_JS_PATH + "pages/profile.js",
+      BASE_SCSS_PATH + "screens/profile.scss",
     ],
     shop: [
-      "./src/client/js/pages/shop.js",
-      "./src/client/scss/screens/shop.scss",
+      BASE_JS_PATH + "pages/shop.js",
+      BASE_SCSS_PATH + "screens/shop.scss",
+    ],
+    store: [
+      BASE_JS_PATH + "pages/store.js",
+      BASE_SCSS_PATH + "screens/store.scss",
     ],
     test: [
-      "./src/client/js/pages/test.js",
-      "./src/client/scss/screens/test.scss",
+      BASE_JS_PATH + "pages/test.js",
+      BASE_SCSS_PATH + "screens/test.scss",
     ],
   },
   mode: "development",

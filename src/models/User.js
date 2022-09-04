@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
   introduction: String,
   socialOnly: { type: Boolean, default: false },
   postalCode: { type: String },
+  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "Review" }],
 });
 
 userSchema.pre("save", async function () {

@@ -6,5 +6,3 @@ $(document).ready(function () {
     });
   });
 });
-
-export default register;

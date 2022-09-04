@@ -1,0 +1,25 @@
+extends ../layout
+include ../mixins/flash-msg
+
+block styles
+    
+block links
+    link(rel="stylesheet", href="/static/css/review.css")
+
+block content
+    if messages.error 
+        +flashMsg("error", messages.error)
+    if messages.info
+        +flashMsg("info", messages.info)
+    if messages.success
+        +flashMsg("success", messages.success)
+    if loggedIn
+        .r-container 
+            form.r-form#rForm
+                textarea(cols="30" rows="10" placeholder="리뷰를 등록해보세요")
+                button ADD
+
+    
+
+block scripts
+    script(src="/static/js/review.js")

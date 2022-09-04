@@ -5,12 +5,22 @@ export const intro = async (req, res) => {
 };
 export const story = async (req, res) => {
   return res.render("story", {
-    pageTitle: "story",
+    pageTitle: "Story",
   });
 };
 export const shop = async (req, res) => {
   return res.render("shop", {
-    pageTitle: "shop",
+    pageTitle: "Online Shop",
+  });
+};
+export const review = async (req, res) => {
+  return res.render("review", {
+    pageTitle: "Review",
+  });
+};
+export const store = async (req, res) => {
+  return res.render("store", {
+    pageTitle: "Offline Store",
   });
 };
 export const test = async (req, res) => {

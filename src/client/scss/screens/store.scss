@@ -1,0 +1,50 @@
+@import "../config/_variables.scss";
+
+.store-section-container {
+  width: 100%;
+  height: 250vh;
+  color: $tiraMainDark;
+  font-size: $baseFontSize;
+  .store-section-title {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    h1 {
+      position: absolute;
+      bottom: 0;
+      font-size: calc($baseFontSize + 1.5em);
+      font-family: $tiraHeaderFont;
+      font-weight: 600;
+    }
+  }
+  .store-section-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 10%;
+    background-color: rgb(255, 222, 217);
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      width: 50%;
+      height: 10%;
+      font-family: $tiraGothicFont;
+      line-height: 1.5em;
+    }
+    .store-section-image {
+      width: 100%;
+      height: 45%;
+      background-color: white;
+      margin: 3%;
+      border-radius: 25px;
+      box-shadow: 0 5px 45px 3px rgb($tiraMainDark, 0.1);
+    }
+  }
+}

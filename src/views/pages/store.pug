@@ -1,0 +1,37 @@
+extends ../layout
+include ../mixins/flash-msg
+
+block styles
+    
+block links
+    link(rel="stylesheet", href="/static/css/store.css")
+
+block content
+    if messages.error 
+        +flashMsg("error", messages.error)
+    if messages.info
+        +flashMsg("info", messages.info)
+    if messages.success
+        +flashMsg("success", messages.success)
+    
+    .store-section-container 
+        .store-section-title
+            h1 Our Offline Store
+        .store-section-content
+            h1 
+                |이태원 본점 : 서울시 용산구 회나무로 49
+                br
+                |현대백화점 압구정본점 : 서울시 강남구 압구정로 165 B1
+                br
+                |현대백화점 중동점 : 경기도 부천시 길주로 180 B1
+                br
+                |신세계백화점 본점 : 서울특별시 중구 소공로 63 B1 식품관
+                br
+                |신세계백화점 강남점 : 서울특별시 서초구 신반포로 176 B1 식품관
+            .store-section-image
+            .store-section-image
+            .store-section-image
+    
+
+block scripts
+    script(src="/static/js/store.js")

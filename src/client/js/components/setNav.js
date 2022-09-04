@@ -21,7 +21,7 @@ export const setNav = () => {
     case "shop":
       set(2);
       break;
-    case "review":
+    case "offline store":
       set(4);
       break;
     case "log in":

@@ -1,4 +1,3 @@
-import variables from "../variables";
 import setNav from "./setNav";
 
 $(window).scroll(function () {
