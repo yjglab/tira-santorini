@@ -14,8 +14,8 @@ body {
   .product-section {
     width: 100%;
     height: 100vh;
-
-    transition: filter 0.5s ease-in-out;
+    margin-bottom: 4%;
+    transition: filter 1s $mainTransition;
     position: relative;
     .product-individual-container-background {
       width: 100%;
@@ -34,7 +34,7 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      transition: all 1s ease-in-out;
+      transition: all 1s $mainTransition;
       .product-section-title {
         width: 75%;
         margin-bottom: 25px;
@@ -94,13 +94,11 @@ body {
             h1 {
               display: flex;
               align-items: center;
-              font-family: "Gotham", sans-serif;
               font-size: $baseFontSize;
               cursor: pointer;
               margin-right: 20px;
               margin-bottom: 15px;
-              font-weight: 600;
-              letter-spacing: 1.5px;
+              font-weight: 700;
             }
           }
           .product-name {
@@ -113,9 +111,8 @@ body {
               position: absolute;
               top: 3px;
               font-size: calc($baseFontSize + 22px);
-              font-family: $tiraHeaderBlackFont;
-
-              letter-spacing: 3px;
+              font-weight: 900;
+              letter-spacing: $tiraLogoLetterSpace;
             }
             .product-logo {
               width: 40px;
@@ -178,7 +175,7 @@ body {
 
                 margin: 0 4px;
                 border: 2px solid transparent;
-                transition: all 0.3s ease-in-out;
+                transition: all 0.3s $mainTransition;
                 cursor: pointer;
                 &:hover {
                   border: 4px solid white;
@@ -266,7 +263,7 @@ body {
             color: white;
             box-shadow: 0 5px 15px 3px rgb($tiraMainDark, 0.1);
             cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.3s $mainTransition;
             &:hover {
               background-color: transparent;
               color: $tiraMainDark;
@@ -276,6 +273,154 @@ body {
       }
     }
   }
+
+  .set-section-container {
+    width: 100%;
+    height: 100vh;
+
+    .set-individual-container {
+      width: 100%;
+      height: 100%;
+      padding: 100px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(196deg, #ffffff, #dce4ff);
+      .set-section-title {
+        width: 75%;
+        margin-bottom: 25px;
+        font-size: 1.05em;
+        font-family: "넥슨Lv2고딕 OTF", "넥슨Lv2고딕OTF", "nexon-lv2-gothic-otf";
+        font-weight: 500;
+        border-radius: 35px;
+        padding: 10px 20px;
+        background-color: white;
+        box-shadow: 0 8px 15px 3px rgb(51 61 102 / 5%);
+
+        span {
+          text-align: left;
+        }
+        span:last-child {
+          margin-left: 15px;
+          font-size: calc($baseFontSize - 6px);
+        }
+      }
+      .set-container {
+        width: 75%;
+        height: 570px;
+        display: flex;
+
+        .set-img-container {
+          width: 52%;
+          height: 100%;
+          background-color: white;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .set-info-container {
+          width: 48%;
+          height: 100%;
+          position: relative;
+          padding: 1% 4%;
+          .set-name {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            h1 {
+              width: 70%;
+              height: 100%;
+              font-size: calc(1.05em + 22px);
+              font-weight: 900;
+              letter-spacing: $tiraLogoLetterSpace;
+            }
+            .set-logo {
+              width: 30%;
+              position: relative;
+
+              right: 0;
+              img {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                right: 0;
+                object-fit: cover;
+              }
+            }
+          }
+          .set-description {
+            width: 100%;
+            height: 40%;
+            p {
+              line-height: 1.4;
+            }
+          }
+          .set-info-title {
+            width: 100%;
+            height: 25px;
+            margin: 3% 0;
+            h1 {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              font-size: 1.05em;
+              font-weight: 700;
+            }
+          }
+          .set-price-and-quantity {
+            position: absolute;
+
+            right: 40px;
+            bottom: 90px;
+            display: flex;
+            div {
+              margin: 10px 10px;
+              height: 20px;
+            }
+
+            .set-price {
+              display: flex;
+              h2 {
+                font-size: calc($baseFontSize + 2px);
+                margin-right: 3px;
+              }
+              h1 {
+                font-size: calc($baseFontSize + 10px);
+              }
+            }
+          }
+          .set-add-cart-btn {
+            position: absolute;
+            right: 30px;
+            bottom: 40px;
+            width: 150px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 35px;
+            font-weight: 600;
+            font-family: $tiraHeaderFont;
+            background-color: $tiraMainDark;
+            color: white;
+            box-shadow: 0 5px 15px 3px rgb($tiraMainDark, 0.1);
+            cursor: pointer;
+            transition: all 0.3s $mainTransition;
+            &:hover {
+              background-color: transparent;
+              color: $tiraMainDark;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .cart-section-container {
     width: 100%;
     height: 100%;
@@ -288,7 +433,7 @@ body {
     align-items: center;
     z-index: 999;
     transform: translateY(900px);
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition: transform 0.6s ease-in-out, opacity 0.6s $mainTransition;
 
     .cart-section-background {
       width: 100%;
@@ -298,6 +443,7 @@ body {
       top: 0;
     }
   }
+
   .cart-section {
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
@@ -386,7 +532,7 @@ body {
             font-family: $tiraHeaderFont;
             font-weight: 500;
             height: 100%;
-            position: absolute;
+            position: relative;
             top: -2px;
           }
           .cart-product-description {
@@ -447,7 +593,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    transition: all 1s ease-in-out;
+    transition: all 1s $mainTransition;
     .totals-item {
       width: 100%;
       padding: 2px 0;
@@ -466,17 +612,19 @@ body {
 
   .checkout {
     height: 25px;
-    border: 0;
+    border: 2px solid transparent;
     padding: 6px 25px;
     background-color: $tiraMainDark;
     color: white;
     font-size: $baseFontSize;
+
     display: flex;
     align-items: center;
     border-radius: 25px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s $mainTransition;
     cursor: pointer;
     &:hover {
+      border: 2px solid $tiraMainDark;
       background-color: white;
       color: $tiraMainDark;
     }

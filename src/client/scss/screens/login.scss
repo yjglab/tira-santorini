@@ -3,10 +3,7 @@
 
 #loginTable {
   margin-top: 0;
-  .hr1 {
-    width: 23%;
-    top: 210px;
-  }
+
   .form-group-login {
     margin-top: 60px;
   }
@@ -36,7 +33,7 @@
       background-color: rgb(251, 250, 255);
 
       font-size: 16px;
-      transition: background-color 0.5s ease-in-out;
+      transition: background-color 0.5s $mainTransition;
     }
     input[type="submit"],
     a {
@@ -47,10 +44,8 @@
       cursor: pointer;
       text-indent: 0;
       border: none;
-      transition: all 0.3s ease-in-out;
+      transition: all 0.5s $mainTransition;
       font-weight: 700;
-      font-family: $tiraHeaderFont;
-      letter-spacing: 1px;
       &:hover {
         background-color: $navColor;
         color: $tiraMainDark;

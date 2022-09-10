@@ -2,7 +2,7 @@
 
 .store-section-container {
   width: 100%;
-  height: 250vh;
+  height: 320vh;
   color: $tiraMainDark;
   font-size: $baseFontSize;
   .store-section-title {
@@ -17,7 +17,7 @@
       bottom: 0;
       font-size: calc($baseFontSize + 1.5em);
       font-family: $tiraHeaderFont;
-      font-weight: 600;
+      font-weight: 700;
     }
   }
   .store-section-content {
@@ -27,22 +27,22 @@
     flex-direction: column;
     align-items: center;
     padding: 2% 10%;
-    background-color: rgb(255, 222, 217);
     h1 {
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: white;
       width: 50%;
-      height: 10%;
+      height: 6%;
       font-family: $tiraGothicFont;
+      text-align: center;
       line-height: 1.5em;
     }
     .store-section-image {
       width: 100%;
-      height: 45%;
+      height: 25%;
       background-color: white;
-      margin: 3%;
+      margin: 2% 0;
       border-radius: 25px;
       box-shadow: 0 5px 45px 3px rgb($tiraMainDark, 0.1);
     }

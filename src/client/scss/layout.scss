@@ -19,10 +19,17 @@ body {
   scroll-behavior: smooth;
   font-family: $tiraLightFont;
 }
+
+main {
+  font-family: $tiraHeaderFont;
+}
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+* {
+  -webkit-font-smoothing: antialiased;
 }
 body {
   // background: white;
@@ -104,11 +111,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  h1 {
-    font-size: $tiraGothicFont;
-    color: white;
-    font-weight: 600;
-    text-align: center;
   }
 }

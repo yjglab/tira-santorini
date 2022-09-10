@@ -30,13 +30,13 @@ body {
     .edit-mode-element-show {
       visibility: hidden;
       opacity: 0;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.5s $mainTransition;
     }
     .edit-mode-element-textbox {
       border: 2px solid white;
       box-sizing: border-box;
       border-radius: 8px;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.5s $mainTransition;
       pointer-events: none;
     }
     form {
@@ -85,7 +85,7 @@ body {
       }
       i {
         margin: 0 10px;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.4s $mainTransition;
         &:hover {
           font-size: 26px;
         }
@@ -116,7 +116,7 @@ body {
           i {
             color: $tiraMainDark;
             font-size: 22px;
-            transition: all 0.4s ease-in-out;
+            transition: all 0.4s $mainTransition;
             cursor: pointer;
 
             &:hover {
@@ -142,18 +142,10 @@ body {
         box-sizing: border-box;
         position: relative;
         h1 {
-          font-family: $tiraHeaderFont;
           font-size: $profileListFontSize;
-          letter-spacing: 1.5px;
           padding: 0px 5px;
           margin-bottom: 10px;
           font-weight: 600;
-        }
-        .hr {
-          width: 100%;
-          height: 2px;
-          background-color: $navColor;
-          margin: 15px 0 12px 0;
         }
 
         textarea {
@@ -192,14 +184,10 @@ body {
             width: 50%;
             height: 100%;
             display: flex;
-
-            // transition: all 1s ease-in-out;
             flex-direction: column;
             h1 {
-              font-family: $tiraHeaderFont;
               font-size: $profileListFontSize;
               font-weight: 600;
-              letter-spacing: 1.5px;
               margin-bottom: 5px;
             }
             h2 {

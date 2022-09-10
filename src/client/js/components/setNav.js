@@ -7,18 +7,13 @@ export const setNav = () => {
 
     const $item = document.querySelector(`.nav-item:nth-of-type(${itemIdx})`);
     $item.classList.add("active");
-
-    const $$navItems = document.querySelectorAll(".nav-item");
-    $$navItems.forEach((item, idx) => {
-      item.addEventListener("click", () => classToggle(item));
-    });
   };
 
   switch (pageTitle.toLowerCase()) {
     case "story":
       set(1);
       break;
-    case "shop":
+    case "online shop":
       set(2);
       break;
     case "offline store":

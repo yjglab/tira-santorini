@@ -1,10 +1,15 @@
 // $mainFont: "Barlow Semi Condensed", sans-serif;
 $serif: "EB Garamond", serif; // "Nanum Myeongjo", serif;
 $sans: "Nanum Gothic", sans-serif;
-$tiraHeaderFont: "Gotham", sans-serif;
+// $tiraHeaderFont: "Gotham", sans-serif;
+$tiraHeaderFont: "Qanelas", sans-serif;
+$tiraLogoLetterSpace: 0.1em;
+// 로고는 weight 800, letter space
 $tiraHeaderBlackFont: "Gotham Black", sans-serif;
 $tiraLightFont: -apple-system, BlinkMacSystemFont, sans-serif;
 $tiraGothicFont: "넥슨Lv2고딕 OTF", "넥슨Lv2고딕OTF", "nexon-lv2-gothic-otf";
+$tiraGothicLetterSpace: -0.02em;
+$mainTransition: cubic-bezier(0.51, 0.08, 0.03, 0.99);
 
 $baseFontSize: 1.05em;
 $tiraMainWhite: rgb(255, 248, 248);

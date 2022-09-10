@@ -21,8 +21,7 @@ html {
   backdrop-filter: blur(3px);
   border-radius: 11.5px;
   z-index: 999;
-  // box-shadow: 0px 0px 14px 2px rgba(205, 94, 94, 0.2);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s $mainTransition;
 }
 
 .nav-item {
@@ -37,7 +36,7 @@ html {
   align-items: center;
   will-change: transform;
   justify-content: center;
-  transition: transform var(--timeOut, var(--duration));
+  transition: all 0.6s $mainTransition;
   width: 20%;
 
   h3 {
@@ -46,12 +45,9 @@ html {
     font-weight: 500;
     color: $tiraMainDark;
 
-    transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
+    transition: color 0.5s $mainTransition, font-size 0.5s $mainTransition;
     position: absolute;
-    &:not(.nav-title-mid) {
-      top: -1.6px;
-      letter-spacing: 0.03em;
-    }
+
     &:hover {
       color: rgb(146, 158, 186);
     }
@@ -59,11 +55,11 @@ html {
 }
 .nav-item:nth-of-type(3) {
   h3 {
-    font-family: "Gotham Black", sans-serif;
-
-    font-size: 1.1em;
-    letter-spacing: 2.7;
-    transition: all 0.3s ease-in-out;
+    font-family: $tiraHeaderFont;
+    font-weight: 800;
+    letter-spacing: $tiraLogoLetterSpace;
+    font-size: calc($baseFontSize - 0.2em);
+    transition: all 0.5s $mainTransition;
   }
 }
 .nav-item::before {
@@ -74,7 +70,7 @@ html {
   border-radius: 50%;
   position: absolute;
   transform: scale(0);
-  transition: background-color var(--duration), transform var(--duration);
+  transition: all 0.8s $mainTransition;
 }
 
 .nav-item.active {
@@ -82,13 +78,13 @@ html {
 }
 
 .nav-item.active::before {
-  transform: scale(1);
-  background-color: var(--bgColorItem);
+  transform: scale(1.2);
+  background-color: white;
+  border: 2px solid $navColor;
 }
 
 .nav-title-mid {
   font-weight: 700;
-  letter-spacing: 3px;
   font-size: 1.3em;
   color: $tiraMainDark;
 }
@@ -122,6 +118,9 @@ html {
       font-size: 0.8em;
     }
   }
+  .nav-item.active::before {
+    border: 2px solid transparent;
+  }
   .nav-item.active {
     transform: none;
   }
@@ -143,7 +142,7 @@ html {
   overflow: hidden;
 
   box-shadow: 0px 0px 40px 4px rgba(40, 21, 21, 0.12);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.5s $mainTransition;
   a {
     display: flex;
     border: none;

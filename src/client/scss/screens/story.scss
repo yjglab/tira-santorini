@@ -51,12 +51,11 @@ body {
         width: 200px;
       }
       span {
-        font-family: $tiraHeaderBlackFont;
-        font-size: 23px;
-        letter-spacing: 3.2px;
+        font-size: calc($baseFontSize + 0.8em);
         color: $tiraMainDark;
         margin: -24px;
         position: absolute;
+        font-weight: 600;
         bottom: 0;
       }
     }
@@ -120,9 +119,7 @@ body {
   --scroll-length: 1.5;
   height: calc(var(--scroll-length) * 100vh);
   width: 100%;
-  font-family: $tiraHeaderBlackFont;
-  font-weight: 100;
-  letter-spacing: 4.5px;
+
   .content-header {
     margin-bottom: 20px;
     font-size: 22px;
@@ -167,16 +164,16 @@ body {
     }
 
     .content-paragraph {
-      grid-row: 2 / 3;
+      width: 80%;
       line-height: 1.6;
       color: white;
+      font-size: calc($baseFontSize - 0.4em);
     }
     .content-subheading,
     .content-paragraph {
       opacity: 1;
       opacity: calc(1 + var(--viewport-y));
       font-family: $tiraGothicFont;
-      letter-spacing: 0.4px;
     }
   }
 }
@@ -261,7 +258,17 @@ body {
   text-align: center;
   height: 65vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  position: relative;
+  .bottom-img {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    bottom: 5%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }

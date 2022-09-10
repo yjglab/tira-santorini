@@ -847,7 +847,7 @@ body {
       color: $tiraMainDark;
       h1,
       p {
-        transition: color 0.7s ease-in-out;
+        transition: color 0.7s $mainTransition;
       }
       h1 {
         font-size: calc($baseFontSize + 0.2em);
@@ -897,12 +897,15 @@ body {
 
     &.one {
       h2 {
+        .one-head {
+          font-weight: 600;
+          margin-bottom: 1%;
+        }
         font-family: $tiraGothicFont;
         letter-spacing: -0.02em;
         line-height: 1.5em;
         width: 70%;
-        top: 10%;
-        margin-bottom: 35px;
+        margin-bottom: 2%;
         color: $tiraMainDark;
         @media all and (min-width: 768px) and (max-width: 1280px) {
           font-size: calc($baseFontSize - 0.1em);
@@ -913,10 +916,11 @@ body {
         }
       }
       .intro__section-card {
-        width: 80%;
-        height: 70%;
+        width: 70%;
+        height: 60%;
         overflow: hidden;
         position: relative;
+        border-radius: 25px;
         @media all and (min-width: 768px) and (max-width: 1280px) {
           width: 80%;
           height: 70%;
@@ -940,8 +944,8 @@ body {
       h2 {
         position: absolute;
         text-align: center;
-        width: 70%;
-        top: 10%;
+        width: 60%;
+        top: 17%;
         color: $tiraMainDark;
         font-family: $tiraGothicFont;
         letter-spacing: -0.02em;
@@ -954,6 +958,10 @@ body {
           font-size: calc($baseFontSize - 0.2em);
           width: 80%;
         }
+      }
+      .intro__section-card {
+        border-radius: 25px;
+        overflow: hidden;
       }
       .intro__section-card:nth-of-type(1) {
         .card-content {
@@ -1043,7 +1051,7 @@ body {
         margin: 0 auto;
         overflow: hidden;
         text-align: center;
-        transition: all 0.4s;
+        transition: all 0.5s $mainTransition;
 
         .card-content__img {
           width: 100%;
@@ -1066,7 +1074,7 @@ body {
         a {
           color: #fff;
           text-decoration: none;
-          transition: all 0.2s;
+          transition: all 0.5s $mainTransition;
         }
 
         &:hover {
@@ -1091,18 +1099,18 @@ body {
           width: 100%;
           top: 0;
           left: 0;
-          transition: all 0.6s;
+          transition: all 0.6s $mainTransition;
 
           h3 {
-            font-size: 1.3em;
-            letter-spacing: 1px;
+            font-size: calc($baseFontSize + 0.2em);
             font-family: $tiraHeaderFont;
+            font-weight: 700;
             margin-bottom: 0;
             // display: inline-block;
 
             a {
               text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.133);
-              transition: all 0.2s;
+              transition: all 0.5s $mainTransition;
             }
           }
 
@@ -1115,7 +1123,7 @@ body {
           .card-content__subtitle {
             width: 200px;
             margin: 0 auto;
-            color: white;
+
             font-family: $tiraHeaderFont;
             font-size: 0.9em;
             font-weight: 400;
@@ -1145,8 +1153,8 @@ body {
           display: flex;
           flex-direction: column;
           align-items: center;
-          transition: bottom 0.64s,
-            opacity 0.63s cubic-bezier(0.33, 0.66, 0.66, 1);
+          transition: bottom 0.64s $mainTransition,
+            opacity 0.63s $mainTransition;
 
           font-family: $tiraGothicFont;
 
@@ -1195,50 +1203,54 @@ body {
           z-index: 10;
           top: 0;
           left: 0;
-          transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+          transition: background 0.5s $mainTransition;
         }
       }
     }
     &.three {
-      flex-direction: row;
+      // flex-direction: row;
       .section-video-wrapper {
+        left: 5%;
         position: absolute;
-        width: 80%;
-        height: 80%;
-        bottom: 10%;
+        width: 70%;
+        height: 75%;
+        // bottom: 10%;
+        // overflow: hidden;
+        border-radius: 25px;
         overflow: hidden;
-
         video {
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
       }
 
       .intro__section-card {
-        background-color: rgba(255, 255, 255, 0.283);
-        backdrop-filter: blur(3px);
-        width: 65%;
-        height: 16%;
+        background-color: $navColor;
+        width: 25%;
+        height: 65%;
         overflow: hidden;
         position: absolute;
-        bottom: 12%;
-        border-radius: 38px;
+        right: 5%;
         display: flex;
         justify-content: center;
         align-items: center;
-        img {
-          position: absolute;
-          z-index: 1;
-        }
+        border-radius: 25px;
       }
       p {
-        width: 90%;
-        line-height: 28px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        padding: 2% 5%;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.7em;
         letter-spacing: -0.02em;
-        color: rgb(34, 34, 34);
+        color: $tiraMainDark;
         font-family: $tiraGothicFont;
         text-align: center;
-        transition: color 0.5s ease-in-out;
       }
     }
   }

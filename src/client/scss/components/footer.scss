@@ -1,140 +1,128 @@
-@import "../config/_variables.scss";
+@import "../config/_variables";
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  bottom: 0;
-  font-family: $tiraGothicFont;
-  background-color: $tiraMainWhite;
+.footer-section-container {
   width: 100%;
-  font-weight: 400;
-  font-size: $baseFontSize;
-  text-align: left;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  padding: 30px 60px;
-
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 20px;
-  }
-
-  .footer-left {
-    width: 33%;
-    padding-right: 15px;
-
-    .about {
-      line-height: 25px;
-      color: $tiraMainDark;
-
-      margin: 0;
-
-      span {
-        display: block;
-        color: $tiraMainDark;
-
-        margin-bottom: 20px;
-      }
-    }
-    .icons {
-      margin-top: 25px;
-
-      a {
-        display: inline-block;
-
-        width: 35px;
-        height: 35px;
-        cursor: pointer;
-        background-color: $tiraMainDark;
-        border-radius: 50%;
-
-        color: white;
-        text-align: center;
-        line-height: 2.2;
-        margin-right: 3px;
-        margin-bottom: 5px;
-      }
-    }
-  }
-
-  .footer-center {
-    width: 30%;
-
-    i {
-      background-color: $tiraMainDark;
-      color: white;
-
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 42px;
-      margin: 10px 15px;
-      vertical-align: middle;
-    }
-    i.fa-envelope {
-      line-height: 38px;
-    }
-
-    p {
-      display: inline-block;
-      color: $tiraMainDark;
-      vertical-align: middle;
-      margin: 0;
-
-      span {
-        display: block;
-
-        line-height: 2;
-      }
-      a {
-        text-decoration: none;
-      }
-    }
-  }
-
-  .footer-right {
-    width: 35%;
-
-    h2 {
-      font-family: "Gotham Black", sans-serif;
-      font-size: 30px;
-      letter-spacing: 3.2px;
-      color: $tiraMainDark;
-    }
-
-    .menu {
-      color: $tiraMainDark;
-      margin: 20px 0 12px;
-      padding: 0;
-
-      a {
-        display: inline-block;
-        line-height: 1.8;
-        text-decoration: none;
-        color: inherit;
-      }
-    }
-
-    .name {
-      margin: 0;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .footer .footer-left,
-  .footer .footer-center,
-  .footer .footer-right {
-    display: block;
+  font-family: $tiraHeaderFont;
+  margin-top: 60px;
+  .footer-container {
     width: 100%;
-    margin-bottom: 40px;
-    text-align: center;
+    height: 100%;
+    background-color: $tiraMainDark;
+    padding: 3.5% 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .footer-title {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+      h1 {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: calc($baseFontSize + 1.5em);
+        font-weight: 700;
+        position: absolute;
+        left: 0;
+      }
+      .contact-us {
+        width: 120px;
+        height: 40px;
+
+        border-radius: 7px;
+        color: white;
+        border: 1px solid white;
+
+        position: absolute;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.5s $mainTransition;
+        &:hover {
+          transform: scale(1.05);
+          color: $tiraMainDark;
+          background-color: white;
+        }
+      }
+    }
+    .footer-sub {
+      width: 100%;
+      height: 60px;
+      align-items: center;
+      display: flex;
+      position: relative;
+
+      .footer-logo-and-text {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        .footer-sub-logo {
+          color: white;
+          width: 20%;
+          font-size: calc($baseFontSize + 0.2em);
+          font-weight: 800;
+          letter-spacing: $tiraLogoLetterSpace;
+        }
+        .footer-sub-text {
+          color: rgba(white, 0.5);
+          width: 80%;
+        }
+      }
+      .footer-mail-and-social {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        position: absolute;
+        right: 0;
+        justify-content: flex-end;
+        .footer-mail {
+          color: rgba(white, 0.5);
+          display: flex;
+          align-items: center;
+          margin: 0 4%;
+        }
+        .footer-social {
+          display: flex;
+          align-items: center;
+          .social-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(white, 0.5);
+            color: white;
+            margin: 0 3px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.5s $mainTransition;
+            &:hover {
+              background-color: rgba(white, 1);
+            }
+            i {
+              color: $tiraMainDark;
+            }
+          }
+        }
+      }
+    }
   }
-  .footer .footer-center i {
-    margin-left: 0;
+  .footer-extra-container {
+    width: 100%;
+    height: 60px;
   }
 }
