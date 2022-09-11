@@ -1,7 +1,6 @@
 import express from "express";
 import morgan from "morgan";
 import globalRouter from "./routers/globalRouter.js";
-import mainRouter from "./routers/mainRouter.js";
 import userRouter from "./routers/userRouter.js";
 import session from "express-session";
 import { localsMiddleware } from "./middlewares.js";
@@ -39,7 +38,7 @@ app.use(localsMiddleware);
 app.use("/userUploads", express.static("userUploads"));
 app.use("/static", express.static("assets")); // access 부여
 app.use("/", globalRouter);
-app.use("/main", mainRouter);
+
 app.use("/users", userRouter);
 app.get("*", (req, res) => {
   res.status(404).render("404", { pageTitle: "404 Not Found" });

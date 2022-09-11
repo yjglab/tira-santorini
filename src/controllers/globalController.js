@@ -23,8 +23,3 @@ export const store = async (req, res) => {
     pageTitle: "Offline Store",
   });
 };
-export const test = async (req, res) => {
-  return res.render("test", {
-    pageTitle: "test",
-  });
-};

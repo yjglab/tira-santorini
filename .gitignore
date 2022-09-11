@@ -3,4 +3,5 @@
 /src/client/videos
 /assets
 /userUploads
+/build
 .env
