@@ -4,7 +4,6 @@ import {
   intro,
   shop,
   story,
-  test,
   review,
   store,
 } from "../controllers/globalController.js";
@@ -33,6 +32,5 @@ globalRouter.get("/story", story);
 globalRouter.get("/shop", shop);
 globalRouter.get("/store", store);
 globalRouter.get("/review", review);
-globalRouter.get("/test", test);
 
 export default globalRouter;

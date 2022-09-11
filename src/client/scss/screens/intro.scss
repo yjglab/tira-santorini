@@ -852,7 +852,7 @@ body {
       h1 {
         font-size: calc($baseFontSize + 0.2em);
         margin-bottom: 30px;
-        font-weight: 500;
+        font-weight: 700;
       }
       p {
         width: 100%;
@@ -916,8 +916,8 @@ body {
         }
       }
       .intro__section-card {
-        width: 70%;
-        height: 60%;
+        width: 72%;
+        height: 65%;
         overflow: hidden;
         position: relative;
         border-radius: 25px;
@@ -1226,12 +1226,13 @@ body {
       }
 
       .intro__section-card {
-        background-color: $navColor;
-        width: 25%;
+        background-color: white;
+        box-shadow: 0 10px 35px 8px rgb(0, 0, 0, 0.1);
+        width: 28%;
         height: 65%;
         overflow: hidden;
         position: absolute;
-        right: 5%;
+        right: 4%;
         display: flex;
         justify-content: center;
         align-items: center;

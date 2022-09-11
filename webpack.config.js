@@ -39,10 +39,6 @@ module.exports = {
       BASE_JS_PATH + "pages/store.js",
       BASE_SCSS_PATH + "screens/store.scss",
     ],
-    test: [
-      BASE_JS_PATH + "pages/test.js",
-      BASE_SCSS_PATH + "screens/test.scss",
-    ],
   },
   mode: "development",
   plugins: [
