@@ -17,8 +17,11 @@
 if loggedIn
     .user
         a(href=`/users/${loggedInUser._id}/profile`)
-            img(src="../../" + loggedInUser.avatarUrl)
-else 
+            if loggedInUser.socialOnly
+                img(src=loggedInUser.avatarUrl)
+            else
+                img(src="../../" + loggedInUser.avatarUrl)
+else    
     .user 
         a(href="/login")
             img(src="/static/img/profile-base-dk.png")
