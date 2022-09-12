@@ -1,6 +1,5 @@
 /node_modules
-/src/client/img
-/src/client/videos
+
 /assets
 /userUploads
 /build

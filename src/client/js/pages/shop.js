@@ -183,7 +183,6 @@ function updateQuantity(quantityInput) {
   let price = parseInt(productRow.children(".cart-product-price").text());
   let quantity = $(quantityInput).val();
   let linePrice = price * quantity;
-  console.log(linePrice);
   productRow.children(".cart-product-line-price").each(function () {
     $(this).fadeOut(fadeTime, function () {
       $(this).text(linePrice);

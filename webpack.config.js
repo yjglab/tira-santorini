@@ -8,17 +8,13 @@ module.exports = {
   entry: {
     layout: [BASE_JS_PATH + "layout.js", BASE_SCSS_PATH + "layout.scss"],
     intro: [BASE_JS_PATH + "intro.js", BASE_SCSS_PATH + "screens/intro.scss"],
-    main: [BASE_JS_PATH + "main.js", BASE_SCSS_PATH + "screens/main.scss"],
     nav: [BASE_JS_PATH + "components/nav.js"],
 
     story: [
       BASE_JS_PATH + "pages/story.js",
       BASE_SCSS_PATH + "screens/story.scss",
     ],
-    review: [
-      BASE_JS_PATH + "pages/review.js",
-      BASE_SCSS_PATH + "screens/review.scss",
-    ],
+
     register: [
       BASE_JS_PATH + "pages/register.js",
       BASE_SCSS_PATH + "screens/register.scss",
@@ -40,14 +36,14 @@ module.exports = {
       BASE_SCSS_PATH + "screens/store.scss",
     ],
   },
-  mode: "development",
+  // mode: "development",
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
       // filename: "css/styles.css",
     }),
   ],
-  watch: true,
+  // watch: true,
   watchOptions: {
     ignored: /node_modules/,
     // aggregateTimeout: 3000,
