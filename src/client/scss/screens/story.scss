@@ -51,6 +51,7 @@ body {
         width: 200px;
       }
       span {
+        font-weight: $tiraHeaderFont;
         font-size: calc($baseFontSize + 0.8em);
         color: $tiraMainDark;
         margin: -24px;
@@ -154,11 +155,13 @@ body {
         font-size: 3em;
         margin-bottom: 20px;
         font-weight: 700;
+        font-weight: $tiraHeaderFont;
       }
 
       .content-subheading {
         font-size: 1.25em;
         font-weight: 600;
+        font-weight: $tiraHeaderFont;
         color: white;
       }
     }

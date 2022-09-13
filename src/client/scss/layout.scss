@@ -73,7 +73,7 @@ body {
   border-radius: 10000px;
   border-bottom-right-radius: 0;
   text-align: center;
-  animation: goAway 4s ease-in-out forwards;
+  animation: goAway 4s $mainTransition forwards;
   animation-delay: 300ms;
   z-index: 999;
   font-weight: 600;

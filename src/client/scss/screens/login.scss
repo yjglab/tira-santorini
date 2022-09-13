@@ -45,6 +45,7 @@
       text-indent: 0;
       border: none;
       transition: all 0.5s $mainTransition;
+      font-family: $tiraHeaderFont;
       font-weight: 700;
       &:hover {
         background-color: $navColor;
@@ -55,6 +56,7 @@
 
   .form-group-social {
     a {
+      font-family: $tiraHeaderFont;
       background-color: black;
       color: white;
       &:hover {

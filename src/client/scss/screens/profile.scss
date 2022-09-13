@@ -142,10 +142,11 @@ body {
         box-sizing: border-box;
         position: relative;
         h1 {
+          font-family: $tiraHeaderFont;
+          font-weight: 700;
           font-size: $profileListFontSize;
           padding: 0px 5px;
           margin-bottom: 10px;
-          font-weight: 600;
         }
 
         textarea {
@@ -186,8 +187,10 @@ body {
             display: flex;
             flex-direction: column;
             h1 {
+              font-family: $tiraHeaderFont;
+              font-weight: 700;
               font-size: $profileListFontSize;
-              font-weight: 600;
+
               margin-bottom: 5px;
             }
             h2 {

@@ -33,6 +33,7 @@ main {
   }
 
   .register-title {
+    font-family: $tiraHeaderFont;
     margin-bottom: 65px;
     color: $tiraMainDark;
     font-weight: 700;
@@ -105,6 +106,7 @@ main {
             border: none;
             transition: all 0.5s $mainTransition;
             font-weight: 700;
+            font-family: $tiraHeaderFont;
             &:hover {
               background-color: $tiraColor2;
               color: $tiraMainDark;
