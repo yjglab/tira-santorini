@@ -3,7 +3,7 @@ const productObjects = {
   product1: {
     name: "OIA",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-01-1.png",
+    imgSrc: "/static/img/",
     explain: "달콤한 딸기와 치즈를 배합하여 만든 부드러운 티라미수",
     ingredient: "255,23.3,3,5.5,70,계란•우유•밀",
     backColor: "linear-gradient(196deg, white, #ffe2dd)",
@@ -11,7 +11,7 @@ const productObjects = {
   product2: {
     name: "FIRA",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-02-1.png",
+    imgSrc: "/static/img/",
     explain: "상큼한 자몽과 망고를 배합하여 만든 새콤한 티라미수",
     ingredient: "230,25.2,4,6.5,65,계란•우유•밀",
     backColor: "linear-gradient(196deg, #ffe3e0, #ffb3ab)",
@@ -19,7 +19,7 @@ const productObjects = {
   product3: {
     name: "AKROTIRI",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-03-1.png",
+    imgSrc: "/static/img/",
     explain: "마스카포네 치즈와 에스프레소를 배합하여 만든 정통 티라미수",
     ingredient: "300,7.5,5.4,6.5,60,계란•우유•밀",
     backColor: "linear-gradient(196deg, #c69191, #764c4c)",
@@ -27,7 +27,7 @@ const productObjects = {
   product4: {
     name: "FIROSTEFANI",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-04-1.png",
+    imgSrc: "/static/img/",
     explain: "시원한 민트와 청포도를 배합하여 만든 시그니처 티라미수",
     ingredient: "355,31.2,5.5,14,77,계란•우유•밀",
     backColor: "linear-gradient(196deg, #edf2ff, #c5d4ff)",
@@ -35,7 +35,7 @@ const productObjects = {
   product5: {
     name: "IMEROVIGLI",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-05-1.png",
+    imgSrc: "/static/img/",
     explain: "블루베리와 치즈를 배합하여 만든 부드럽고 달콤한 티라미수",
     ingredient: "340,30,5.3,14,79,계란•우유•밀",
     backColor: "linear-gradient(196deg, #afc9ff, #87adff)",
@@ -43,12 +43,93 @@ const productObjects = {
   product6: {
     name: "KAMARI",
     price: 6000,
-    imgSrc: "/static/img/digital-mkup-06-1.png",
+    imgSrc: "/static/img/",
     explain: "흑임자와 초콜릿 쿠키를 배합하여 만든 진한 티라미수",
     ingredient: "402,41,3.5,19,66.2,계란•우유•밀",
     backColor: "linear-gradient(196deg, #9595ae, #64647e)",
   },
+  pack3_01: {
+    name: "TIRA 3 PACK",
+    subTitle: "티라미수 3 PACK",
+    price: 18000,
+    imgSrc: "",
+    explain: `산토리니 OIA, FIRA, AKROTIRI 마을의 패키지를 모두 담은 티라의 프로모션 패키지.<br>
+    믿을 수 있는 재료로 만든 깨끗하고 정직한 핸드메이드 디저트입니다.<br><br> 
+    각 1인분 기준의 용량이 총 3가지로 구성되어 있으며 시트 끝까지 깊게 한 스푼 떠서
+    드시면 진한 마스카포네 치즈와 각각의 파우더가 함께 어우러져 깊은 맛을 선사합니다.`,
+    backColor: "linear-gradient(196deg, #fde7e5, #ffffff)",
+  },
+  pack3_02: {
+    name: "TIRA 3 PACK",
+    subTitle: "티라미수 3 PACK",
+    price: 18000,
+    imgSrc: "",
+    explain: `산토리니 FIROSTEFANI, IMEROVIGLI, KAMARI 마을의 패키지를 모두 담은 티라의 프로모션 패키지.<br>
+    믿을 수 있는 재료로 만든 깨끗하고 정직한 핸드메이드 디저트입니다.<br><br> 
+    각 1인분 기준의 용량이 총 3가지로 구성되어 있으며 시트 끝까지 깊게 한 스푼 떠서
+    드시면 진한 마스카포네 치즈와 각각의 파우더가 함께 어우러져 깊은 맛을 선사합니다.`,
+    backColor: "linear-gradient(196deg, #c0d3ff, #eaf1ff)",
+  },
+  pack_whole: {
+    name: "TIRA WHOLE PACK",
+    subTitle: "티라미수 WHOLE PACK",
+    price: 36000,
+    imgSrc: "",
+    explain: `산토리니 여섯 마을의 패키지를 모두 담은 티라의 대표 프로모션 패키지.<br>
+믿을 수 있는 재료로 만든 깨끗하고 정직한 핸드메이드 디저트입니다.<br><br> 
+각 1인분 기준의 용량이 총 6가지로 구성되어 있으며 시트 끝까지 깊게 한 스푼 떠서
+드시면 진한 마스카포네 치즈와 각각의 파우더가 함께 어우러져 깊은 맛을 선사합니다.`,
+    backColor: "linear-gradient(196deg, #ffebeb, #d9e1ff)",
+  },
 };
+let singleProduct;
+let setProduct;
+
+const $setSectionContainer = document.querySelector(".set-section-container");
+const $setIndividualContainer = $setSectionContainer.querySelector(
+  ".set-individual-container"
+);
+const $setContainer = $setSectionContainer.querySelector(".set-container");
+const $setImg = $setContainer.querySelector(".set-img-container img");
+const $setName = $setContainer.querySelector(".set-name > h1");
+const $setDescription = $setContainer.querySelector(".set-description > p");
+const $setPrice = $setContainer.querySelector(".set-price .price");
+const $setCartBtn = $setContainer.querySelector(".set-add-cart-btn");
+const $setPickers = $setContainer.querySelectorAll(".set-picker");
+
+const handlePromotionPackChange = (e) => {
+  $setPickers.forEach((v) => v.classList.remove("picked"));
+  e.currentTarget.classList.add("picked");
+  const nowPickedClass = e.currentTarget.classList;
+  if (nowPickedClass.contains("pack-3-01")) {
+    $setName.textContent = productObjects.pack3_01.name;
+    $setDescription.innerHTML = productObjects.pack3_01.explain;
+    $setPrice.textContent = productObjects.pack3_01.price;
+    $setImg.src = productObjects.pack3_01.imgSrc;
+    $setIndividualContainer.style.background =
+      productObjects.pack3_01.backColor;
+    setProduct = JSON.parse(JSON.stringify(productObjects.pack3_01));
+  } else if (nowPickedClass.contains("pack-3-02")) {
+    $setName.textContent = productObjects.pack3_02.name;
+    $setDescription.innerHTML = productObjects.pack3_02.explain;
+    $setPrice.textContent = productObjects.pack3_02.price;
+    $setImg.src = productObjects.pack3_02.imgSrc;
+    $setIndividualContainer.style.background =
+      productObjects.pack3_02.backColor;
+    setProduct = JSON.parse(JSON.stringify(productObjects.pack3_02));
+  } else if (nowPickedClass.contains("pack-whole")) {
+    $setName.textContent = productObjects.pack_whole.name;
+    $setDescription.innerHTML = productObjects.pack_whole.explain;
+    $setPrice.textContent = productObjects.pack_whole.price;
+    $setImg.src = productObjects.pack_whole.imgSrc;
+    $setIndividualContainer.style.background =
+      productObjects.pack_whole.backColor;
+    setProduct = JSON.parse(JSON.stringify(productObjects.pack_whole));
+  }
+};
+$setPickers.forEach((v) =>
+  v.addEventListener("click", handlePromotionPackChange)
+);
 
 const handleProductChange = (productObject) => {
   function smoothChange() {
@@ -72,7 +153,6 @@ const handleProductChange = (productObject) => {
 
   changeBackgroundSmoothly();
 };
-let nowProduct = JSON.parse(JSON.stringify(productObjects.product1));
 
 const $productPick = document.querySelectorAll(".product-pick");
 const handleProductPick = (e) => {
@@ -81,28 +161,33 @@ const handleProductPick = (e) => {
 
   if (e.target.classList.contains("pick-1")) {
     handleProductChange(productObjects.product1);
-    nowProduct = JSON.parse(JSON.stringify(productObjects.product1));
+    singleProduct = JSON.parse(JSON.stringify(productObjects.product1));
   } else if (e.target.classList.contains("pick-2")) {
     handleProductChange(productObjects.product2);
-    nowProduct = JSON.parse(JSON.stringify(productObjects.product2));
+    singleProduct = JSON.parse(JSON.stringify(productObjects.product2));
   } else if (e.target.classList.contains("pick-3")) {
     handleProductChange(productObjects.product3);
-    nowProduct = JSON.parse(JSON.stringify(productObjects.product3));
+    singleProduct = JSON.parse(JSON.stringify(productObjects.product3));
   } else if (e.target.classList.contains("pick-4")) {
     handleProductChange(productObjects.product4);
-    nowProduct = JSON.parse(JSON.stringify(productObjects.product4));
+    singleProduct = JSON.parse(JSON.stringify(productObjects.product4));
   } else if (e.target.classList.contains("pick-5")) {
     handleProductChange(productObjects.product5);
-    nowProduct = JSON.parse(JSON.stringify(productObjects.product5));
+    singleProduct = JSON.parse(JSON.stringify(productObjects.product5));
   } else if (e.target.classList.contains("pick-6")) {
     handleProductChange(productObjects.product6);
-    nowProduct = JSON.parse(JSON.stringify(productObjects.product6));
+    singleProduct = JSON.parse(JSON.stringify(productObjects.product6));
   }
 };
+const $productSection = document.querySelector(".product-section");
+
+const $productPrice = $productSection.querySelector(".product-price .price");
 $productPick.forEach((v) =>
-  v.addEventListener("click", (e) => handleProductPick(e))
+  v.addEventListener("click", (e) => {
+    $productPrice.textContent = "6000";
+    handleProductPick(e);
+  })
 );
-handleProductChange(productObjects.product1);
 
 // 카트에 넣기
 const $productAddCartBtn = document.querySelector(".product-add-cart-btn");
@@ -110,21 +195,34 @@ const $cartSectionContainer = document.querySelector(".cart-section-container");
 const $cartSectionBackground = document.querySelector(
   ".cart-section-background"
 );
-const $productSection = document.querySelector(".product-section");
 
-const handleAddCart = () => {
+const handleAddCart = (kind) => {
   // 카트 컨테이너 플로팅
+
+  let nowKind;
+  if (kind === "single") {
+    if (!singleProduct) {
+      alert("제품을 먼저 선택해주세요!");
+      return;
+    }
+    nowKind = JSON.parse(JSON.stringify(singleProduct));
+  } else if (kind === "set") {
+    if (!setProduct) {
+      alert("패키지를 먼저 선택해주세요!");
+      return;
+    }
+    nowKind = JSON.parse(JSON.stringify(setProduct));
+  }
   $cartSectionContainer.style.transform = "translateY(0px)";
   $cartSectionContainer.style.opacity = 1;
   $productSection.style.filter = "blur(10px)";
-
+  $setSectionContainer.style.filter = "blur(10px)";
   // 카트 목록 추가
   const clone = document.querySelector(".cart-product").cloneNode(true);
-  clone.querySelector(".cart-product-price").textContent = nowProduct.price;
-  clone.querySelector(".cart-product-line-price").textContent =
-    nowProduct.price;
-  clone.querySelector(".cart-product-image img").src = nowProduct.imgSrc;
-  clone.querySelector(".cart-product-title").textContent = nowProduct.name;
+  clone.querySelector(".cart-product-price").textContent = nowKind.price;
+  clone.querySelector(".cart-product-line-price").textContent = nowKind.price;
+  clone.querySelector(".cart-product-image img").src = nowKind.imgSrc;
+  clone.querySelector(".cart-product-title").textContent = nowKind.name;
   document.querySelector(".cart").appendChild(clone);
 
   $(".cart-product-removal button").click(function () {
@@ -137,17 +235,17 @@ const handleAddCart = () => {
   recalculateCart();
 };
 // 카트 닫기
-$productAddCartBtn.addEventListener("click", handleAddCart);
+$productAddCartBtn.addEventListener("click", () => handleAddCart("single"));
+$setCartBtn.addEventListener("click", () => handleAddCart("set"));
 $cartSectionBackground.addEventListener("click", () => {
   $productSection.style.filter = "blur(0px)";
+  $setSectionContainer.style.filter = "blur(0px)";
   $cartSectionContainer.style.transform = "translateY(900px)";
   $cartSectionContainer.style.opacity = 0;
 });
 // 카트
 let shippingCost = 2500;
 let fadeTime = 200;
-
-// recalculateCart();
 
 function recalculateCart() {
   let subtotal = 0;
@@ -199,15 +297,3 @@ function removeItem(removeButton) {
     recalculateCart();
   });
 }
-
-// setTimeout(() => {
-//   let cl = document.querySelector(".cart-product:nth-of-type(1)");
-//   let clone = cl.cloneNode(true);
-//   document.querySelector(".shopping-cart").appendChild(clone);
-//   recalculateCart();
-// }, 1000);
-
-// setTimeout(() => {
-//   document.querySelector(".product-img-section img").src =
-//     "/static/img/anms.png";
-// }, 1000);
