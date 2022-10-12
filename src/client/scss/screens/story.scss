@@ -51,7 +51,7 @@ body {
         width: 200px;
       }
       span {
-        font-weight: $tiraHeaderFont;
+        font-family: $tiraHeaderFont;
         font-size: calc($baseFontSize + 0.8em);
         color: $tiraMainDark;
         margin: -24px;
