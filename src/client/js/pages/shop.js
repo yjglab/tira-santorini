@@ -3,7 +3,7 @@ const productObjects = {
   product1: {
     name: "OIA",
     price: 6000,
-    imgSrc: "/static/img/",
+    imgSrc: "/static/img/s-1.jpeg",
     explain: "달콤한 딸기와 치즈를 배합하여 만든 부드러운 티라미수",
     ingredient: "255,23.3,3,5.5,70,계란•우유•밀",
     backColor: "linear-gradient(196deg, white, #ffe2dd)",
@@ -11,7 +11,7 @@ const productObjects = {
   product2: {
     name: "FIRA",
     price: 6000,
-    imgSrc: "/static/img/",
+    imgSrc: "/static/img/s-2.jpeg",
     explain: "상큼한 자몽과 망고를 배합하여 만든 새콤한 티라미수",
     ingredient: "230,25.2,4,6.5,65,계란•우유•밀",
     backColor: "linear-gradient(196deg, #ffe3e0, #ffb3ab)",
@@ -19,7 +19,7 @@ const productObjects = {
   product3: {
     name: "AKROTIRI",
     price: 6000,
-    imgSrc: "/static/img/",
+    imgSrc: "/static/img/s-3.jpeg",
     explain: "마스카포네 치즈와 에스프레소를 배합하여 만든 정통 티라미수",
     ingredient: "300,7.5,5.4,6.5,60,계란•우유•밀",
     backColor: "linear-gradient(196deg, #c69191, #764c4c)",
@@ -27,7 +27,7 @@ const productObjects = {
   product4: {
     name: "FIROSTEFANI",
     price: 6000,
-    imgSrc: "/static/img/",
+    imgSrc: "/static/img/s-4.jpeg",
     explain: "시원한 민트와 청포도를 배합하여 만든 시그니처 티라미수",
     ingredient: "355,31.2,5.5,14,77,계란•우유•밀",
     backColor: "linear-gradient(196deg, #edf2ff, #c5d4ff)",
@@ -35,7 +35,7 @@ const productObjects = {
   product5: {
     name: "IMEROVIGLI",
     price: 6000,
-    imgSrc: "/static/img/",
+    imgSrc: "/static/img/s-5.jpeg",
     explain: "블루베리와 치즈를 배합하여 만든 부드럽고 달콤한 티라미수",
     ingredient: "340,30,5.3,14,79,계란•우유•밀",
     backColor: "linear-gradient(196deg, #afc9ff, #87adff)",
@@ -43,7 +43,7 @@ const productObjects = {
   product6: {
     name: "KAMARI",
     price: 6000,
-    imgSrc: "/static/img/",
+    imgSrc: "/static/img/s-6.jpeg",
     explain: "흑임자와 초콜릿 쿠키를 배합하여 만든 진한 티라미수",
     ingredient: "402,41,3.5,19,66.2,계란•우유•밀",
     backColor: "linear-gradient(196deg, #9595ae, #64647e)",
@@ -52,7 +52,7 @@ const productObjects = {
     name: "TIRA 3 PACK",
     subTitle: "티라미수 3 PACK",
     price: 18000,
-    imgSrc: "",
+    imgSrc: "/static/img/3p-1.jpeg",
     explain: `산토리니 OIA, FIRA, AKROTIRI 마을의 패키지를 모두 담은 티라의 프로모션 패키지.<br>
     믿을 수 있는 재료로 만든 깨끗하고 정직한 핸드메이드 디저트입니다.<br><br> 
     각 1인분 기준의 용량이 총 3가지로 구성되어 있으며 시트 끝까지 깊게 한 스푼 떠서
@@ -63,7 +63,7 @@ const productObjects = {
     name: "TIRA 3 PACK",
     subTitle: "티라미수 3 PACK",
     price: 18000,
-    imgSrc: "",
+    imgSrc: "/static/img/3p-2.jpeg",
     explain: `산토리니 FIROSTEFANI, IMEROVIGLI, KAMARI 마을의 패키지를 모두 담은 티라의 프로모션 패키지.<br>
     믿을 수 있는 재료로 만든 깨끗하고 정직한 핸드메이드 디저트입니다.<br><br> 
     각 1인분 기준의 용량이 총 3가지로 구성되어 있으며 시트 끝까지 깊게 한 스푼 떠서
@@ -74,7 +74,7 @@ const productObjects = {
     name: "TIRA WHOLE PACK",
     subTitle: "티라미수 WHOLE PACK",
     price: 36000,
-    imgSrc: "",
+    imgSrc: "/static/img/w-2.jpeg",
     explain: `산토리니 여섯 마을의 패키지를 모두 담은 티라의 대표 프로모션 패키지.<br>
 믿을 수 있는 재료로 만든 깨끗하고 정직한 핸드메이드 디저트입니다.<br><br> 
 각 1인분 기준의 용량이 총 6가지로 구성되어 있으며 시트 끝까지 깊게 한 스푼 떠서
