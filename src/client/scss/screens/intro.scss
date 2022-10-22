@@ -1234,27 +1234,12 @@ body {
           z-index: 1;
         }
       }
-      // .section-video-wrapper {
-      //   left: 5%;
-      //   position: absolute;
-      //   width: 70%;
-      //   height: 75%;
-      //   // bottom: 10%;
-      //   // overflow: hidden;
-      //   border-radius: 25px;
-      //   overflow: hidden;
-      //   video {
-      //     width: 100%;
-      //     height: 100%;
-      //     object-fit: cover;
-      //   }
-      // }
 
       .intro__section-card {
         background-color: white;
         box-shadow: 0 10px 35px 8px rgb(0, 0, 0, 0.1);
         width: 30%;
-        height: 35%;
+        height: 40%;
         overflow: hidden;
         position: absolute;
         top: 10%;
@@ -1263,21 +1248,41 @@ body {
         justify-content: center;
         align-items: center;
         border-radius: 25px;
-      }
-      p {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-
-        padding: 2% 5%;
-        justify-content: center;
-        align-items: center;
-        line-height: 1.7em;
-        letter-spacing: -0.02em;
-        color: $tiraMainDark;
-        font-family: $tiraGothicFont;
-        text-align: center;
+        a {
+          display: flex;
+          width: 100px;
+          height: 50px;
+          background-color: $tiraMainDark;
+          position: absolute;
+          bottom: 20px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 20px;
+          transition: all 0.3s $mainTransition;
+          border: 2px solid transparent;
+          &:hover {
+            transform: scale(1.1);
+            color: $tiraMainDark;
+            background-color: white;
+            border: 2px solid $tiraMainDark;
+          }
+        }
+        p {
+          width: 100%;
+          height: 80%;
+          position: absolute;
+          top: 4%;
+          display: flex;
+          flex-direction: column;
+          padding: 2% 5%;
+          justify-content: center;
+          align-items: center;
+          line-height: 1.7em;
+          letter-spacing: -0.02em;
+          color: $tiraMainDark;
+          font-family: $tiraGothicFont;
+          text-align: center;
+        }
       }
     }
   }
