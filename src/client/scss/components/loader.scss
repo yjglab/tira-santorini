@@ -1,73 +1,213 @@
+@import "../config/_variables";
+
+$russian-violet: #110d31ff;
+$light-coral: white;
+$size: 80px;
+$animation-duration: 2s;
+
 #loader {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  background: white;
+  background: $tiraMainDark;
   position: fixed;
   left: 0px;
   top: 0px;
   z-index: 9999999;
 }
 
-$offset: 187;
-$duration: 1.4s;
-
-.spinner {
-  animation: rotator $duration linear infinite;
+.cube-container {
+  position: relative;
+  z-index: 2;
+  height: $size * 2.75;
+  width: $size * 2.75;
+  display: grid;
+  place-items: center;
 }
 
-@keyframes rotator {
+.cube-wrapper {
+  transform-style: preserve-3d;
+  animation: bouncing $animation-duration infinite;
+}
+
+.cube {
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateZ(45deg);
+  animation: rotation $animation-duration infinite;
+}
+
+.cube-faces {
+  transform-style: preserve-3d;
+  height: $size;
+  width: $size;
+  position: relative;
+  transform-origin: 0 0;
+  transform: translateX(0) translateY(0) translateZ(-$size/2);
+}
+
+.cube-face {
+  position: absolute;
+  inset: 0;
+  background: $russian-violet;
+  border: solid 1px $light-coral;
+  &.shadow {
+    transform: translateZ(-$size);
+    animation: bouncing-shadow $animation-duration infinite;
+  }
+  &.top {
+    transform: translateZ($size);
+  }
+  &.front {
+    transform-origin: 0 50%;
+    transform: rotateY(-90deg);
+  }
+  &.back {
+    transform-origin: 0 50%;
+    transform: rotateY(-90deg) translateZ(-$size);
+  }
+  &.right {
+    transform-origin: 50% 0;
+    transform: rotateX(-90deg) translateY(-$size);
+  }
+  &.left {
+    transform-origin: 50% 0;
+    transform: rotateX(-90deg) translateY(-$size) translateZ($size);
+  }
+  &.front,
+  &.back {
+    div {
+      &:nth-of-type(1) {
+        height: 100%;
+        width: 20%;
+        background-color: white;
+      }
+    }
+  }
+  &.left,
+  &.right {
+    div {
+      &:nth-of-type(1) {
+        width: 100%;
+        height: 20%;
+        background-color: white;
+      }
+    }
+  }
+}
+
+@keyframes rotation {
+  $start: 45deg;
+
   0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(270deg);
-  }
-}
-
-.path {
-  stroke-dasharray: $offset;
-  stroke-dashoffset: 0;
-  transform-origin: center;
-  animation: dash $duration ease-in-out infinite,
-    colors ($duration * 4) ease-in-out infinite;
-}
-
-@keyframes colors {
-  0% {
-    stroke: $tiraMainDark;
-    opacity: 0;
-  }
-  25% {
-    stroke: $tiraMainDark;
-    opacity: 1;
+    transform: rotateX($start) rotateY(0) rotateZ($start);
+    animation-timing-function: cubic-bezier(0.17, 0.84, 0.44, 1);
   }
   50% {
-    stroke: $tiraMainDark;
-    opacity: 0;
-  }
-  75% {
-    stroke: $tiraMainDark;
-    opacity: 1;
+    transform: rotateX($start) rotateY(0) rotateZ($start + 360/2);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
   }
   100% {
-    stroke: $tiraMainDark;
-    opacity: 0;
+    transform: rotateX($start) rotateY(0) rotateZ($start + 360);
+    animation-timing-function: cubic-bezier(0.17, 0.84, 0.44, 1);
   }
 }
 
-@keyframes dash {
+@keyframes bouncing {
   0% {
-    stroke-dashoffset: $offset;
+    transform: translateY(-$size * 0.5);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
   }
-  50% {
-    stroke-dashoffset: $offset/4;
-    transform: rotate(135deg);
+
+  45% {
+    transform: translateY($size * 0.5);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
   }
+
   100% {
-    stroke-dashoffset: $offset;
-    transform: rotate(450deg);
+    transform: translateY(-$size * 0.5);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
   }
 }
+
+@keyframes bouncing-shadow {
+  0% {
+    transform: translateZ(-$size) scale(1.3);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+    opacity: 0.05;
+  }
+
+  45% {
+    transform: translateZ(0);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateZ(-$size) scale(1.3);
+    animation-timing-function: cubic-bezier(0.76, 0.05, 0.86, 0.06);
+    opacity: 0.05;
+  }
+}
+
+// $offset: 187;
+// $duration: 1.4s;
+
+// .spinner {
+//   animation: rotator $duration linear infinite;
+// }
+
+// @keyframes rotator {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(270deg);
+//   }
+// }
+
+// .path {
+//   stroke-dasharray: $offset;
+//   stroke-dashoffset: 0;
+//   transform-origin: center;
+//   animation: dash $duration ease-in-out infinite,
+//     colors ($duration * 4) ease-in-out infinite;
+// }
+
+// @keyframes colors {
+//   0% {
+//     stroke: $tiraMainDark;
+//     opacity: 0;
+//   }
+//   25% {
+//     stroke: $tiraMainDark;
+//     opacity: 1;
+//   }
+//   50% {
+//     stroke: $tiraMainDark;
+//     opacity: 0;
+//   }
+//   75% {
+//     stroke: $tiraMainDark;
+//     opacity: 1;
+//   }
+//   100% {
+//     stroke: $tiraMainDark;
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes dash {
+//   0% {
+//     stroke-dashoffset: $offset;
+//   }
+//   50% {
+//     stroke-dashoffset: $offset/4;
+//     transform: rotate(135deg);
+//   }
+//   100% {
+//     stroke-dashoffset: $offset;
+//     transform: rotate(450deg);
+//   }
+// }

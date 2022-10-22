@@ -26,7 +26,7 @@ function clickItem(item, index) {
 
   activeItem = item;
   setTimeout(() => {
-    $("#loader").fadeIn();
+    $("#").fadeIn();
   }, 300);
   const navItemTitle = item.children[0].textContent.toLowerCase();
   if (navItemTitle === "tira") {

@@ -1,3 +1,24 @@
+//- #loader
+//-     svg.spinner(width="65px", height="65px", viewBox="0 0 66 66", xmlns="http://www.w3.org/2000/svg")
+//-         circle.path(fill="none", stroke-width="6", stroke-linecap="round", cx="33", cy="33", r="30")
 #loader
-    svg.spinner(width="65px", height="65px", viewBox="0 0 66 66", xmlns="http://www.w3.org/2000/svg")
-        circle.path(fill="none", stroke-width="6", stroke-linecap="round", cx="33", cy="33", r="30")
+    .cube-container
+        .cube-wrapper
+            .cube
+                .cube-faces
+                    .cube-face.shadow
+                    .cube-face.bottom
+                    .cube-face.top
+                       
+                    .cube-face.left
+                        - for(let i = 0; i < 3; i += 1)
+                            div
+                    .cube-face.right
+                        - for(let i = 0; i < 3; i += 1)
+                            div
+                    .cube-face.back
+                        - for(let i = 0; i < 3; i += 1)
+                            div
+                    .cube-face.front
+                        - for(let i = 0; i < 3; i += 1)
+                            div
