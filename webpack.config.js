@@ -35,6 +35,10 @@ module.exports = {
       BASE_JS_PATH + "pages/store.js",
       BASE_SCSS_PATH + "screens/store.scss",
     ],
+    usermenu: [
+      BASE_JS_PATH + "pages/usermenu.js",
+      BASE_SCSS_PATH + "screens/usermenu.scss",
+    ],
   },
   // mode: "development",
   plugins: [

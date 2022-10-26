@@ -6,6 +6,7 @@ import {
   story,
   review,
   store,
+  usermenu,
 } from "../controllers/globalController.js";
 import {
   getRegister,
@@ -32,5 +33,6 @@ globalRouter.get("/story", story);
 globalRouter.get("/shop", shop);
 globalRouter.get("/store", store);
 globalRouter.get("/review", review);
+globalRouter.get("/user-menu", usermenu);
 
 export default globalRouter;

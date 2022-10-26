@@ -74,7 +74,7 @@ const productObjects = {
     name: "TIRA WHOLE PACK",
     subTitle: "티라미수 WHOLE PACK",
     price: 36000,
-    imgSrc: "/static/img/w-2.jpeg",
+    imgSrc: "/static/img/w-2.png",
     explain: `산토리니 여섯 마을의 패키지를 모두 담은 티라의 대표 프로모션 패키지.<br>
 믿을 수 있는 재료로 만든 깨끗하고 정직한 핸드메이드 디저트입니다.<br><br> 
 각 1인분 기준의 용량이 총 6가지로 구성되어 있으며 시트 끝까지 깊게 한 스푼 떠서
