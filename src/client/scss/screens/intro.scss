@@ -898,6 +898,7 @@ body {
     &.one {
       h2 {
         .one-head {
+          font-size: 1.2em;
           font-weight: 600;
           margin-bottom: 1%;
         }
@@ -1258,6 +1259,7 @@ body {
           justify-content: center;
           align-items: center;
           border-radius: 20px;
+          font-weight: 600;
           transition: all 0.3s $mainTransition;
           border: 2px solid transparent;
           &:hover {
