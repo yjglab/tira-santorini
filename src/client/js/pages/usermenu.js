@@ -46,6 +46,6 @@ $confirmBtn.addEventListener("click", handleConfirmBtn);
 
 // devmode
 // // $confirmBtn.click();
-$userMenuSectionName.style.opacity = 0;
-$userMenuSectionOpen.style.opacity = 0;
-$userMenuSectionProduct.style.opacity = 1;
+// $userMenuSectionName.style.opacity = 0;
+// $userMenuSectionOpen.style.opacity = 0;
+// $userMenuSectionProduct.style.opacity = 1;
