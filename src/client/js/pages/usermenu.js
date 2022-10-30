@@ -37,7 +37,9 @@ const handleConfirmBtn = () => {
     }, 2200);
     setTimeout(() => {
       $userMenuSectionOpen.style.opacity = 0;
-      $userMenuSectionProduct.style.opacity = 1;
+
+      $userMenuSectionProduct.style.display = "flex";
+      document.querySelector(".usermenu-section-header").style.display = "flex";
       setTimeout(() => {
         $userMenuSectionName.style.display = "none";
         $userMenuSectionOpen.style.display = "none";
@@ -95,8 +97,8 @@ $pageChevronsRight.addEventListener("click", () => handlePage("right"));
 
 // devmode
 // $confirmBtn.click();
-$userMenuSectionOpen.style.display = "none";
-$userMenuSectionName.style.display = "none";
-$userMenuSectionName.style.opacity = 0;
-$userMenuSectionOpen.style.opacity = 0;
-$userMenuSectionProduct.style.opacity = 1;
+// $userMenuSectionOpen.style.display = "none";
+// $userMenuSectionName.style.display = "none";
+// $userMenuSectionName.style.opacity = 0;
+// $userMenuSectionOpen.style.opacity = 0;
+// $userMenuSectionProduct.style.opacity = 1;

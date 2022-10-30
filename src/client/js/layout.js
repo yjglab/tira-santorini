@@ -7,3 +7,7 @@
   const r = require.context("../videos", false, /\.(mp4)$/);
   return r.keys().map(r);
 })();
+
+if (document.location.href.includes("user-menu")) {
+  document.querySelector(".not-supported").style.display = "none";
+}

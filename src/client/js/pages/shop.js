@@ -297,3 +297,7 @@ function removeItem(removeButton) {
     recalculateCart();
   });
 }
+
+// default
+document.querySelector(".product-pick.pick-1").click();
+document.querySelector(".set-picker.pack-3-01").click();
