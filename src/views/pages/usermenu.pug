@@ -4,8 +4,67 @@ block links
     link(rel="stylesheet", href="/static/css/usermenu.css")
 
 block content
-    .usermenu-container
+    .usermenu-whole-container
+        .usermenu-section-name 
+            .name-msg 
+                | 방문해주셔서 감사합니다
+                br
+                | 터치하여 성함을 입력 후 확인 버튼을 눌러주세요
+            .name-input-box
+                input
+                .confirm-btn
+                    i.fa-solid.fa-check
+        .usermenu-section-open
+            .open-msg
+                h1.customer-name 안녕낭녕
+                br
+                h1.welcome-msg <span>TIRA</span>에 방문해주셔서 감사합니다
+            .open-logo
 
+        .usermenu-section-product
+            .section-product-header 
+                .header TIRAMISU
+                .header-line
+                    .line-dot 
+                    .line-dot
+                .sub-header 티라미수
+            .section-product-container 
+                .product-row 
+                    .product-back
+                    .product-img
+                        img(src="/static/img/3p-1.jpeg")
+                    .product-container 
+                        .product-number 01.
+                        .product-subheader 1번 티라미수
+                        .product-name
+                            h1 OIA <span>이아</span>
+                .product-row 
+                    .product-container 
+                        .product-number 02.
+                        .product-subheader 2번 티라미수
+                        .product-name 
+                            h1 FIRA <span>피라</span>
+                    .product-back
+                    .product-img
+                        img(src="/static/img/3p-1.jpeg")
+                .product-row 
+                    .product-back
+                    .product-img
+                        img(src="/static/img/3p-1.jpeg")
+                    .product-container 
+                        .product-number 03.
+                        .product-subheader 3번 티라미수
+                        .product-name 
+                            h1 AKROTIRI <span>아크로티리</span>
+                         
+            .section-product-footer
+                .logo-img 
+                    img(src="/static/img/logo-base.png")
+                .logo-text TIRA OFFICIAL
+
+
+
+            
 
 block scripts
     script(src="/static/js/usermenu.js")
