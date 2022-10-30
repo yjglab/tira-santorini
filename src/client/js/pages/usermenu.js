@@ -44,8 +44,18 @@ const handleConfirmBtn = () => {
 
 $confirmBtn.addEventListener("click", handleConfirmBtn);
 
+// page 컨트롤
+const $pageChevronsLeft = $userMenuSectionProduct.querySelector(
+  ".page-chevrons-left"
+);
+const $pageChevronsRight = $userMenuSectionProduct.querySelector(
+  ".page-chevrons-right"
+);
+const handlePageLeft = () => {};
+$pageChevronsLeft.addEventListener("click", handlePageLeft);
+
 // devmode
 // // $confirmBtn.click();
-// $userMenuSectionName.style.opacity = 0;
-// $userMenuSectionOpen.style.opacity = 0;
-// $userMenuSectionProduct.style.opacity = 1;
+$userMenuSectionName.style.opacity = 0;
+$userMenuSectionOpen.style.opacity = 0;
+$userMenuSectionProduct.style.opacity = 1;

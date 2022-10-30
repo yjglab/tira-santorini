@@ -34,8 +34,8 @@ body {
   align-items: center;
   z-index: 100;
   .name-msg {
-    font-size: calc($baseFontSize + 2.3em);
-    margin-bottom: 80px;
+    font-size: calc($baseFontSize + 1em);
+    margin-bottom: 40px;
     text-align: center;
     line-height: 1.4;
   }
@@ -48,7 +48,7 @@ body {
     input {
       all: unset;
       width: 30%;
-      height: 90px;
+      height: 70px;
       border-radius: 100px;
       background-color: $lightBlue;
       text-align: center;
@@ -64,15 +64,17 @@ body {
       }
     }
     .confirm-btn {
-      width: 85px;
-      height: 85px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       background-color: $tiraMainDark;
       display: flex;
       justify-content: center;
       align-items: center;
       i {
-        font-size: 3em;
+        font-size: 1.5em;
+        position: relative;
+        right: 1.5px;
         color: white;
       }
     }
@@ -100,13 +102,12 @@ body {
       color: white;
       transition: all 0.5s $mainTransition;
       &:nth-of-type(1) {
-        margin-bottom: 20px;
         opacity: 0;
-        font-size: calc($baseFontSize + 2.7em);
+        font-size: calc($baseFontSize + 1em);
       }
       &:nth-of-type(2) {
         opacity: 0;
-        font-size: calc($baseFontSize + 2.7em);
+        font-size: calc($baseFontSize + 1em);
       }
     }
     .welcome-msg {
@@ -116,6 +117,52 @@ body {
         font-weight: 700;
       }
     }
+  }
+}
+
+.usermenu-section-header {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 15px;
+  .header {
+    font-size: 2em;
+    font-weight: 800;
+    font-family: $tiraHeaderFont;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .header-line {
+    width: 40%;
+    height: 2px;
+    border-radius: 10px;
+    background-color: $tiraMainDark;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .line-dot {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: $tiraMainDark;
+      &:nth-of-type(1) {
+        left: 0;
+      }
+      &:nth-of-type(2) {
+        right: 0;
+      }
+    }
+  }
+  .sub-header {
+    font-size: 1em;
+    font-weight: 500;
   }
 }
 .usermenu-section-product {
@@ -130,202 +177,304 @@ body {
   left: 0;
   z-index: 98;
 
-  .section-product-header {
-    width: 100%;
-    height: 15%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .header {
-      font-size: 5em;
-      font-weight: 800;
-      font-family: $tiraHeaderFont;
-      letter-spacing: 0.1em;
-      margin-bottom: 10px;
-    }
-    .header-line {
-      width: 40%;
-      height: 3px;
-      border-radius: 10px;
-      background-color: $tiraMainDark;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      .line-dot {
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: $tiraMainDark;
-        &:nth-of-type(1) {
-          left: 0;
-        }
-        &:nth-of-type(2) {
-          right: 0;
-        }
-      }
-    }
-    .sub-header {
-      font-size: 2em;
-      font-weight: 500;
-    }
-  }
   .section-product-container {
     width: 100%;
-    height: 75%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    .product-row {
-      display: flex;
-      justify-content: center;
+    position: relative;
+    .section-product-page-chevrons {
+      position: absolute;
+      top: 50%;
       width: 100%;
-      height: 33.3%;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
 
-      &:nth-of-type(1) {
-        position: relative;
-        right: 20px;
-        .product-container {
-          position: relative;
-          right: 80px;
-        }
-        .product-back {
-          position: absolute;
-          border-radius: 50%;
-          width: 580px;
-          height: 580px;
-          background-color: $tiraColor1;
-          left: 15%;
-          top: 0;
-          z-index: -1;
-        }
-        .product-img {
-          img {
-            width: 550px;
-            height: 550px;
-            box-shadow: 0px 10px 25px 10px rgba(rgb(81, 12, 0), 0.1);
-          }
-        }
-      }
-      &:nth-of-type(2) {
-        position: relative;
-        right: 20px;
-        .product-container {
-          position: relative;
-          left: 280px;
-        }
-        .product-back {
-          position: absolute;
-          border-radius: 50%;
-          width: 480px;
-          height: 480px;
-          right: 13%;
-          z-index: -1;
-          background-color: $tiraColor2;
-        }
-        .product-img {
-          img {
-            width: 450px;
-            height: 450px;
-            box-shadow: 5px -10px 25px 10px rgba(rgb(81, 12, 0), 0.1);
-          }
-        }
-      }
-      &:nth-of-type(3) {
-        position: relative;
-        left: 140px;
-        .product-container {
-          position: relative;
-          right: 150px;
-        }
-        .product-back {
-          position: absolute;
-          border-radius: 50%;
-          width: 530px;
-          height: 530px;
-          background-color: $tiraColor3;
-          left: 11%;
-          z-index: -1;
-          top: -5%;
-        }
-        .product-img {
-          img {
-            width: 500px;
-            height: 500px;
-            box-shadow: -5px -10px 25px 10px rgba(rgb(81, 12, 0), 0.1);
-          }
-        }
-      }
-      .product-img {
-        width: 50%;
-        height: 100%;
-
+      .page-chevrons-left,
+      .page-chevrons-right {
+        margin: 0 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $tiraMainDark;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        img {
-          border-radius: 50%;
-          object-fit: cover;
+        i {
+          color: white;
+          font-size: 1.4em;
         }
       }
-      .product-container {
-        width: 40%;
-        height: 100%;
+      .page-chevrons-left {
+        opacity: 0;
+      }
+    }
+    .section-product-page-1,
+    .section-product-page-2 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      padding-top: 150px;
 
+      top: 0;
+      left: 0;
+
+      .product-row {
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        width: 100%;
+        height: 33.3%;
         align-items: center;
-        font-family: $tiraHeaderFont;
-
-        .product-number {
-          width: 65%;
-          height: 15%;
-          margin: 7px 0;
-
-          display: flex;
-          align-items: center;
-          font-size: calc($baseFontSize + 3.3em);
-          font-weight: 800;
+        &:nth-of-type(1) {
+          .product {
+            position: relative;
+            left: 20px;
+          }
+          .product-container {
+            position: relative;
+            left: 40px;
+          }
+          .product-img {
+            position: relative;
+            left: 120px;
+            top: 20px;
+            img {
+              width: 255px;
+              height: 255px;
+              box-shadow: -5px -5px 25px 10px rgba(rgb(81, 12, 0), 0.1);
+            }
+          }
         }
-        .product-subheader {
-          width: 65%;
-          height: 8%;
-          margin: 7px 0;
+        &:nth-of-type(2) {
+          .product {
+            position: relative;
+            right: 30px;
+          }
+          .product-container {
+            position: relative;
+            left: 130px;
+          }
+          .product-img {
+            position: relative;
+            left: 80px;
+            top: 10px;
+            img {
+              width: 200px;
+              height: 200px;
+              box-shadow: 5px -5px 25px 10px rgba(rgb(81, 12, 0), 0.1);
+            }
+          }
+        }
+        &:nth-of-type(3) {
+          .product {
+            position: relative;
+            left: 105px;
+          }
+          .product-container {
+            position: relative;
+            left: 90px;
+          }
+          .product-img {
+            position: relative;
+            left: 80px;
+            top: -10px;
+            img {
+              width: 230px;
+              height: 230px;
+              box-shadow: 5px 10px 25px 10px rgba(rgb(81, 12, 0), 0.1);
+            }
+          }
+        }
+        .product {
+          opacity: 0;
+          width: 50%;
+          height: 100%;
+          position: relative;
           display: flex;
+          justify-content: center;
           align-items: center;
 
-          font-size: 1.7em;
-          font-weight: 500;
-        }
-        .product-name {
-          width: 65%;
-          height: 10%;
-          margin: 7px 0;
-          display: flex;
-          h1 {
-            width: 100%;
+          .product-img {
+            width: 50%;
             height: 100%;
+            position: absolute;
             display: flex;
+            justify-content: center;
             align-items: center;
 
-            font-size: 2.8em;
+            img {
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+          .product-back {
+            &.product-1 {
+              border-radius: 50%;
+              width: 270px;
+              height: 270px;
+              z-index: -1;
+              background-color: $tiraColor1;
+            }
+            &.product-2 {
+              border-radius: 50%;
+              width: 215px;
+              height: 215px;
+              z-index: -1;
+              background-color: $tiraColor2;
+            }
+            &.product-3 {
+              border-radius: 50%;
+              width: 250px;
+              height: 250px;
+              z-index: -1;
+              background-color: $tiraColor3;
+            }
+            &.product-4 {
+              border-radius: 50%;
+              width: 270px;
+              height: 270px;
+              z-index: -1;
+              background-color: $tiraColor4;
+            }
+            &.product-5 {
+              border-radius: 50%;
+              width: 215px;
+              height: 215px;
+
+              z-index: -1;
+              background-color: $tiraColor5;
+            }
+            &.product-6 {
+              border-radius: 50%;
+              width: 250px;
+              height: 250px;
+
+              z-index: -1;
+              background-color: $tiraColor6;
+            }
+          }
+        }
+        .product-container {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-family: $tiraHeaderFont;
+          opacity: 0;
+          transform: translateY(-15%);
+          .product-number {
+            width: 85%;
+            height: 15%;
+            margin: 7px 0;
+
+            display: flex;
+            align-items: center;
+            font-size: calc($baseFontSize + 1.3em);
             font-weight: 700;
-            letter-spacing: 0.1em;
-            span {
-              letter-spacing: -0.05em;
-              margin-left: 15px;
-              font-size: 0.7em;
+            font-style: italic;
+          }
+          .product-subheader {
+            width: 85%;
+            height: 8%;
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.03em;
+            font-size: 1.2em;
+            font-weight: 500;
+          }
+          .product-name {
+            width: 85%;
+            height: 10%;
+
+            display: flex;
+            flex-direction: column;
+            h1 {
+              width: 100%;
+              height: 100%;
+
+              &:nth-of-type(1) {
+                font-size: 1.6em;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+                margin-bottom: 7.5px;
+              }
+              &:nth-of-type(2) {
+                letter-spacing: -0.01em;
+                font-size: 0.85em;
+              }
             }
           }
         }
       }
     }
+    .section-product-page-1 {
+      transition: all 1s $mainTransition;
+      .product-row {
+        &:nth-of-type(1) {
+          .product {
+            animation-delay: 0s;
+          }
+        }
+        &:nth-of-type(2) {
+          .product {
+            animation-delay: 0.2s;
+          }
+        }
+        &:nth-of-type(3) {
+          .product {
+            animation-delay: 0.4s;
+          }
+        }
+        .product {
+          animation: product 1s ease-in-out forwards;
+          @keyframes product {
+            0% {
+              opacity: 0;
+              transform: scale(1);
+            }
+            30% {
+              transform: scale(1.05);
+            }
+            60% {
+              transform: scale(0.95);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+            }
+          }
+        }
+        .product-container {
+          animation: product-container 2s $mainTransition forwards;
+          animation-delay: 0.7s;
+          @keyframes product-container {
+            0% {
+              transform: translateY(-15%);
+
+              opacity: 0;
+            }
+            100% {
+              transform: translateY(0%);
+
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    .section-product-page-2 {
+      transition: all 1s $mainTransition;
+      left: 100%;
+    }
+    // .section-product-page-3 {
+    //   transform: translateX(200%);
+    // }
   }
   .section-product-footer {
     width: 100%;
@@ -336,16 +485,17 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    top: 20px;
+    top: 5px;
     .logo-img {
       margin-bottom: 10px;
       img {
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
         object-fit: cover;
       }
     }
     .logo-text {
+      font-size: 0.6em;
       font-family: $tiraHeaderFont;
       letter-spacing: 0.3em;
       font-weight: 800;
