@@ -3,7 +3,7 @@ const productObjects = {
   product1: {
     name: "OIA",
     price: 6000,
-    imgSrc: "/static/img/ss-1.png",
+    imgSrc: "/static/img/single-1.png",
     explain: "달콤한 딸기와 치즈를 배합하여 만든 부드러운 티라미수",
     ingredient: "255,23.3,3,5.5,70,계란•우유•밀",
     backColor: "linear-gradient(196deg, white, #ffe2dd)",
@@ -11,7 +11,7 @@ const productObjects = {
   product2: {
     name: "FIRA",
     price: 6000,
-    imgSrc: "/static/img/ss-2.png",
+    imgSrc: "/static/img/single-2.png",
     explain: "상큼한 자몽과 망고를 배합하여 만든 새콤한 티라미수",
     ingredient: "230,25.2,4,6.5,65,계란•우유•밀",
     backColor: "linear-gradient(196deg, #ffe3e0, #ffb3ab)",
@@ -19,7 +19,7 @@ const productObjects = {
   product3: {
     name: "AKROTIRI",
     price: 6000,
-    imgSrc: "/static/img/ss-3.png",
+    imgSrc: "/static/img/single-3.png",
     explain: "마스카포네 치즈와 에스프레소를 배합하여 만든 정통 티라미수",
     ingredient: "300,7.5,5.4,6.5,60,계란•우유•밀",
     backColor: "linear-gradient(196deg, #c69191, #764c4c)",
@@ -27,7 +27,7 @@ const productObjects = {
   product4: {
     name: "FIROSTEFANI",
     price: 6000,
-    imgSrc: "/static/img/ss-4.png",
+    imgSrc: "/static/img/single-4.png",
     explain: "시원한 민트와 청포도를 배합하여 만든 시그니처 티라미수",
     ingredient: "355,31.2,5.5,14,77,계란•우유•밀",
     backColor: "linear-gradient(196deg, #edf2ff, #c5d4ff)",
@@ -35,7 +35,7 @@ const productObjects = {
   product5: {
     name: "IMEROVIGLI",
     price: 6000,
-    imgSrc: "/static/img/ss-5.png",
+    imgSrc: "/static/img/single-5.png",
     explain: "블루베리와 치즈를 배합하여 만든 부드럽고 달콤한 티라미수",
     ingredient: "340,30,5.3,14,79,계란•우유•밀",
     backColor: "linear-gradient(196deg, #afc9ff, #87adff)",
@@ -43,7 +43,7 @@ const productObjects = {
   product6: {
     name: "KAMARI",
     price: 6000,
-    imgSrc: "/static/img/ss-6.png",
+    imgSrc: "/static/img/single-6.png",
     explain: "흑임자와 초콜릿 쿠키를 배합하여 만든 진한 티라미수",
     ingredient: "402,41,3.5,19,66.2,계란•우유•밀",
     backColor: "linear-gradient(196deg, #9595ae, #64647e)",

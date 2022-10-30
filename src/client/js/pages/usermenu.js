@@ -14,38 +14,59 @@ const $userMenuSectionProduct = document.querySelector(
 );
 const $confirmBtn = $userMenuSectionName.querySelector(".confirm-btn");
 
+const devmodeCnt = false;
+
 // section-name 에서 section-open 이동
 const handleConfirmBtn = () => {
   const username = $userMenuSectionName.querySelector("input").value;
   $userMenuSectionName.style.opacity = 0;
-  setTimeout(() => {
-    $userMenuSectionName.style.display = "none";
-  }, 1000);
+  setTimeout(
+    () => {
+      $userMenuSectionName.style.display = "none";
+    },
+    devmodeCnt ? 0 : 1000
+  );
 
   const $customerName = $userMenuSectionOpen.querySelector(".customer-name");
   const $welcomeMsg = $userMenuSectionOpen.querySelector(".welcome-msg");
   $customerName.textContent = `안녕하세요 ${username}님`;
 
-  setTimeout(() => {
-    $userMenuSectionOpen.style.opacity = 1;
+  setTimeout(
+    () => {
+      $userMenuSectionOpen.style.opacity = 1;
 
-    setTimeout(() => {
-      $customerName.style.opacity = 1;
-    }, 1000);
-    setTimeout(() => {
-      $welcomeMsg.style.opacity = 1;
-    }, 2200);
-    setTimeout(() => {
-      $userMenuSectionOpen.style.opacity = 0;
+      setTimeout(
+        () => {
+          $customerName.style.opacity = 1;
+        },
+        devmodeCnt ? 0 : 1000
+      );
+      setTimeout(
+        () => {
+          $welcomeMsg.style.opacity = 1;
+        },
+        devmodeCnt ? 0 : 2200
+      );
+      setTimeout(
+        () => {
+          $userMenuSectionOpen.style.opacity = 0;
 
-      $userMenuSectionProduct.style.display = "flex";
-      document.querySelector(".usermenu-section-header").style.display = "flex";
-      setTimeout(() => {
-        $userMenuSectionName.style.display = "none";
-        $userMenuSectionOpen.style.display = "none";
-      }, 1000);
-    }, 4300);
-  }, 1000);
+          $userMenuSectionProduct.style.display = "flex";
+          document.querySelector(".usermenu-section-header").style.display =
+            "flex";
+          setTimeout(
+            () => {
+              $userMenuSectionName.style.display = "none";
+              $userMenuSectionOpen.style.display = "none";
+            },
+            devmodeCnt ? 0 : 1000
+          );
+        },
+        devmodeCnt ? 0 : 4300
+      );
+    },
+    devmodeCnt ? 0 : 1000
+  );
 };
 
 $confirmBtn.addEventListener("click", handleConfirmBtn);
@@ -96,7 +117,7 @@ $pageChevronsLeft.addEventListener("click", () => handlePage("left"));
 $pageChevronsRight.addEventListener("click", () => handlePage("right"));
 
 // devmode
-// $confirmBtn.click();
+if (devmodeCnt) $confirmBtn.click();
 // $userMenuSectionOpen.style.display = "none";
 // $userMenuSectionName.style.display = "none";
 // $userMenuSectionName.style.opacity = 0;
