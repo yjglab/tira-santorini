@@ -38,6 +38,10 @@ const handleConfirmBtn = () => {
     setTimeout(() => {
       $userMenuSectionOpen.style.opacity = 0;
       $userMenuSectionProduct.style.opacity = 1;
+      setTimeout(() => {
+        $userMenuSectionName.style.display = "none";
+        $userMenuSectionOpen.style.display = "none";
+      }, 1000);
     }, 4300);
   }, 1000);
 };
@@ -45,17 +49,54 @@ const handleConfirmBtn = () => {
 $confirmBtn.addEventListener("click", handleConfirmBtn);
 
 // page 컨트롤
+let currentPage = 1;
+
 const $pageChevronsLeft = $userMenuSectionProduct.querySelector(
   ".page-chevrons-left"
 );
 const $pageChevronsRight = $userMenuSectionProduct.querySelector(
   ".page-chevrons-right"
 );
-const handlePageLeft = () => {};
-$pageChevronsLeft.addEventListener("click", handlePageLeft);
+const $sectionProductPage1 = $userMenuSectionProduct.querySelector(
+  ".section-product-page-1"
+);
+const $sectionProductPage2 = $userMenuSectionProduct.querySelector(
+  ".section-product-page-2"
+);
+const handlePage = (direction) => {
+  switch (direction) {
+    case "left": {
+      if (currentPage === 1) {
+        return;
+      } else if (currentPage === 2) {
+        $pageChevronsLeft.style.opacity = 0;
+        currentPage = 1;
+        $sectionProductPage1.style.left = "0%";
+        $sectionProductPage2.style.left = "100%";
+      }
+      break;
+    }
+    case "right": {
+      if (currentPage === 1) {
+        $pageChevronsLeft.style.opacity = 1;
+        currentPage = 2;
+        $sectionProductPage1.style.left = "-100%";
+        $sectionProductPage2.style.left = "0%";
+      } else if (currentPage === 2) {
+      }
+      break;
+    }
+    default:
+      break;
+  }
+};
+$pageChevronsLeft.addEventListener("click", () => handlePage("left"));
+$pageChevronsRight.addEventListener("click", () => handlePage("right"));
 
 // devmode
-// // $confirmBtn.click();
+// $confirmBtn.click();
+$userMenuSectionOpen.style.display = "none";
+$userMenuSectionName.style.display = "none";
 $userMenuSectionName.style.opacity = 0;
 $userMenuSectionOpen.style.opacity = 0;
 $userMenuSectionProduct.style.opacity = 1;

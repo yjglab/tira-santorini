@@ -136,9 +136,19 @@ body {
     font-family: $tiraHeaderFont;
     letter-spacing: 0.1em;
     margin-bottom: 10px;
+    transform: translateY(-200%);
+    animation: header 1s $mainTransition forwards;
+    @keyframes header {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0%);
+      }
+    }
   }
   .header-line {
-    width: 40%;
+    width: 0%;
     height: 2px;
     border-radius: 10px;
     background-color: $tiraMainDark;
@@ -146,6 +156,15 @@ body {
     display: flex;
     align-items: center;
     position: relative;
+    animation: header-line 1s $mainTransition forwards;
+    @keyframes header-line {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 40%;
+      }
+    }
     .line-dot {
       position: absolute;
       width: 7px;
@@ -163,6 +182,17 @@ body {
   .sub-header {
     font-size: 1em;
     font-weight: 500;
+    opacity: 0;
+    animation: sub-header 1.5s $mainTransition forwards;
+    animation-delay: 0.2s;
+    @keyframes sub-header {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   }
 }
 .usermenu-section-product {
@@ -191,7 +221,7 @@ body {
       height: 60px;
       display: flex;
       justify-content: space-between;
-
+      z-index: 1;
       .page-chevrons-left,
       .page-chevrons-right {
         margin: 0 20px;
@@ -202,7 +232,10 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-
+        transition: all 0.3s $mainTransition;
+        &:active {
+          transform: scale(1.2);
+        }
         i {
           color: white;
           font-size: 1.4em;
@@ -218,7 +251,7 @@ body {
       height: 100%;
       position: absolute;
       padding-top: 150px;
-
+      transition: left 1s $mainTransition;
       top: 0;
       left: 0;
 
@@ -413,22 +446,23 @@ body {
         }
       }
     }
-    .section-product-page-1 {
+    .section-product-page-1,
+    .section-product-page-2 {
       transition: all 1s $mainTransition;
       .product-row {
         &:nth-of-type(1) {
           .product {
-            animation-delay: 0s;
+            animation-delay: 1s;
           }
         }
         &:nth-of-type(2) {
           .product {
-            animation-delay: 0.2s;
+            animation-delay: 1.2s;
           }
         }
         &:nth-of-type(3) {
           .product {
-            animation-delay: 0.4s;
+            animation-delay: 1.4s;
           }
         }
         .product {
@@ -452,7 +486,7 @@ body {
         }
         .product-container {
           animation: product-container 2s $mainTransition forwards;
-          animation-delay: 0.7s;
+          animation-delay: 1.5s;
           @keyframes product-container {
             0% {
               transform: translateY(-15%);
