@@ -50,7 +50,7 @@ const handleConfirmBtn = () => {
       setTimeout(
         () => {
           $userMenuSectionOpen.style.opacity = 0;
-
+          $userMenuSectionOpen.style.transform = "translateY(100%)";
           $userMenuSectionProduct.style.display = "flex";
           document.querySelector(".usermenu-section-header").style.display =
             "flex";
@@ -115,6 +115,20 @@ const handlePage = (direction) => {
 };
 $pageChevronsLeft.addEventListener("click", () => handlePage("left"));
 $pageChevronsRight.addEventListener("click", () => handlePage("right"));
+
+// 제품 클릭
+const $$products = $userMenuSectionProduct.querySelectorAll(".product");
+const $sectionProductDetail = $userMenuSectionProduct.querySelector(
+  ".section-product-detail"
+);
+$sectionProductDetail.addEventListener("click", () => {
+  $sectionProductDetail.className = "section-product-detail";
+});
+$$products.forEach((product, productNum) => {
+  product.addEventListener("click", () => {
+    $sectionProductDetail.classList.add(`product-${productNum + 1}-clicked`);
+  });
+});
 
 // devmode
 if (devmodeCnt) $confirmBtn.click();
