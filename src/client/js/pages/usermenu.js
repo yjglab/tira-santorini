@@ -117,21 +117,118 @@ $pageChevronsLeft.addEventListener("click", () => handlePage("left"));
 $pageChevronsRight.addEventListener("click", () => handlePage("right"));
 
 // 제품 클릭
+const productObjects = {
+  p1: {
+    nameEng: "OIA",
+    nameKor: "이아",
+    imgSrc: "/static/img/single-1.png",
+  },
+  p2: {
+    nameEng: "FIRA",
+    nameKor: "피라",
+    imgSrc: "/static/img/single-2.png",
+  },
+  p3: {
+    nameEng: "AKROTIRI",
+    nameKor: "아크로티리",
+    imgSrc: "/static/img/single-3.png",
+  },
+  p4: {
+    nameEng: "FIROSTEFANI",
+    nameKor: "피로스테파니",
+    imgSrc: "/static/img/single-4.png",
+  },
+  p5: {
+    nameEng: "IMEROVIGLI",
+    nameKor: "이메로비글리",
+    imgSrc: "/static/img/single-5.png",
+  },
+  p6: {
+    nameEng: "KAMARI",
+    nameKor: "카마리",
+    imgSrc: "/static/img/single-6.png",
+  },
+};
 const $$products = $userMenuSectionProduct.querySelectorAll(".product");
 const $sectionProductDetail = $userMenuSectionProduct.querySelector(
   ".section-product-detail"
 );
-$sectionProductDetail.addEventListener("click", () => {
+const $productDetailCloseBtn = $sectionProductDetail.querySelector(
+  ".product-detail-close-btn"
+);
+
+$productDetailCloseBtn.addEventListener("click", () => {
   $sectionProductDetail.className = "section-product-detail";
 });
 $$products.forEach((product, productNum) => {
   product.addEventListener("click", () => {
     $sectionProductDetail.classList.add(`product-${productNum + 1}-clicked`);
+    const $headerEng = $sectionProductDetail.querySelector(".header-eng");
+    const $headerKor = $sectionProductDetail.querySelector(".header-kor");
+    const $productDetailImg = $sectionProductDetail.querySelector(
+      ".product-detail-img > img"
+    );
+    switch (productNum + 1) {
+      case 1: {
+        $headerEng.textContent = productObjects.p1.nameEng;
+        $headerKor.textContent = productObjects.p1.nameKor;
+        $productDetailImg.src = productObjects.p1.imgSrc;
+        break;
+      }
+      case 2: {
+        $headerEng.textContent = productObjects.p2.nameEng;
+        $headerKor.textContent = productObjects.p2.nameKor;
+        $productDetailImg.src = productObjects.p2.imgSrc;
+        break;
+      }
+      case 3: {
+        $headerEng.textContent = productObjects.p3.nameEng;
+        $headerKor.textContent = productObjects.p3.nameKor;
+        $productDetailImg.src = productObjects.p3.imgSrc;
+        break;
+      }
+      case 4: {
+        $headerEng.textContent = productObjects.p4.nameEng;
+        $headerKor.textContent = productObjects.p4.nameKor;
+        $productDetailImg.src = productObjects.p4.imgSrc;
+        break;
+      }
+      case 5: {
+        $headerEng.textContent = productObjects.p5.nameEng;
+        $headerKor.textContent = productObjects.p5.nameKor;
+        $productDetailImg.src = productObjects.p5.imgSrc;
+        break;
+      }
+      case 6: {
+        $headerEng.textContent = productObjects.p6.nameEng;
+        $headerKor.textContent = productObjects.p6.nameKor;
+        $productDetailImg.src = productObjects.p6.imgSrc;
+        break;
+      }
+    }
   });
 });
+const $userPurchased = document.querySelector(".user-purchased");
+let purchasedCnt = 0;
 
+const $productDetailPurchaseBtn = $sectionProductDetail.querySelector(
+  ".product-detail-purchase-btn"
+);
+$productDetailPurchaseBtn.addEventListener("click", () => {
+  $sectionProductDetail.className = "section-product-detail";
+  purchasedCnt += 1;
+  setTimeout(() => {
+    $userPurchased.querySelector(".purchased-cnt").textContent = purchasedCnt;
+    $userPurchased.classList.add("counted");
+    setTimeout(() => {
+      $userPurchased.classList.remove("counted");
+    }, 400);
+  }, 700);
+});
 // devmode
-if (devmodeCnt) $confirmBtn.click();
+if (devmodeCnt) {
+  $confirmBtn.click();
+}
 // $userMenuSectionOpen.style.display = "none";
 // $userMenuSectionName.style.display = "none";
 // $userMenuSectionName.style.opacity = 0;
